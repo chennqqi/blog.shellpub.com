@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="wordpress 远程命令执行漏洞预警">
+  <meta name="description" content="WordPress 远程命令执行漏洞预警">
   <meta name="generator" content="Hugo 0.17-DEV" />
 
   <title>漏洞预警-WordPress Core远程代码执行0day &middot; SHELLPUB BLOG</title>
@@ -207,7 +207,7 @@
 
 <div class="header">
   <h1>漏洞预警-WordPress Core远程代码执行0day</h1>
-  <h2>wordpress 远程命令执行漏洞预警</h2>
+  <h2>WordPress 远程命令执行漏洞预警</h2>
 </div>
 <div class="content">
 
@@ -250,11 +250,13 @@
 
 </div>
 
-  <p>#漏洞预警-WordPress Core远程代码执行0day(无需验证和插件)</p>
+  
 
-<p><center><img src="http://storage1.imgchr.com/FpjZ8.png" alt="" /></center></p>
+<h1 id="漏洞预警-wordpress-core远程代码执行0day-无需验证和插件">漏洞预警-WordPress Core远程代码执行0day(无需验证和插件)</h1>
 
-<p>2017年5月1日，<strong>WordPress</strong> 被曝出远程代码执行漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞不需要验证，同时不需要安装任何插件即可获取反弹的shell，目前该漏洞官方尚未回应。另外，漏洞细节legalhackers并未公布。预计等待官方发布补丁后会放出。</p>
+<p><center><img src="https://www.tripwire.com/state-of-security/wp-content/uploads/sites/3/wp-featured.jpeg" alt="" /></center></p>
+
+<p>2017年5月1日，<strong>WordPress</strong> 被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞不需要验证，同时不需要安装任何插件即可获取反弹的shell，目前该漏洞官方尚未回应。另外，漏洞细节legalhackers并未公布。预计等待官方发布补丁后会放出。</p>
 
 <p><strong>WordPress</strong>是一款由PHP语言开发的内容管理系统（CMS）系统。是当今最流行的cms，很适合二次开发，使用量超过百万。潜在影响范围广泛，请大家在官方补丁出来之前，提早做好防范。以免带来不必要的麻烦。</p>
 
@@ -265,14 +267,14 @@ google搜索Wordpress的结果
 
 <p>我们将持续关注此漏洞</p>
 
-<p>##漏洞详情与PoC</p>
+<h2 id="漏洞详情与poc">漏洞详情与PoC</h2>
 
 <p>视频中有相关利用成功的演示。演示结果如下（详细请看视频，文中结尾处有）：
 <center>
 <img src="http://storage1.imgchr.com/FpLsP.png" alt="" />
 </center></p>
 
-<p>##修复建议</p>
+<h2 id="修复建议">修复建议</h2>
 
 <ol>
 <li><p>即时关注<a href="https://cn.wordpress.org">wordpress中文官方</a>，官方发布补丁，第一时间修复该漏洞</p></li>
@@ -285,11 +287,14 @@ google搜索Wordpress的结果
 <li><p>安装相关防护软件，如主机waf，或者云防护(<a href="http://wangzhan.360.com">网站卫士</a>、<a href="https://www.yunaq.com/">加速乐</a>)；如使用阿里云主机，可开启阿里云防护。</p></li>
 </ol>
 
-<p>##漏洞演示视频及参考资料</p>
+<h2 id="漏洞演示视频及参考资料">漏洞演示视频及参考资料</h2>
+
+<p><center>
+<iframe height=498 width=510 src="http://player.youku.com/embed/XMjc0MjA3MjE5Ng==" frameborder=0 "allowfullscreen">  </iframe>
+</center></p>
 
 <ol>
 <li><a href="https://www.youtube.com/watch?v=ZFt_S5pQPX0">https://www.youtube.com/watch?v=ZFt_S5pQPX0</a><br /></li>
-<li>墙内用户请戳这里<a href="http://">还在审核当中，稍后放出</a></li>
 <li><a href="https://www.zhihu.com/question/20747854">知乎wordpress讨论帖</a></li>
 <li><a href="http://baike.baidu.com/item/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C">百度百科-远程代码执行</a></li>
 </ol>

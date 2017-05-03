@@ -15,11 +15,13 @@
       <pubDate>Wed, 03 May 2017 13:46:17 +0800</pubDate>
       
       <guid>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</guid>
-      <description>&lt;p&gt;#漏洞预警-WordPress Core远程代码执行0day(无需验证和插件)&lt;/p&gt;
+      <description>
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&#34;http://storage1.imgchr.com/FpjZ8.png&#34; alt=&#34;&#34; /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;h1 id=&#34;漏洞预警-wordpress-core远程代码执行0day-无需验证和插件&#34;&gt;漏洞预警-WordPress Core远程代码执行0day(无需验证和插件)&lt;/h1&gt;
 
-&lt;p&gt;2017年5月1日，&lt;strong&gt;WordPress&lt;/strong&gt; 被曝出远程代码执行漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞不需要验证，同时不需要安装任何插件即可获取反弹的shell，目前该漏洞官方尚未回应。另外，漏洞细节legalhackers并未公布。预计等待官方发布补丁后会放出。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://www.tripwire.com/state-of-security/wp-content/uploads/sites/3/wp-featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;2017年5月1日，&lt;strong&gt;WordPress&lt;/strong&gt; 被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞不需要验证，同时不需要安装任何插件即可获取反弹的shell，目前该漏洞官方尚未回应。另外，漏洞细节legalhackers并未公布。预计等待官方发布补丁后会放出。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;WordPress&lt;/strong&gt;是一款由PHP语言开发的内容管理系统（CMS）系统。是当今最流行的cms，很适合二次开发，使用量超过百万。潜在影响范围广泛，请大家在官方补丁出来之前，提早做好防范。以免带来不必要的麻烦。&lt;/p&gt;
 
@@ -30,14 +32,14 @@ google搜索Wordpress的结果
 
 &lt;p&gt;我们将持续关注此漏洞&lt;/p&gt;
 
-&lt;p&gt;##漏洞详情与PoC&lt;/p&gt;
+&lt;h2 id=&#34;漏洞详情与poc&#34;&gt;漏洞详情与PoC&lt;/h2&gt;
 
 &lt;p&gt;视频中有相关利用成功的演示。演示结果如下（详细请看视频，文中结尾处有）：
 &lt;center&gt;
 &lt;img src=&#34;http://storage1.imgchr.com/FpLsP.png&#34; alt=&#34;&#34; /&gt;
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;##修复建议&lt;/p&gt;
+&lt;h2 id=&#34;修复建议&#34;&gt;修复建议&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;即时关注&lt;a href=&#34;https://cn.wordpress.org&#34;&gt;wordpress中文官方&lt;/a&gt;，官方发布补丁，第一时间修复该漏洞&lt;/p&gt;&lt;/li&gt;
@@ -50,11 +52,14 @@ google搜索Wordpress的结果
 &lt;li&gt;&lt;p&gt;安装相关防护软件，如主机waf，或者云防护(&lt;a href=&#34;http://wangzhan.360.com&#34;&gt;网站卫士&lt;/a&gt;、&lt;a href=&#34;https://www.yunaq.com/&#34;&gt;加速乐&lt;/a&gt;)；如使用阿里云主机，可开启阿里云防护。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;##漏洞演示视频及参考资料&lt;/p&gt;
+&lt;h2 id=&#34;漏洞演示视频及参考资料&#34;&gt;漏洞演示视频及参考资料&lt;/h2&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;iframe height=498 width=510 src=&#34;http://player.youku.com/embed/XMjc0MjA3MjE5Ng==&#34; frameborder=0 &#34;allowfullscreen&#34;&gt;  &lt;/iframe&gt;
+&lt;/center&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=ZFt_S5pQPX0&#34;&gt;https://www.youtube.com/watch?v=ZFt_S5pQPX0&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;墙内用户请戳这里&lt;a href=&#34;http://&#34;&gt;还在审核当中，稍后放出&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/20747854&#34;&gt;知乎wordpress讨论帖&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://baike.baidu.com/item/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C&#34;&gt;百度百科-远程代码执行&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;

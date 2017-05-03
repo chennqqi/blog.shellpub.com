@@ -15,11 +15,13 @@
       <pubDate>Wed, 03 May 2017 13:46:17 +0800</pubDate>
       
       <guid>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</guid>
-      <description>&lt;p&gt;#漏洞预警-WordPress Core远程代码执行0day(无需验证和插件)&lt;/p&gt;
+      <description>
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&#34;http://storage1.imgchr.com/FpjZ8.png&#34; alt=&#34;&#34; /&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;h1 id=&#34;漏洞预警-wordpress-core远程代码执行0day-无需验证和插件&#34;&gt;漏洞预警-WordPress Core远程代码执行0day(无需验证和插件)&lt;/h1&gt;
 
-&lt;p&gt;2017年5月1日，&lt;strong&gt;WordPress&lt;/strong&gt; 被曝出远程代码执行漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞不需要验证，同时不需要安装任何插件即可获取反弹的shell，目前该漏洞官方尚未回应。另外，漏洞细节legalhackers并未公布。预计等待官方发布补丁后会放出。&lt;/p&gt;
+&lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://www.tripwire.com/state-of-security/wp-content/uploads/sites/3/wp-featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;2017年5月1日，&lt;strong&gt;WordPress&lt;/strong&gt; 被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞不需要验证，同时不需要安装任何插件即可获取反弹的shell，目前该漏洞官方尚未回应。另外，漏洞细节legalhackers并未公布。预计等待官方发布补丁后会放出。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;WordPress&lt;/strong&gt;是一款由PHP语言开发的内容管理系统（CMS）系统。是当今最流行的cms，很适合二次开发，使用量超过百万。潜在影响范围广泛，请大家在官方补丁出来之前，提早做好防范。以免带来不必要的麻烦。&lt;/p&gt;
 
@@ -30,14 +32,14 @@ google搜索Wordpress的结果
 
 &lt;p&gt;我们将持续关注此漏洞&lt;/p&gt;
 
-&lt;p&gt;##漏洞详情与PoC&lt;/p&gt;
+&lt;h2 id=&#34;漏洞详情与poc&#34;&gt;漏洞详情与PoC&lt;/h2&gt;
 
 &lt;p&gt;视频中有相关利用成功的演示。演示结果如下（详细请看视频，文中结尾处有）：
 &lt;center&gt;
 &lt;img src=&#34;http://storage1.imgchr.com/FpLsP.png&#34; alt=&#34;&#34; /&gt;
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;##修复建议&lt;/p&gt;
+&lt;h2 id=&#34;修复建议&#34;&gt;修复建议&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;即时关注&lt;a href=&#34;https://cn.wordpress.org&#34;&gt;wordpress中文官方&lt;/a&gt;，官方发布补丁，第一时间修复该漏洞&lt;/p&gt;&lt;/li&gt;
@@ -50,11 +52,14 @@ google搜索Wordpress的结果
 &lt;li&gt;&lt;p&gt;安装相关防护软件，如主机waf，或者云防护(&lt;a href=&#34;http://wangzhan.360.com&#34;&gt;网站卫士&lt;/a&gt;、&lt;a href=&#34;https://www.yunaq.com/&#34;&gt;加速乐&lt;/a&gt;)；如使用阿里云主机，可开启阿里云防护。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;##漏洞演示视频及参考资料&lt;/p&gt;
+&lt;h2 id=&#34;漏洞演示视频及参考资料&#34;&gt;漏洞演示视频及参考资料&lt;/h2&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;iframe height=498 width=510 src=&#34;http://player.youku.com/embed/XMjc0MjA3MjE5Ng==&#34; frameborder=0 &#34;allowfullscreen&#34;&gt;  &lt;/iframe&gt;
+&lt;/center&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=ZFt_S5pQPX0&#34;&gt;https://www.youtube.com/watch?v=ZFt_S5pQPX0&lt;/a&gt;&lt;br /&gt;&lt;/li&gt;
-&lt;li&gt;墙内用户请戳这里&lt;a href=&#34;http://&#34;&gt;还在审核当中，稍后放出&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/20747854&#34;&gt;知乎wordpress讨论帖&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://baike.baidu.com/item/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C&#34;&gt;百度百科-远程代码执行&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -82,33 +87,14 @@ WEBSHELL.PUB&lt;/p&gt;
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.shellpub.com/about/</guid>
-      <description>
-
-&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
-
-&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;Cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;Viper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/jWalterWeatherman&#34;&gt;J Walter Weatherman&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/spf13&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-
-&lt;p&gt;Some fun facts about &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Built in &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Loosely inspired by &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Primarily developed by &lt;a href=&#34;http://spf13.com/&#34;&gt;spf13&lt;/a&gt; on the train while commuting to and from Manhattan.&lt;/li&gt;
-&lt;li&gt;Coded in &lt;a href=&#34;http://vim.org&#34;&gt;Vim&lt;/a&gt; using &lt;a href=&#34;http://vim.spf13.com/&#34;&gt;spf13-vim&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Have questions or suggestions? Feel free to &lt;a href=&#34;https://github.com/spf13/hugo/issues/new&#34;&gt;open an issue on GitHub&lt;/a&gt; or &lt;a href=&#34;https://twitter.com/spf13&#34;&gt;ask me on Twitter&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;div class=&#34;about-thumb&#34;&gt;
+                    &lt;div class=&#34;section-title&#34;&gt;
+                        &lt;h1 class=&#34;wow fadeIn animated&#34; data-wow-delay=&#34;0.2s&#34; style=&#34;visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;&#34;&gt;关于我们&lt;/h1&gt;
+                        &lt;h3 class=&#34;wow fadeInUp animated&#34; data-wow-delay=&#34;0.4s&#34; style=&#34;visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;&#34;&gt;&lt;a href=&#34;http://www.shellpub.com&#34;&gt;shellpub.pub&lt;/h3&gt;
+                    &lt;/dsiv&gt;
+                    &lt;div class=&#34;wow fadeInUp animated&#34; data-wow-delay=&#34;0.6s&#34; style=&#34;visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;&#34;&gt;
+                        &lt;p&gt;团队成员来自国内顶尖安全团队，专注webshell查杀研究。拥有海量webshell样本和自主查杀技术，采用传统特征+云端大数据双引擎的查杀技术。查杀速度快、精度高、误报低。&lt;/p&gt;
+                    &lt;/div&gt;
 
 &lt;p&gt;Thanks for reading!&lt;/p&gt;
 </description>
@@ -120,45 +106,27 @@ WEBSHELL.PUB&lt;/p&gt;
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.shellpub.com/contact/</guid>
-      <description>&lt;form class=&#34;pure-form pure-form-stacked&#34;&gt;
-  &lt;fieldset&gt;
-    &lt;div class=&#34;pure-g&#34;&gt;
-      &lt;div class=&#34;pure-u-1 pure-u-md-1-3&#34;&gt;
-        &lt;label for=&#34;first-name&#34;&gt;First Name&lt;/label&gt;
-        &lt;input id=&#34;first-name&#34; class=&#34;pure-u-23-24&#34; type=&#34;text&#34;&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&#34;pure-u-1 pure-u-md-1-3&#34;&gt;
-        &lt;label for=&#34;last-name&#34;&gt;Last Name&lt;/label&gt;
-        &lt;input id=&#34;last-name&#34; class=&#34;pure-u-23-24&#34; type=&#34;text&#34;&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&#34;pure-u-1 pure-u-md-1-3&#34;&gt;
-        &lt;label for=&#34;email&#34;&gt;E-Mail&lt;/label&gt;
-        &lt;input id=&#34;email&#34; class=&#34;pure-u-23-24&#34; type=&#34;email&#34; required&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&#34;pure-u-1 pure-u-md-1-3&#34;&gt;
-        &lt;label for=&#34;city&#34;&gt;City&lt;/label&gt;
-        &lt;input id=&#34;city&#34; class=&#34;pure-u-23-24&#34; type=&#34;text&#34;&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&#34;pure-u-1 pure-u-md-1-3&#34;&gt;
-        &lt;label for=&#34;state&#34;&gt;State&lt;/label&gt;
-        &lt;select id=&#34;state&#34; class=&#34;pure-input-1-2&#34;&gt;
-          &lt;option&gt;AL&lt;/option&gt;
-          &lt;option&gt;CA&lt;/option&gt;
-          &lt;option&gt;IL&lt;/option&gt;
-        &lt;/select&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;fieldset class=&#34;pure-group&#34;&gt;
-      &lt;input type=&#34;text&#34; class=&#34;pure-input-1-2&#34; placeholder=&#34;A title&#34;&gt;
-      &lt;textarea class=&#34;pure-input-1-2&#34; placeholder=&#34;Your message&#34;&gt;&lt;/textarea&gt;
-    &lt;/fieldset&gt;
-    &lt;button type=&#34;submit&#34; class=&#34;pure-button pure-button-primary&#34;&gt;Send&lt;/button&gt;
-  &lt;/fieldset&gt;
-&lt;/form&gt;
+      <description>&lt;p&gt;&lt;h2 name=&#34;contact&#34;&gt;联系我们&lt;/h2&gt;
+                &lt;div class=&#34;wow fadeInUp animated&#34; data-wow-delay=&#34;0.6s&#34; style=&#34;visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;&#34;&gt;
+                    &lt;p&gt;&lt;a href=&#34;tencent://message/?uin=1494922137&amp;amp;Site=&amp;amp;Menu=yes&#34;&gt;QQ:1494922137&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a href=&#34;mailto:webshell.pub@gmail.com&#34;&gt;webshell.pub@gmail.com&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a href=&#34;http://www.miitbeian.gov.cn/&#34; target=&#34;_blank&#34; style=&#34;color:#737573;text-decoration:none;&#34;&gt;京ICP备16011091号-4&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>http://blog.shellpub.com/online/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.shellpub.com/online/</guid>
+      <description>&lt;p&gt;&lt;h2 name=&#34;contact&#34;&gt;联系我们&lt;/h2&gt;
+                &lt;div class=&#34;wow fadeInUp animated&#34; data-wow-delay=&#34;0.6s&#34; style=&#34;visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;&#34;&gt;
+                    &lt;p&gt;&lt;a href=&#34;tencent://message/?uin=1494922137&amp;amp;Site=&amp;amp;Menu=yes&#34;&gt;QQ:1494922137&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a href=&#34;mailto:webshell.pub@gmail.com&#34;&gt;webshell.pub@gmail.com&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a href=&#34;http://www.miitbeian.gov.cn/&#34; target=&#34;_blank&#34; style=&#34;color:#737573;text-decoration:none;&#34;&gt;京ICP备16011091号-4&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;&lt;/p&gt;
 </description>
     </item>
     
