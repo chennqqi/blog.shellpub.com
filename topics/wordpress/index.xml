@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/post/</link>
-    <description>Recent content in Posts on SHELLPUB BLOG</description>
+    <title>Wordpress on SHELLPUB BLOG</title>
+    <link>http://blog.shellpub.com/topics/wordpress/</link>
+    <description>Recent content in Wordpress on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Wed, 03 May 2017 13:46:17 +0800</lastBuildDate>
-    <atom:link href="http://blog.shellpub.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.shellpub.com/topics/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>漏洞预警-WordPress Core远程代码执行0day</title>
@@ -58,21 +58,6 @@ google搜索Wordpress的结果
 &lt;li&gt;&lt;a href=&#34;https://www.zhihu.com/question/20747854&#34;&gt;知乎wordpress讨论帖&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://baike.baidu.com/item/%E8%BF%9C%E7%A8%8B%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C&#34;&gt;百度百科-远程代码执行&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>1</title>
-      <link>http://blog.shellpub.com/post/1/</link>
-      <pubDate>Sun, 19 Mar 2017 10:44:50 +0800</pubDate>
-      
-      <guid>http://blog.shellpub.com/post/1/</guid>
-      <description>&lt;p&gt;##webshell.pub 第一篇博文&lt;/p&gt;
-
-&lt;p&gt;#关于我们
-WEBSHELL.PUB&lt;/p&gt;
-
-&lt;p&gt;团队成员来自国内顶尖安全团队，专注webshell查杀研究。拥有海量webshell样本和自主查杀技术，采用传统特征+云端大数据双引擎的查杀技术。查杀速度快、精度高、误报低。&lt;/p&gt;
 </description>
     </item>
     
