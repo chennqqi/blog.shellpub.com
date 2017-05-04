@@ -99,3 +99,4 @@ paginate = 10
 
   # Other
   #keybase = "*"
+ignoreFiles = [ "\\.bak$", "\\.orgin$" ]
