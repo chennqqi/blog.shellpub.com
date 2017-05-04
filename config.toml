@@ -53,6 +53,16 @@ paginate = 10
     pre = "<i class='fa fa-phone fa-fw'></i>"
     weight = 3
     url = "/contact/"
+  [[menu.main]]
+    name = "在线查杀"
+    pre = "<i class='fa fa-chrome fa-fw'></i>"
+    weight = 4
+    url = "http://n.shellpub.com"
+  [[menu.main]]
+    name = "官网"
+    pre = "<i class='fa fa-globe fa-fw'></i>"
+    weight = 5
+    url = "http://www.shellpub.com"
 
 [social]
   # Link your social networking accounts to the side menu
