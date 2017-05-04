@@ -383,11 +383,26 @@ WEBSHELL.PUB&lt;/p&gt;
     </item>
     
     <item>
-      <title>Contact</title>
+      <title>Online</title>
       <link>http://blog.shellpub.com/online/</link>
       <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>http://blog.shellpub.com/online/</guid>
+      <description>&lt;p&gt;&lt;h2 name=&#34;contact&#34;&gt;联系我们&lt;/h2&gt;
+                &lt;div class=&#34;wow fadeInUp animated&#34; data-wow-delay=&#34;0.6s&#34; style=&#34;visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;&#34;&gt;
+                    &lt;p&gt;&lt;a href=&#34;tencent://message/?uin=1494922137&amp;amp;Site=&amp;amp;Menu=yes&#34;&gt;QQ:1494922137&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a href=&#34;mailto:webshell.pub@gmail.com&#34;&gt;webshell.pub@gmail.com&lt;/a&gt;&lt;/p&gt;
+                    &lt;p&gt;&lt;a href=&#34;http://www.miitbeian.gov.cn/&#34; target=&#34;_blank&#34; style=&#34;color:#737573;text-decoration:none;&#34;&gt;京ICP备16011091号-4&lt;/a&gt;&lt;/p&gt;
+                &lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>官网</title>
+      <link>http://blog.shellpub.com/official/</link>
+      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.shellpub.com/official/</guid>
       <description>&lt;p&gt;&lt;h2 name=&#34;contact&#34;&gt;联系我们&lt;/h2&gt;
                 &lt;div class=&#34;wow fadeInUp animated&#34; data-wow-delay=&#34;0.6s&#34; style=&#34;visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;&#34;&gt;
                     &lt;p&gt;&lt;a href=&#34;tencent://message/?uin=1494922137&amp;amp;Site=&amp;amp;Menu=yes&#34;&gt;QQ:1494922137&lt;/a&gt;&lt;/p&gt;
