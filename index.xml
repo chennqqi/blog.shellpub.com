@@ -6,8 +6,44 @@
     <description>Recent content on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 03 May 2017 13:46:17 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jul 2017 15:31:21 +0800</lastBuildDate>
     <atom:link href="http://blog.shellpub.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>更换域名 紧急通告</title>
+      <link>http://blog.shellpub.com/2017/07/13/domainblock_alert.html</link>
+      <pubDate>Thu, 13 Jul 2017 15:31:21 +0800</pubDate>
+      
+      <guid>http://blog.shellpub.com/2017/07/13/domainblock_alert.html</guid>
+      <description>
+
+&lt;h1 id=&#34;紧急公告&#34;&gt;紧急公告&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://webhsell.pub&#34;&gt;http://webhsell.pub&lt;/a&gt; 后门查杀，域名无法在国内备案（管局不支持.PUB）,现已准备全面迁移到&lt;a href=&#34;http://shellpub.com&#34;&gt;http://shellpub.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;影响范围&#34;&gt;影响范围:&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;部分地区无法打开 n.webshell.pub 在线查杀&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;本地查杀云查杀功能无法使用&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;导致有部分漏报
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.webshell.pub&#34;&gt;http://www.webshell.pub&lt;/a&gt; 使用国外CDN，不受影响&lt;/p&gt;
+
+&lt;h2 id=&#34;更新&#34;&gt;更新&lt;/h2&gt;
+
+&lt;p&gt;2017-07-13 15:40&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;经过技术人员的紧急抢修目前&lt;a href=&#34;http://n.webshell.pub&#34;&gt;http://n.webshell.pub&lt;/a&gt;已经恢复&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;已使用国外CDN通过301跳转到&lt;a href=&#34;http://n.shellpub.com&#34;&gt;http://n.shellpub.com&lt;/a&gt;&lt;br /&gt;
+部分地区可能需要等本地DNS更新，一般在24小时之内完成&lt;/p&gt;
+
+&lt;p&gt;云查杀功能还在紧急抢修当中&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>漏洞预警-WordPress Core远程代码执行</title>
