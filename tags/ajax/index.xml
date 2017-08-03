@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ajax on SHELLPUB BLOG</title>
+    <link>http://blog.shellpub.com/tags/ajax/</link>
+    <description>Recent content in Ajax on SHELLPUB BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 03 Aug 2017 10:01:17 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.shellpub.com/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Asp异地登陆提醒代码，限制不同IP不能同时登陆</title>
+      <link>http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html</link>
+      <pubDate>Thu, 03 Aug 2017 10:01:17 +0800</pubDate>
+      
+      <guid>http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html</guid>
+      <description>实现原来主要是通过前端不断发送Ajax请求到后端ASP，每隔几秒钟更新一次登陆请求。后端记录登陆IP和最后登录时间。当有新的IP在其他IP登陆时，则会登陆失败。这里为了发出请求不是缓存，故加了随机数进行请求。另外这种情况，比如网吧或者企业内部其他用户登陆的情况功能失效。
+ajax_update.js
+//author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &amp;quot;updateLogin.asp&amp;quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&amp;quot;GET&amp;quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&amp;quot;Microsoft.XMLHTTP&amp;quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.status == 200) { if (xmlHttp.responseText == &amp;quot;&amp;quot;) { //alert(&#39;登录超时，帐户注销，请重新登录...&#39;); //window.</description>
+    </item>
+    
+  </channel>
+</rss>

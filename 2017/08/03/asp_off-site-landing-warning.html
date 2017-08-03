@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Asp异地登陆提醒代码，限制不同IP不能同时登陆,">
+  <meta name="generator" content="Hugo 0.25.1" />
+
+  <title>Asp异地登陆提醒代码，限制不同IP不能同时登陆 &middot; SHELLPUB BLOG</title>
+
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="http://blog.shellpub.com/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="http://blog.shellpub.com/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="http://blog.shellpub.com/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  
+
+  
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/androidstudio.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="http://blog.shellpub.com/img/favicon.ico" type="image/x-icon" />
+
+  
+    <link rel="stylesheet" href="http://blog.shellpub.com/css/custom.css">
+  
+  
+    <script src="http://blog.shellpub.com/js/baidu.js"></script>
+  
+    <script src="http://blog.shellpub.com/js/baidupush.js"></script>
+  
+    <script src="http://blog.shellpub.com/js/cnzz.js"></script>
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="http://blog.shellpub.com/">SHELLPUB</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://blog.shellpub.com/post/"><i class='fa fa-list fa-fw'></i>Posts</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://blog.shellpub.com/about/"><i class='fa fa-user fa-fw'></i>About</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://blog.shellpub.com/contact/"><i class='fa fa-phone fa-fw'></i>Contact</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://n.shellpub.com"><i class='fa fa-chrome fa-fw'></i>在线查杀</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://www.shellpub.com"><i class='fa fa-globe fa-fw'></i>官网</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://blog.shellpub.com/"><i class='fa fa-home fa-fw'></i>Home</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/chennqqi" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/webshellpub" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Asp异地登陆提醒代码，限制不同IP不能同时登陆</h1>
+  <h2>Asp异地登陆提醒代码，限制不同IP不能同时登陆,</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2017-08-03 10:01</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/asp">ASP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/iis">IIS</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/windows">Windows</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/ajax">Ajax</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/asp">Asp</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/login">Login</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/ip">IP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/%E5%BC%82%E5%9C%B0%E7%99%BB%E9%99%86">异地登陆</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/ajax">Ajax</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p>实现原来主要是通过前端不断发送Ajax请求到后端ASP，每隔几秒钟更新一次登陆请求。后端记录登陆IP和最后登录时间。当有新的IP在其他IP登陆时，则会登陆失败。这里为了发出请求不是缓存，故加了随机数进行请求。另外这种情况，比如网吧或者企业内部其他用户登陆的情况功能失效。</p>
+
+<p>ajax_update.js</p>
+
+<pre><code>//author :x@shellpub.com
+//website:www.shellpub.com
+function makeRequest() {
+    var guid = rnd();
+    //记住给个随机数，不然的话有缓存
+    var url = &quot;updateLogin.asp&quot;;
+    createXMLHttpRequest();
+    xmlHttp.onreadystatechange = handleRefresh;
+    xmlHttp.open(&quot;GET&quot;, url, false);
+    xmlHttp.send(null);
+}
+//创建xmlHttp
+var xmlHttp;
+function createXMLHttpRequest() {
+    if (window.ActiveXObject) {
+        xmlHttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+    }
+    else if (window.XMLHttpRequest) {
+        xmlHttp = new XMLHttpRequest();
+    }
+}
+//返回信息
+function handleRefresh() {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {
+            if (xmlHttp.responseText == &quot;&quot;) {
+                //alert('登录超时，帐户注销，请重新登录...');
+                //window.parent.document.location = &quot;index.asp&quot;;
+            }
+                setTimeout(&quot;makeRequest()&quot;, 30000);   
+        }
+    }
+}
+//创建随机数
+rnd.today = new Date();
+rnd.seed = rnd.today.getTime();
+function rnd() {
+    rnd.seed = (rnd.seed * 9301 + 49297) % 233280;
+    return rnd.seed / (233280.0);
+}
+function rand(number) {
+    return Math.ceil(rnd() * number);
+}
+var s2 = setTimeout(&quot;makeRequest()&quot;, 100);
+
+//updatelogin.asp
+&lt;!--#include virtual=&quot;function.asp&quot;--&gt;
+&lt;%
+On Error Resume Next
+response.Charset  = &quot;euc-kr&quot;
+
+if session(&quot;userid&quot;) = &quot;&quot; Then
+     'Response.Redirect &quot;index.asp&quot;
+     Response.End()
+else
+     vuserid = Session(&quot;userid&quot;)
+     vip     = Request.serverVariables(&quot;REMOTE_HOST&quot;)
+     set memdb=getServerDB()
+     sql = &quot;update member set Last_login=getdate() ,Ip='&quot;&amp;vip&amp;&quot;' WHERE u_id = '&quot;&amp;vuserid&amp;&quot;'&quot;
+     memdb.execute(sql)
+
+     memdb.close
+     set memdb=nothing
+end if
+</code></pre>
+
+<p>更新登陆后端ASP代码，updatelogin.asp。</p>
+
+<pre><code>'author :x@shellpub.com
+'website:www.shellpub.com
+&lt;!--#include virtual=&quot;function.asp&quot;--&gt;
+&lt;%
+On Error Resume Next
+response.Charset  = &quot;euc-kr&quot;
+
+if session(&quot;userid&quot;) = &quot;&quot; Then
+ 'Response.Redirect &quot;index.asp&quot;
+ Response.End()
+else
+ vuserid = Session(&quot;userid&quot;)
+ vip = Request.serverVariables(&quot;REMOTE_HOST&quot;)
+ set memdb=getServerDB()
+ sql = &quot;update member set Last_login=getdate() ,Ip='&quot;&amp;vip&amp;&quot;' WHERE u_id = '&quot;&amp;vuserid&amp;&quot;'&quot;
+ memdb.execute(sql)
+
+ memdb.close
+ set memdb=nothing
+end if
+
+%&gt;
+</code></pre>
+
+<p>检查登陆状态，checklogin.asp</p>
+
+<pre><code>&lt;!--#include virtual=&quot;function.asp&quot;--&gt;
+&lt;%
+'author :x@shellpub.com
+'website:www.shellpub.com
+On Error Resume Next
+response.Charset  = &quot;euc-kr&quot;
+maxTime = 30
+function checkLogin(userid)
+     isLogin = False
+     vip     = Request.serverVariables(&quot;REMOTE_HOST&quot;)
+     set memdb=getServerDB()
+     sql = &quot;select ip,Last_login from  member  WHERE u_id = '&quot;&amp;userid&amp;&quot;'&quot;
+     set mRs = memdb.execute(sql)
+     Oip = mRs(&quot;ip&quot;)
+     oTime =mRs(&quot;Last_login&quot;)
+     'Response.Write &quot;oip:&quot; &amp; Oip &amp; &quot;nip:&quot; &amp; vip
+     if trim(vip)&lt;&gt;trim(Oip) and DateDiff(&quot;s&quot;,oTime,now()) &lt; maxTime then
+          'Response.Write &quot;&lt;script&gt;alert('is Login');history.go(-1);&lt;script&gt;&quot;
+          'Response.End()
+          isLogin =True
+     end if
+     memdb.close
+     set memdb=nothing
+     checkLogin = isLogin
+end function
+%&gt;
+</code></pre>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://blog.shellpub.com/2017/07/13/domainblock_alert.html"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://blog.shellpub.com/2017/07/13/domainblock_alert.html">更换域名 紧急通告</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
+</div>
+
+</div>
+</div>
+<script src="http://blog.shellpub.com/js/ui.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'Your Google Analytics tracking ID', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+</body>
+</html>
+

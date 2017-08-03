@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alarm on SHELLPUB BLOG</title>
+    <link>http://blog.shellpub.com/topics/alarm/</link>
+    <description>Recent content in Alarm on SHELLPUB BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Thu, 13 Jul 2017 15:31:21 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.shellpub.com/topics/alarm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>更换域名 紧急通告</title>
+      <link>http://blog.shellpub.com/2017/07/13/domainblock_alert.html</link>
+      <pubDate>Thu, 13 Jul 2017 15:31:21 +0800</pubDate>
+      
+      <guid>http://blog.shellpub.com/2017/07/13/domainblock_alert.html</guid>
+      <description>紧急公告 http://webhsell.pub 后门查杀，域名无法在国内备案（管局不支持.PUB）,现已准备全面迁移到http://shellpub.com
+更新 2017-08-14 16:26 云查杀功能 已经恢复
+目前已经恢复全部功能，有任何问题欢迎随时反馈
+2017-07-13 15:40
+经过技术人员的紧急抢修目前http://n.webshell.pub已经恢复
+已使用国外CDN通过301跳转到http://n.shellpub.com
+部分地区可能需要等本地DNS更新，一般在24小时之内完成
+云查杀功能还在紧急抢修当中
+影响范围: 部分地区无法打开 n.webshell.pub 在线查杀
+河马扫描器云查杀功能无法使用
+导致有部分漏报  http://www.webshell.pub 使用国外CDN，不受影响</description>
+    </item>
+    
+  </channel>
+</rss>
