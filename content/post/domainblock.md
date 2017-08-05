@@ -20,7 +20,7 @@ url = "/2017/07/13/domainblock_alert.html"
 
 ## 更新
 
-2017-08-14 16:26
+2017-07-13 17:00
 云查杀功能 已经恢复
 
 **目前已经恢复全部功能**，有任何问题欢迎随时[反馈](http://blog.shellpub.com/contact/)
