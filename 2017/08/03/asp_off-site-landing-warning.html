@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Asp，限制不同IP不能同时登陆,">
   <meta name="generator" content="Hugo 0.25.1" />
 
-  <title>SHELLPUB BLOG</title>
+  <title>asp 限制多IP登录 &middot; SHELLPUB BLOG</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="SHELLPUB BLOG" href="http://blog.shellpub.com/index.xml" />
   
 
   
@@ -121,10 +119,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="http://blog.shellpub.com/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -224,17 +218,12 @@
 
 
 <div class="header">
-  <h1>SHELLPUB BLOG</h1>
-  <h2>专注webshell查杀</h2>
+  <h1>asp 限制多IP登录</h1>
+  <h2>Asp，限制不同IP不能同时登陆,</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">asp 限制多IP登录</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -283,177 +272,190 @@
 
 </div>
 
-  </header>
+  
 
-  <p>
-  目的 限制同一账号多IP登录
-原理  前端不断发送Ajax请求后端ASP，每隔几秒钟更新一次登陆请求。 后端记录登陆IP和最后登录时间。 如发现登录IP与最后登录IP不同，则登陆失败。 为了防止请求被缓存, 在请求中加随机数。 需要注意的是NAT环境下（网吧或者企业学校等公用出口）, 使用这个代码会导致其他用户登陆失败  代码 ajax_update.js
-//author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &quot;updateLogin.asp&quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&quot;GET&quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.
-  </p>
+<h2 id="目的">目的</h2>
+
+<p><strong>限制同一账号多IP登录</strong></p>
+
+<h2 id="原理">原理</h2>
+
+<ul>
+<li>前端不断发送Ajax请求后端ASP，每隔几秒钟更新一次登陆请求。</li>
+<li>后端记录登陆IP和最后登录时间。</li>
+<li>如发现登录IP与最后登录IP不同，则登陆失败。</li>
+<li>为了防止请求被缓存, 在请求中加随机数。</li>
+<li>需要注意的是NAT环境下（网吧或者企业学校等公用出口）, 使用这个代码会导致其他用户登陆失败</li>
+</ul>
+
+<h2 id="代码">代码</h2>
+
+<p>ajax_update.js</p>
+
+<pre><code>//author :x@shellpub.com
+//website:www.shellpub.com
+function makeRequest() {
+    var guid = rnd();
+    //记住给个随机数，不然的话有缓存
+    var url = &quot;updateLogin.asp&quot;;
+    createXMLHttpRequest();
+    xmlHttp.onreadystatechange = handleRefresh;
+    xmlHttp.open(&quot;GET&quot;, url, false);
+    xmlHttp.send(null);
+}
+//创建xmlHttp
+var xmlHttp;
+function createXMLHttpRequest() {
+    if (window.ActiveXObject) {
+        xmlHttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+    }
+    else if (window.XMLHttpRequest) {
+        xmlHttp = new XMLHttpRequest();
+    }
+}
+//返回信息
+function handleRefresh() {
+    if (xmlHttp.readyState == 4) {
+        if (xmlHttp.status == 200) {
+            if (xmlHttp.responseText == &quot;&quot;) {
+                //alert('登录超时，帐户注销，请重新登录...');
+                //window.parent.document.location = &quot;index.asp&quot;;
+            }
+                setTimeout(&quot;makeRequest()&quot;, 30000);   
+        }
+    }
+}
+//创建随机数
+rnd.today = new Date();
+rnd.seed = rnd.today.getTime();
+function rnd() {
+    rnd.seed = (rnd.seed * 9301 + 49297) % 233280;
+    return rnd.seed / (233280.0);
+}
+function rand(number) {
+    return Math.ceil(rnd() * number);
+}
+var s2 = setTimeout(&quot;makeRequest()&quot;, 100);
+
+//updatelogin.asp
+&lt;!--#include virtual=&quot;function.asp&quot;--&gt;
+&lt;%
+On Error Resume Next
+response.Charset  = &quot;euc-kr&quot;
+
+if session(&quot;userid&quot;) = &quot;&quot; Then
+     'Response.Redirect &quot;index.asp&quot;
+     Response.End()
+else
+     vuserid = Session(&quot;userid&quot;)
+     vip     = Request.serverVariables(&quot;REMOTE_HOST&quot;)
+     set memdb=getServerDB()
+     sql = &quot;update member set Last_login=getdate() ,Ip='&quot;&amp;vip&amp;&quot;' WHERE u_id = '&quot;&amp;vuserid&amp;&quot;'&quot;
+     memdb.execute(sql)
+
+     memdb.close
+     set memdb=nothing
+end if
+</code></pre>
+
+<p>更新登陆后端ASP代码，updatelogin.asp。</p>
+
+<pre><code>'author :x@shellpub.com
+'website:www.shellpub.com
+&lt;!--#include virtual=&quot;function.asp&quot;--&gt;
+&lt;%
+On Error Resume Next
+response.Charset  = &quot;euc-kr&quot;
+
+if session(&quot;userid&quot;) = &quot;&quot; Then
+ 'Response.Redirect &quot;index.asp&quot;
+ Response.End()
+else
+ vuserid = Session(&quot;userid&quot;)
+ vip = Request.serverVariables(&quot;REMOTE_HOST&quot;)
+ set memdb=getServerDB()
+ sql = &quot;update member set Last_login=getdate() ,Ip='&quot;&amp;vip&amp;&quot;' WHERE u_id = '&quot;&amp;vuserid&amp;&quot;'&quot;
+ memdb.execute(sql)
+
+ memdb.close
+ set memdb=nothing
+end if
+
+%&gt;
+</code></pre>
+
+<p>检查登陆状态，checklogin.asp</p>
+
+<pre><code>&lt;!--#include virtual=&quot;function.asp&quot;--&gt;
+&lt;%
+'author :x@shellpub.com
+'website:www.shellpub.com
+On Error Resume Next
+response.Charset  = &quot;euc-kr&quot;
+maxTime = 30
+function checkLogin(userid)
+     isLogin = False
+     vip     = Request.serverVariables(&quot;REMOTE_HOST&quot;)
+     set memdb=getServerDB()
+     sql = &quot;select ip,Last_login from  member  WHERE u_id = '&quot;&amp;userid&amp;&quot;'&quot;
+     set mRs = memdb.execute(sql)
+     Oip = mRs(&quot;ip&quot;)
+     oTime =mRs(&quot;Last_login&quot;)
+     'Response.Write &quot;oip:&quot; &amp; Oip &amp; &quot;nip:&quot; &amp; vip
+     if trim(vip)&lt;&gt;trim(Oip) and DateDiff(&quot;s&quot;,oTime,now()) &lt; maxTime then
+          'Response.Write &quot;&lt;script&gt;alert('is Login');history.go(-1);&lt;script&gt;&quot;
+          'Response.End()
+          isLogin =True
+     end if
+     memdb.close
+     set memdb=nothing
+     checkLogin = isLogin
+end function
+%&gt;
+</code></pre>
+
 
   
-  <footer>
-    <a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="http://blog.shellpub.com/2017/07/13/domainblock_alert.html">更换域名 紧急通告</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2017-07-13 15:31</time>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="http://blog.shellpub.com/2017/07/13/domainblock_alert.html"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/alarm">alarm</a>
+    <nav class="prev">
+      <a href="http://blog.shellpub.com/2017/07/13/domainblock_alert.html">更换域名 紧急通告</a>
+    </nav>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/%E5%85%AC%E5%91%8A">公告</a>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
     
   </div>
-  
-  
-
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  紧急公告 http://webhsell.pub 后门查杀，域名无法在国内备案（管局不支持.PUB）,现已准备全面迁移到http://shellpub.com
-更新 2017-07-13 17:00 云查杀功能 已经恢复
-目前已经恢复全部功能，有任何问题欢迎随时反馈
-2017-07-13 15:40
-经过技术人员的紧急抢修目前http://n.webshell.pub已经恢复
-已使用国外CDN通过301跳转到http://n.shellpub.com
-部分地区可能需要等本地DNS更新，一般在24小时之内完成
-云查杀功能还在紧急抢修当中
-影响范围: 部分地区无法打开 n.webshell.pub 在线查杀
-河马扫描器云查杀功能无法使用
-导致有部分漏报  http://www.webshell.pub 使用国外CDN，不受影响
-  </p>
-
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html">漏洞预警-WordPress Core远程代码执行</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2017-05-03 13:46</time>
-  </div>
-
-  
 
   
   
   
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/wordpress">wordpress</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/remote-code-excute">remote code excute</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/wordpress">wordpress</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  漏洞预警-WordPress Core远程代码执行(无需验证和插件) 
-2017年5月1日，WordPress 4.6版本被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞在不需要验证，同时不需要安装任何插件即可获取反弹的shell。北京时间2017年5月4日，legalhackers发布了相关漏洞利用代码。
-WordPress是一款由PHP语言开发的内容管理系统（CMS）系统。是当今最流行的cms，很适合二次开发，使用量超过百万。潜在影响范围广泛，请大家在官方补丁出来之前，提早做好防范。以免带来不必要的麻烦。
- google搜索Wordpress的结果 
-我们将持续关注此漏洞
-漏洞详情与PoC 该漏洞主要是由于使用了存在漏洞的PHPMailer，导致存在远程代码执行漏洞。
-#!/bin/bash # # __ __ __ __ __ # / / ___ ____ _____ _/ / / / / /___ ______/ /_____ __________ # / / / _ \/ __ `/ __ `/ / / /_/ / __ `/ ___/ //_/ _ \/ ___/ ___/ # / /___/ __/ /_/ / /_/ / / / __ / /_/ / /__/ ,&lt; / __/ / (__ ) # /_____/\___/\__, /\__,_/_/ /_/ /_/\__,_/\___/_/|_|\___/_/ /____/ # /____/ # # # WordPress 4.
-  </p>
-
-  
-  <footer>
-    <a href="http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="http://blog.shellpub.com/post/1/">1</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2017-03-19 10:44</time>
-  </div>
-
-  
-
-  
-
-  
-
-</div>
-
-  </header>
-
-  <p>
-  ##webshell.pub 第一篇博文
-#关于我们 WEBSHELL.PUB
-团队成员来自国内顶尖安全团队，专注webshell查杀研究。拥有海量webshell样本和自主查杀技术，采用传统特征+云端大数据双引擎的查杀技术。查杀速度快、精度高、误报低。
-  </p>
-
-  
-</article>
-
-  
-
-  
+<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var gentie_shortname = 'bb9036617fc74da4aa6075171a35a0a0';
+  var cloudTieConfig = {
+    url: document.location.href, 
+    sourceId: "",
+    productKey: gentie_shortname,
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
 
 
 </div>

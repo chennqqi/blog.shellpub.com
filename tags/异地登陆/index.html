@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.25.1" />
 
-  <title>Tags &middot; SHELLPUB BLOG</title>
+  <title>异地登陆 &middot; SHELLPUB BLOG</title>
 
   
   
@@ -37,7 +37,7 @@
 
   
   
-  <link rel="alternate" type="application/rss+xml" title="SHELLPUB BLOG" href="http://blog.shellpub.com/tags/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="SHELLPUB BLOG" href="http://blog.shellpub.com/tags/%E5%BC%82%E5%9C%B0%E7%99%BB%E9%99%86/index.xml" />
   
 
   
@@ -123,7 +123,7 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="http://blog.shellpub.com/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href="http://blog.shellpub.com/tags/%E5%BC%82%E5%9C%B0%E7%99%BB%E9%99%86/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -224,53 +224,80 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>异地登陆</h1>
 </div>
+
 <div class="content">
-  <ul>
+  
+    <article>
+  <header>
+    <h2><a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">asp 限制多IP登录</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2017-08-03 10:01</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="ajax">ajax</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="asp">asp</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/asp">ASP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/iis">IIS</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/windows">Windows</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/ajax">Ajax</a>
+    
+  </div>
   
-    <li>
-      <a href="ip">ip</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="login">login</a>
-      <span>&#40;1&#41;</span>
-    </li>
+
   
-    <li>
-      <a href="wordpress">wordpress</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="%E5%85%AC%E5%91%8A">公告</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="%E5%BC%82%E5%9C%B0%E7%99%BB%E9%99%86">异地登陆</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/asp">Asp</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/login">Login</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/ip">IP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/%E5%BC%82%E5%9C%B0%E7%99%BB%E9%99%86">异地登陆</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/ajax">Ajax</a>
+    
+  </div>
   
-    <li>
-      <a href="%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-  </ul>
+
+</div>
+
+  </header>
+
+  <p>
+  目的 限制同一账号多IP登录
+原理  前端不断发送Ajax请求后端ASP，每隔几秒钟更新一次登陆请求。 后端记录登陆IP和最后登录时间。 如发现登录IP与最后登录IP不同，则登陆失败。 为了防止请求被缓存, 在请求中加随机数。 需要注意的是NAT环境下（网吧或者企业学校等公用出口）, 使用这个代码会导致其他用户登陆失败  代码 ajax_update.js
+//author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &quot;updateLogin.asp&quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&quot;GET&quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.
+  </p>
+
+  
+  <footer>
+    <a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
 </div>
 
 </div>
