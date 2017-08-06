@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Asp on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/tags/asp/</link>
-    <description>Recent content in Asp on SHELLPUB BLOG</description>
+    <title>排序 on SHELLPUB BLOG</title>
+    <link>http://blog.shellpub.com/tags/%E6%8E%92%E5%BA%8F/</link>
+    <description>Recent content in 排序 on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Sat, 05 Aug 2017 11:01:15 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/tags/asp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.shellpub.com/tags/%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,17 +18,6 @@
       
       <guid>http://blog.shellpub.com/2017/08/05/asp_sort-code.html</guid>
       <description>//author :x@shellpub.com //website:www.shellpub.com function subject_sort_link(sod,sord,sst,flag,sType,svalue,nPage) q1 = &amp;quot;sod=&amp;quot; &amp;amp; sod if flag = &amp;quot;asc&amp;quot; Then q2=&amp;quot;sst=asc&amp;quot; if sod=sord then if sst = &amp;quot;asc&amp;quot; then q2 = &amp;quot;sst=desc&amp;quot; end if end if else q2 = &amp;quot;sst=desc&amp;quot; if sod=sord then if sst = &amp;quot;desc&amp;quot; then q2 = &amp;quot;sst=asc &amp;quot; end if end if end if response.Write &amp;quot;&amp;lt;a href=list.asp?nPage=&amp;quot; &amp;amp; nPage &amp;amp; &amp;quot;&amp;amp;sType=&amp;quot; &amp;amp; sType &amp;amp; &amp;quot;&amp;amp;sValue=&amp;quot;&amp;amp;keyword&amp;amp;&amp;quot;&amp;amp;&amp;quot;&amp;amp;q1&amp;amp;&amp;quot;&amp;amp;&amp;quot;&amp;amp;q2&amp;amp;&amp;quot;&amp;gt;&amp;quot; end function 函数调用 可以生成连接 create_time 为排序的数据库字段 subject_sort_link(&amp;quot;create_time&amp;quot;,sod,sst,&amp;quot;desc&amp;quot;,sType,sValue,nPage) 在组装sql语句的时候,如果为空的时候，设置默认的排序规则。 if sst = &amp;quot;&amp;quot; Then sst = &amp;quot; desc&amp;quot; end if if sod &amp;lt;&amp;gt; &amp;quot;&amp;quot; Then sord = getDatabase(sod) &amp;amp; &amp;quot;.</description>
-    </item>
-    
-    <item>
-      <title>asp 限制多IP登录</title>
-      <link>http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html</link>
-      <pubDate>Thu, 03 Aug 2017 10:01:17 +0800</pubDate>
-      
-      <guid>http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html</guid>
-      <description>目的 限制同一账号多IP登录
-原理  前端不断发送Ajax请求后端ASP，每隔几秒钟更新一次登陆请求。 后端记录登陆IP和最后登录时间。 如发现登录IP与最后登录IP不同，则登陆失败。 为了防止请求被缓存, 在请求中加随机数。 需要注意的是NAT环境下（网吧或者企业学校等公用出口）, 使用这个代码会导致其他用户登陆失败  代码 ajax_update.js
-//author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &amp;quot;updateLogin.asp&amp;quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&amp;quot;GET&amp;quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&amp;quot;Microsoft.XMLHTTP&amp;quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.</description>
     </item>
     
   </channel>

@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Asp生成按照字段排序代码">
   <meta name="generator" content="Hugo 0.25.1" />
 
-  <title>Asp &middot; SHELLPUB BLOG</title>
+  <title>Asp生成按照字段排序代码 &middot; SHELLPUB BLOG</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="SHELLPUB BLOG" href="http://blog.shellpub.com/tags/asp/index.xml" />
   
 
   
@@ -121,10 +119,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="http://blog.shellpub.com/tags/asp/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -224,16 +218,12 @@
 
 
 <div class="header">
-  <h1>Asp</h1>
+  <h1>Asp生成按照字段排序代码</h1>
+  <h2>Asp生成按照字段排序代码</h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="http://blog.shellpub.com/2017/08/05/asp_sort-code.html">Asp生成按照字段排序代码</a></h2>
 
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -274,89 +264,72 @@
 
 </div>
 
-  </header>
+  <pre><code>//author :x@shellpub.com
+//website:www.shellpub.com
+function subject_sort_link(sod,sord,sst,flag,sType,svalue,nPage)
+          q1 = &quot;sod=&quot; &amp; sod
+          if flag = &quot;asc&quot; Then
+               q2=&quot;sst=asc&quot;
+               if sod=sord then
+                    if sst = &quot;asc&quot; then
+                         q2 = &quot;sst=desc&quot;
+                    end if
+               end if
+          else
+               q2 = &quot;sst=desc&quot;
+               if sod=sord then
+                    if sst = &quot;desc&quot; then
+                         q2 = &quot;sst=asc &quot;
+                    end if
+               end if
+          end if
+          response.Write &quot;&lt;a href=list.asp?nPage=&quot; &amp; nPage &amp; &quot;&amp;sType=&quot; &amp; sType &amp; &quot;&amp;sValue=&quot;&amp;keyword&amp;&quot;&amp;&quot;&amp;q1&amp;&quot;&amp;&quot;&amp;q2&amp;&quot;&gt;&quot;
+     end function
 
-  <p>
-  //author :x@shellpub.com //website:www.shellpub.com function subject_sort_link(sod,sord,sst,flag,sType,svalue,nPage) q1 = &quot;sod=&quot; &amp; sod if flag = &quot;asc&quot; Then q2=&quot;sst=asc&quot; if sod=sord then if sst = &quot;asc&quot; then q2 = &quot;sst=desc&quot; end if end if else q2 = &quot;sst=desc&quot; if sod=sord then if sst = &quot;desc&quot; then q2 = &quot;sst=asc &quot; end if end if end if response.Write &quot;&lt;a href=list.asp?nPage=&quot; &amp; nPage &amp; &quot;&amp;sType=&quot; &amp; sType &amp; &quot;&amp;sValue=&quot;&amp;keyword&amp;&quot;&amp;&quot;&amp;q1&amp;&quot;&amp;&quot;&amp;q2&amp;&quot;&gt;&quot; end function 函数调用 可以生成连接 create_time 为排序的数据库字段 subject_sort_link(&quot;create_time&quot;,sod,sst,&quot;desc&quot;,sType,sValue,nPage) 在组装sql语句的时候,如果为空的时候，设置默认的排序规则。 if sst = &quot;&quot; Then sst = &quot; desc&quot; end if if sod &lt;&gt; &quot;&quot; Then sord = getDatabase(sod) &amp; &quot;.
-  </p>
+函数调用 可以生成连接 create_time 为排序的数据库字段
+subject_sort_link(&quot;create_time&quot;,sod,sst,&quot;desc&quot;,sType,sValue,nPage)
 
-  
-  <footer>
-    <a href="http://blog.shellpub.com/2017/08/05/asp_sort-code.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
+在组装sql语句的时候,如果为空的时候，设置默认的排序规则。
+if sst = &quot;&quot; Then
+       sst = &quot; desc&quot;
+  end if
+  if sod &lt;&gt; &quot;&quot;  Then
+       sord = getDatabase(sod) &amp; &quot;.&quot; &amp; sod &amp; &quot; &quot;
+  else
+       sord = &quot; m.idx &quot;
+  end if
+</code></pre>
 
-  
-    <article>
-  <header>
-    <h2><a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">asp 限制多IP登录</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2017-08-03 10:01</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/asp">ASP</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/iis">IIS</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/windows">Windows</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/ajax">Ajax</a>
-    
-  </div>
-  
-  
 
   
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/asp">Asp</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/login">Login</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/ip">IP</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/%E5%BC%82%E5%9C%B0%E7%99%BB%E9%99%86">异地登陆</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/ajax">Ajax</a>
+    <a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html"><i class="fa fa-chevron-left"></i></a>
     
   </div>
-  
-  
-
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">asp 限制多IP登录</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
 
-  </header>
 
-  <p>
-  目的 限制同一账号多IP登录
-原理  前端不断发送Ajax请求后端ASP，每隔几秒钟更新一次登陆请求。 后端记录登陆IP和最后登录时间。 如发现登录IP与最后登录IP不同，则登陆失败。 为了防止请求被缓存, 在请求中加随机数。 需要注意的是NAT环境下（网吧或者企业学校等公用出口）, 使用这个代码会导致其他用户登陆失败  代码 ajax_update.js
-//author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &quot;updateLogin.asp&quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&quot;GET&quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.
-  </p>
 
   
-  <footer>
-    <a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
-  
-</article>
 
-  
 </div>
 
 </div>
@@ -379,3 +352,4 @@
 
 </body>
 </html>
+
