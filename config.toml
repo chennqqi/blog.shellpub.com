@@ -19,7 +19,8 @@ paginate = 10
   brand = "SHELLPUB"
   googleAnalytics = "Your Google Analytics tracking ID"
   #disqus = "Your Disqus shortname"
-  yungentie = "bb9036617fc74da4aa6075171a35a0a0"
+  #yungentie = "bb9036617fc74da4aa6075171a35a0a0"
+  livere = "MTAyMC8yOTUxNC82MDgy"
   # CSS name for highlight.js
   highlightjs = "androidstudio"
   dateFormat = "2006-01-02 15:04"
