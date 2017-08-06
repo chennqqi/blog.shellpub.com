@@ -231,7 +231,7 @@
   
     <article>
   <header>
-    <h2><a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">Asp异地登陆提醒代码，限制不同IP不能同时登陆</a></h2>
+    <h2><a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">asp 限制多IP登录</a></h2>
 
     <div class="post-meta">
 
@@ -285,9 +285,9 @@
   </header>
 
   <p>
-  实现原来主要是通过前端不断发送Ajax请求到后端ASP，每隔几秒钟更新一次登陆请求。后端记录登陆IP和最后登录时间。当有新的IP在其他IP登陆时，则会登陆失败。这里为了发出请求不是缓存，故加了随机数进行请求。另外这种情况，比如网吧或者企业内部其他用户登陆的情况功能失效。
-ajax_update.js
-//author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &quot;updateLogin.asp&quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&quot;GET&quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.status == 200) { if (xmlHttp.responseText == &quot;&quot;) { //alert('登录超时，帐户注销，请重新登录...'); //window.
+  目的 限制同一账号多IP登录
+原理  前端不断发送Ajax请求后端ASP，每隔几秒钟更新一次登陆请求。 后端记录登陆IP和最后登录时间。 如发现登录IP与最后登录IP不同，则登陆失败。 为了防止请求被缓存, 在请求中加随机数。 需要注意的是NAT环境下（网吧或者企业学校等公用出口）, 使用这个代码会导致其他用户登陆失败  代码 ajax_update.js
+//author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &quot;updateLogin.asp&quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&quot;GET&quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.
   </p>
 
   
