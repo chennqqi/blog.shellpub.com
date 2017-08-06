@@ -232,6 +232,65 @@
   
     <article>
   <header>
+    <h2><a href="http://blog.shellpub.com/2017/08/05/asp_sort-code.html">Asp生成按照字段排序代码</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2017-08-05 11:01</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/asp">ASP</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/iis">IIS</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/windows">Windows</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/asp">Asp</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/%E6%8E%92%E5%BA%8F">排序</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  //author :x@shellpub.com //website:www.shellpub.com function subject_sort_link(sod,sord,sst,flag,sType,svalue,nPage) q1 = &quot;sod=&quot; &amp; sod if flag = &quot;asc&quot; Then q2=&quot;sst=asc&quot; if sod=sord then if sst = &quot;asc&quot; then q2 = &quot;sst=desc&quot; end if end if else q2 = &quot;sst=desc&quot; if sod=sord then if sst = &quot;desc&quot; then q2 = &quot;sst=asc &quot; end if end if end if response.Write &quot;&lt;a href=list.asp?nPage=&quot; &amp; nPage &amp; &quot;&amp;sType=&quot; &amp; sType &amp; &quot;&amp;sValue=&quot;&amp;keyword&amp;&quot;&amp;&quot;&amp;q1&amp;&quot;&amp;&quot;&amp;q2&amp;&quot;&gt;&quot; end function 函数调用 可以生成连接 create_time 为排序的数据库字段 subject_sort_link(&quot;create_time&quot;,sod,sst,&quot;desc&quot;,sType,sValue,nPage) 在组装sql语句的时候,如果为空的时候，设置默认的排序规则。 if sst = &quot;&quot; Then sst = &quot; desc&quot; end if if sod &lt;&gt; &quot;&quot; Then sord = getDatabase(sod) &amp; &quot;.
+  </p>
+
+  
+  <footer>
+    <a href="http://blog.shellpub.com/2017/08/05/asp_sort-code.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">asp 限制多IP登录</a></h2>
 
     <div class="post-meta">

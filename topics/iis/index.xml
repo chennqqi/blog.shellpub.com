@@ -6,10 +6,19 @@
     <description>Recent content in Iis on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 03 Aug 2017 10:01:17 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 05 Aug 2017 11:01:15 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.shellpub.com/topics/iis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Asp生成按照字段排序代码</title>
+      <link>http://blog.shellpub.com/2017/08/05/asp_sort-code.html</link>
+      <pubDate>Sat, 05 Aug 2017 11:01:15 +0800</pubDate>
+      
+      <guid>http://blog.shellpub.com/2017/08/05/asp_sort-code.html</guid>
+      <description>//author :x@shellpub.com //website:www.shellpub.com function subject_sort_link(sod,sord,sst,flag,sType,svalue,nPage) q1 = &amp;quot;sod=&amp;quot; &amp;amp; sod if flag = &amp;quot;asc&amp;quot; Then q2=&amp;quot;sst=asc&amp;quot; if sod=sord then if sst = &amp;quot;asc&amp;quot; then q2 = &amp;quot;sst=desc&amp;quot; end if end if else q2 = &amp;quot;sst=desc&amp;quot; if sod=sord then if sst = &amp;quot;desc&amp;quot; then q2 = &amp;quot;sst=asc &amp;quot; end if end if end if response.Write &amp;quot;&amp;lt;a href=list.asp?nPage=&amp;quot; &amp;amp; nPage &amp;amp; &amp;quot;&amp;amp;sType=&amp;quot; &amp;amp; sType &amp;amp; &amp;quot;&amp;amp;sValue=&amp;quot;&amp;amp;keyword&amp;amp;&amp;quot;&amp;amp;&amp;quot;&amp;amp;q1&amp;amp;&amp;quot;&amp;amp;&amp;quot;&amp;amp;q2&amp;amp;&amp;quot;&amp;gt;&amp;quot; end function 函数调用 可以生成连接 create_time 为排序的数据库字段 subject_sort_link(&amp;quot;create_time&amp;quot;,sod,sst,&amp;quot;desc&amp;quot;,sType,sValue,nPage) 在组装sql语句的时候,如果为空的时候，设置默认的排序规则。 if sst = &amp;quot;&amp;quot; Then sst = &amp;quot; desc&amp;quot; end if if sod &amp;lt;&amp;gt; &amp;quot;&amp;quot; Then sord = getDatabase(sod) &amp;amp; &amp;quot;.</description>
+    </item>
     
     <item>
       <title>asp 限制多IP登录</title>
