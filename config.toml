@@ -28,6 +28,7 @@ paginate = 10
   # (relative to /static folder)
   custom_css = ["css/custom.css"]
   custom_js = ["js/baidu.js","js/baidupush.js","js/cnzz.js"]
+  BaiduShare = "89860593"
 
 [menu]
   # Shown in the side menu.
