@@ -2,16 +2,16 @@
 draft = false
 author = "q@shellpub.com"
 date = "2017-08-09T15:31:21+08:00"
-description = "河马扫描器1.2发布"
+description = "河马WEBSHELL扫描器1.2发布"
 keywords = ["河马扫描器","WEBSHELL","1.2"]
-title = "河马扫描器1.2发布"
+title = "河马WEBSHELL扫描器1.2发布"
 topics = ["发布"]
 tags = ["1.2","发布"]
 type = "post"
-url = "/2017/07/13/河马扫描器V1_2.html"
+url = "/2017/07/13/河马WEBSHELL扫描器V1_2.html"
 +++
 
-# 河马扫描器1.2
+# 河马WEBSHELL扫描器1.2
 
 ## 更新日志
 
