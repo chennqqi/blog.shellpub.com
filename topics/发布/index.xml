@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>发布 on SHELLPUB BLOG</title>
+    <link>http://blog.shellpub.com/topics/%E5%8F%91%E5%B8%83/</link>
+    <description>Recent content in 发布 on SHELLPUB BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 09 Aug 2017 15:31:21 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.shellpub.com/topics/%E5%8F%91%E5%B8%83/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>河马扫描器1.2发布</title>
+      <link>http://blog.shellpub.com/2017/07/13/%E6%B2%B3%E9%A9%AC%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html</link>
+      <pubDate>Wed, 09 Aug 2017 15:31:21 +0800</pubDate>
+      
+      <guid>http://blog.shellpub.com/2017/07/13/%E6%B2%B3%E9%A9%AC%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html</guid>
+      <description>河马扫描器1.2 更新日志  开发了windows版的图形界面
+ 查杀引擎升级到1.2
+ 支持自定义过扩展名白名单
+ 升级查杀规则，增强了查杀效果，降低误报  使用新云查杀接口，速度更快
+  windows使用教程  下载安装
+访问官网 或者点此直接下载
+解压缩zip文件
+双击安装程序进行安装
+ 扫描
+点击立即扫描选择要扫描的目录
+支持选择多个目录
+单击开始扫描按钮
+ 处理结果
+扫描完成后处理WEBSHELL
+  FAQ:
+如果发现扫描失败的提醒请联系我们的技术人员
+联系我们 如果您在使用中遇到什么问题或者有什么建议欢迎联系我们
+QQ: 1494922137
+EMAIL: Webshell.pub@gmail.com</description>
+    </item>
+    
+  </channel>
+</rss>
