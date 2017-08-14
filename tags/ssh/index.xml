@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ssh on SHELLPUB BLOG</title>
+    <link>http://blog.shellpub.com/tags/ssh/</link>
+    <description>Recent content in Ssh on SHELLPUB BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Mon, 14 Aug 2017 15:31:21 +0800</lastBuildDate>
+    
+	<atom:link href="http://blog.shellpub.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XSHELL多版本存在后门</title>
+      <link>http://blog.shellpub.com/2017/08/14/xshell_with_backdoor.html</link>
+      <pubDate>Mon, 14 Aug 2017 15:31:21 +0800</pubDate>
+      
+      <guid>http://blog.shellpub.com/2017/08/14/xshell_with_backdoor.html</guid>
+      <description>安全通告&amp;ndash;终端软件XSHELL多版本存在后门 据360安全客与360CERT消息，知名linux终端软件XSHELL存在后门，而且是官方版本。包括XSHELL软件单体和其安装套件Xmanager.
+XSHELL是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。详细介绍请看这里
+存在后门的版本  Xshell Build 5.0.1322
+ Xshell Build 5.0.1325
+ Xmanager Enterprise 5.0 Build 1232
+ Xmanager 5.0 Build 1045
+ Xftp 5.0 Build 1218
+ Xftp 5.0 Build 1221
+ Xlpd 5.0 Build 1220
+  修复建议 建议用户使用以下步骤进行修复
+ 升级XSHELL及其套件到最新版本 修改linux服务器系统密码；在可能的情况下使用key+passphrase, 如果您不熟悉这个操作，请查看教程  参考 消息原文:
+http://bobao.360.cn/news/detail/4263.html
+linux 禁止帐号密码验证 使用key验证方式登录SSH:
+http://blog.csdn.net/zhi_heart/article/details/48656467</description>
+    </item>
+    
+  </channel>
+</rss>
