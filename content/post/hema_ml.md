@@ -21,6 +21,9 @@ url = "/2017/10/11/河马WEBSHELL机器学习.html"
 
 **查杀传送门 [http://ml.shellpub.com](http://ml.shellpub.com)**
 
+界面效果
+![](https://s1.ax1x.com/2017/10/11/8MKgI.png)
+
 区分一个文件是否是WEBSHELL是一个典型的[分类](http://blog.csdn.net/chl033/article/details/5204220)过程，属于[监督学习](https://baike.baidu.com/item/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/9820109?fr=aladdin)
 
 有多种分类算法可选，尝试了K邻近、贝叶斯、决策树、逻辑回归几种方法。在我的实验条件下，使用决策树算法效果比较好。试验中使用4000个黑样本，2000个白样本（来自开源CMS）最终结果如下：
@@ -42,7 +45,7 @@ url = "/2017/10/11/河马WEBSHELL机器学习.html"
 
 ##
 
-各位请轻打脸
+各位请轻拍砖
 
 如有任何建议意见请留言或者直接联系我们，请继续关注
 
