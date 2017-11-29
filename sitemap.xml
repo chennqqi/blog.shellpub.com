@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://blog.shellpub.com/2017/11/23/down_fix.html</loc>
+    <loc>http://blog.shellpub.com/2017/11/29/hm_new_version.html</loc>
+    <lastmod>2017-11-29T09:31:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://blog.shellpub.com/2017/10/23/down_fix.html</loc>
     <lastmod>2017-11-23T10:31:21+08:00</lastmod>
   </url>
   
@@ -105,6 +110,12 @@
   </url>
   
   <url>
+    <loc>http://blog.shellpub.com/tags/hm/</loc>
+    <lastmod>2017-11-29T09:31:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.shellpub.com/topics/iis/</loc>
     <lastmod>2017-08-03T10:01:17+08:00</lastmod>
     <priority>0</priority>
@@ -136,7 +147,7 @@
   
   <url>
     <loc>http://blog.shellpub.com/post/</loc>
-    <lastmod>2017-11-23T10:31:21+08:00</lastmod>
+    <lastmod>2017-11-29T09:31:21+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -148,7 +159,7 @@
   
   <url>
     <loc>http://blog.shellpub.com/</loc>
-    <lastmod>2017-11-23T10:31:21+08:00</lastmod>
+    <lastmod>2017-11-29T09:31:21+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -225,6 +236,12 @@
   </url>
   
   <url>
+    <loc>http://blog.shellpub.com/tags/%E5%8F%91%E7%89%88/</loc>
+    <lastmod>2017-11-29T09:31:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.shellpub.com/tags/%E5%90%8E%E9%97%A8/</loc>
     <lastmod>2017-08-14T15:31:21+08:00</lastmod>
     <priority>0</priority>
@@ -232,7 +249,7 @@
   
   <url>
     <loc>http://blog.shellpub.com/topics/%E5%90%8E%E9%97%A8/</loc>
-    <lastmod>2017-08-14T15:31:21+08:00</lastmod>
+    <lastmod>2017-11-29T09:31:21+08:00</lastmod>
     <priority>0</priority>
   </url>
   
