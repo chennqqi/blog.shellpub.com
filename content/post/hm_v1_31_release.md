@@ -16,11 +16,11 @@ url = "/2017/11/29/hm_new_version.html"
 ![](http://blog.shellpub.com/images/2.png)
 </center>
 
-* 下载
+## 下载地址
 
-[windows版下载](http://down.shellpub.com/hm/1.3.1/hm-windows-386.zip)  
-[linux64位下载](http://down.shellpub.com/hm/1.3.1/hm-linux-amd64.tgz)  
-[linux32位下载](http://down.shellpub.com/hm/1.3.1/hm-linux-386.tgz)  
+[windows版下载](http://down.shellpub.com/hm-ui/latest/HmSetup1.3.1.zip)  
+[linux64位下载](http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz)  
+[linux32位下载](http://down.shellpub.com/hm/latest/hm-linux-386.tgz)  
 
 
 ## 功能更新
@@ -52,7 +52,7 @@ url = "/2017/11/29/hm_new_version.html"
 
 1. 扫描失败，或者扫描文件书目为0
 
-		软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，linux下C:/windows目录等
+		软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等
 
 2. 扫描时崩溃
 

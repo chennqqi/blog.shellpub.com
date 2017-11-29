@@ -70,4 +70,4 @@ FAQ:
 
 QQ: [1494922137](tencent://message/?uin=1494922137&Site=&Menu=yes)  
 
-EMAIL: <mailto:Webshell.pub@gmail.com>
+EMAIL: <mailto:service@shellpub.com>
