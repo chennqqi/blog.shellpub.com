@@ -16,12 +16,15 @@ url = "/2017/12/22/hm_new_version132.html"
 ![](http://blog.shellpub.com/images/2.png)
 </center>
 
+近期不少用户反馈扫描时异常崩溃，我们调试后发现在获取版本失败导致的此问题，这个版本主要是修复这个BUG。
+今日冬至，大家大吉大利，晚上吃鸡和饺子！
+
 
 ## 下载地址
 
-[windows版下载](http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.3.2)  
-[linux64位下载](http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.3.2)  
-[linux32位下载](http://down.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.3.2)  
+[windows版下载](http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.4.0)  
+[linux64位下载](http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.4.0)  
+[linux32位下载](http://down.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.4.0)  
 
 
 ## 功能更新
@@ -30,8 +33,7 @@ url = "/2017/12/22/hm_new_version132.html"
 
 ## BUG修正
 
-* 修正某些特殊文件路径无法检测的BUG
-* 修正了一个中英文翻译显示不正确的BUG
+* 修正版本号获取失败时界面崩溃的BUG
 
 ## 优化
 
@@ -41,7 +43,7 @@ url = "/2017/12/22/hm_new_version132.html"
 
 ## 常见问题
 
-1. 扫描失败，或者扫描文件书目为0
+1. 扫描失败，或者扫描文件数目为0
 
 		软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等
 

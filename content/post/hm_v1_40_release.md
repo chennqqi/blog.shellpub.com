@@ -1,20 +1,29 @@
 +++
 draft = false
 author = "admin@shellpub.com"
-date = "2017-11-29T09:31:21+08:00"
+date = "2018-01-29T21:31:21+08:00"
 description = ""
 keywords = ["河马","后门", "发布", "webshell"]
-title = "河马WEBSHELL扫描器1.3.1发布"
+title = "河马WEBSHELL扫描器1.4.0发布"
 topics = ["后门"]
 tags = [ "发版", "hm" ]
 type = "post"
-url = "/2017/11/29/hm_new_version.html"
+url = "/2018/01/29/hm_new_version140.html"
 +++
 
-# 
+# 河马查杀1.4.0 发布
 <center>
 ![](http://blog.shellpub.com/images/2.png)
 </center>
+
+随着weblogic漏洞（CVE-2017-3506)的爆发，近期挖矿程序猖獗; 本次更新主要增加了几个挖矿程序的检测规则。
+
+增加:
+
+  * 黑链、暗链的检测规则
+  * 恶意挖矿脚本检测规则
+  * 恶意挖矿程序检测规则
+
 
 ## 下载地址
 
@@ -25,41 +34,28 @@ url = "/2017/11/29/hm_new_version.html"
 
 ## 功能更新
 
-* 增加一条绕过规则
-* 增加了门罗币挖矿脚本检测
-* 支持离线模式下深度查杀
+* 升级查杀引擎，提高查杀速度
 
 ## BUG修正
 
-* 修正某些特殊文件路径无法检测的BUG
-* 修正了一个中英文翻译显示不正确的BUG
-
-## 优化
-
-* 优化了文件包含类后门检测
-* 优化白名单，允许扫描linux /mnt目录，windows桌面目录
+* 修正版界面上扫描时间总是被累计，不会重置的BUG
 
 ## 已知问题
 
-* 在部分linux系统(ubuntu等)DNS由于cgo自身问题(参考链接<https://yq.aliyun.com/articles/238940>)导致发请求时崩溃, 解决办法
-		
-	
-		在环境变量中加入
-		
-		export GODEBUG=netdns=go
+	windows环境下，由于权限问题，有小概率导致扫描崩溃（测试环境无法复现），如果您遇到这个问题，请联系我们。
 
 ## 常见问题
 
-1. 扫描失败，或者扫描文件书目为0
+1. 扫描失败，或者扫描文件数目为0
 
 		软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等
 
 2. 扫描时崩溃
 
 		请检查您使用的软件版本和操作系统版本是否匹配
-		最常见导致崩溃的就是系统cgo兼容新问题，解决办法参考#已知问题
+		情检查您当前的用户是否为管理员用户
 
-3. 没有找到可执行的文件
+3. linux下没有找到可执行的文件
 
 		请检查是否配置了环境变量或者使用./hm的方式来运行程序
 
@@ -82,7 +78,7 @@ url = "/2017/11/29/hm_new_version.html"
 	
 ## 
 
-如果在使用过程中遇到问题，可以在本文下面留言或添加<a href="tencent://message/?uin=1494922137&amp;Site=&amp;Menu=yes">QQ:1494922137</a>
+如果在使用过程中遇到问题，可以在本文下面留言或加<a href="tencent://message/?uin=1494922137&amp;Site=&amp;Menu=yes">QQ:1494922137</a>
 
 
 
