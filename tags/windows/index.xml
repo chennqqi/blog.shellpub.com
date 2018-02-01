@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>漏洞预警 on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/tags/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6/</link>
-    <description>Recent content in 漏洞预警 on SHELLPUB BLOG</description>
+    <title>Windows on SHELLPUB BLOG</title>
+    <link>http://blog.shellpub.com/tags/windows/</link>
+    <description>Recent content in Windows on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Tue, 30 Jan 2018 13:46:17 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/tags/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.shellpub.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,21 +22,6 @@ MS17010(永恒之蓝)是从网络中泄露的NSA攻击工具包中针对SMB协�
  利用工具利用成功截图 
 漏洞影响 - Affect 该漏洞影响一下版本的Windows 操作系统：
  Windows Server 2000 SP0 x86 Windows 2000 Professional SP4 x86 Windows 2000 Advanced Server SP4 x86 Windows XP SP0 x86 Windows XP SP1 x86 Windows XP SP2 x86 Windows XP SP3 x86 Windows XP SP2 x64 Windows Server 2003 x86 Windows Server 2003 Enterprise SP 2 x86 Windows Server 2003 x64 Windows Vista Home Premium x86 Windows Server 2008 x64 Windows 7 x86 Windows 7 x64 Windows Server 2008 R2 x64 Windows 8 x86 Windows 8 x64 Windows 8.</description>
-    </item>
-    
-    <item>
-      <title>漏洞预警-WordPress Core远程代码执行</title>
-      <link>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</link>
-      <pubDate>Wed, 03 May 2017 13:46:17 +0800</pubDate>
-      
-      <guid>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</guid>
-      <description>漏洞预警-WordPress Core远程代码执行(无需验证和插件) 
-2017年5月1日，WordPress 4.6版本被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞在不需要验证，同时不需要安装任何插件即可获取反弹的shell。北京时间2017年5月4日，legalhackers发布了相关漏洞利用代码。
-WordPress是一款由PHP语言开发的内容管理系统（CMS）系统。是当今最流行的cms，很适合二次开发，使用量超过百万。潜在影响范围广泛，请大家在官方补丁出来之前，提早做好防范。以免带来不必要的麻烦。
- google搜索Wordpress的结果 
-我们将持续关注此漏洞
-漏洞详情与PoC 该漏洞主要是由于使用了存在漏洞的PHPMailer，导致存在远程代码执行漏洞。
-#!/bin/bash # # __ __ __ __ __ # / / ___ ____ _____ _/ / / / / /___ ______/ /_____ __________ # / / / _ \/ __ `/ __ `/ / / /_/ / __ `/ ___/ //_/ _ \/ ___/ ___/ # / /___/ __/ /_/ / /_/ / / / __ / /_/ / /__/ ,&amp;lt; / __/ / (__ ) # /_____/\___/\__, /\__,_/_/ /_/ /_/\__,_/\___/_/|_|\___/_/ /____/ # /____/ # # # WordPress 4.</description>
     </item>
     
   </channel>

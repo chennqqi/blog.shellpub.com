@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.shellpub.com/2018/01/30/ms17010_eternalsynergy_eternalromance_eternalchampion_vulnerability_warning.html</loc>
+    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.shellpub.com/2018/01/29/hm_new_version140.html</loc>
     <lastmod>2018-01-29T21:31:21+08:00</lastmod>
   </url>
@@ -156,20 +161,26 @@
   </url>
   
   <url>
+    <loc>http://blog.shellpub.com/topics/ms17010/</loc>
+    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.shellpub.com/post/</loc>
-    <lastmod>2018-01-29T21:31:21+08:00</lastmod>
+    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.shellpub.com/topics/remote-code-excute/</loc>
-    <lastmod>2017-05-03T13:46:17+08:00</lastmod>
+    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://blog.shellpub.com/</loc>
-    <lastmod>2018-01-29T21:31:21+08:00</lastmod>
+    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -194,6 +205,12 @@
   <url>
     <loc>http://blog.shellpub.com/tags/webshell/</loc>
     <lastmod>2017-10-11T21:15:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.shellpub.com/tags/windows/</loc>
+    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -289,7 +306,7 @@
   
   <url>
     <loc>http://blog.shellpub.com/tags/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6/</loc>
-    <lastmod>2017-05-03T13:46:17+08:00</lastmod>
+    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
     <priority>0</priority>
   </url>
   
