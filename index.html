@@ -232,6 +232,79 @@
   
     <article>
   <header>
+    <h2><a href="http://blog.shellpub.com/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html">漏洞预警-ubuntu系统存本地提权漏洞</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-03-16 16:10</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83">本地提权</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/aws">aws</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/amazon-web-service">Amazon Web Service</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83">本地提权</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/ubuntu">Ubuntu</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/privilege-escalation">Privilege Escalation</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  漏洞预警&ndash;ubuntu 系统存在本地提权漏洞 
+近日相关安全社群了解到内核版本 4.4.0-116的Ubuntu系统最新的本地提权漏洞。目前相关利用代码已经开始流传扩散，请广大站长，运维人员尽早做出应对措施，并跟进Ubuntu官方公告以便及时更新官方修复补丁。
+1. 存在漏洞的版本 
+经过河马卫士的安全人员进行测试确认，目前16.04的版本存在漏洞。另目前AWS,阿里云,腾讯云的Ubuntu系统的云主机受该漏洞影响，其他的国内外公有云厂商均可能受此影响。
+内核版本为4.4.0-116的ubuntu系统存在此漏洞
+对应的ubuntu发型版本号为16.04
+2. 修复建议 目前暂未有明确的补丁升级方案。 建议用户在评估风险后，通过修改内核参数限制普通用户使用bpf(2)系统调用： # echo 1 &gt; /proc/sys/kernel/unprivileged_bpf_disable 此临时修复方案来自360  参考资料 360 CEDRT ubuntu本地提权攻击预警
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="http://blog.shellpub.com/2018/01/30/ms17010_new_threat.html">漏洞预警-MS17010 Wanncry再次来袭</a></h2>
 
     <div class="post-meta">
@@ -874,73 +947,6 @@ EMAIL: service@shellpub.com
   <footer>
     <a href="http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="http://blog.shellpub.com/2017/07/13/domainblock_alert.html">更换域名 紧急通告</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2017-07-13 15:31</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="http://blog.shellpub.com/topics/alarm">alarm</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  
-
-
-	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
-	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="http://blog.shellpub.com/tags/%E5%85%AC%E5%91%8A">公告</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  紧急公告 http://webhsell.pub 后门查杀，域名无法在国内备案（管局不支持.PUB）,现已准备全面迁移到http://shellpub.com
-更新 2017-07-13 17:00 云查杀功能 已经恢复
-目前已经恢复全部功能，有任何问题欢迎随时反馈
-2017-07-13 15:40
-经过技术人员的紧急抢修目前http://n.webshell.pub已经恢复
-已使用国外CDN通过301跳转到http://n.shellpub.com
-部分地区可能需要等本地DNS更新，一般在24小时之内完成
-云查杀功能还在紧急抢修当中
-影响范围: 部分地区无法打开 n.webshell.pub 在线查杀
-河马扫描器云查杀功能无法使用
-导致有部分漏报  http://www.webshell.pub 使用国外CDN，不受影响
-  </p>
-
   
 </article>
 

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://blog.shellpub.com/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html</loc>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://blog.shellpub.com/2018/01/30/ms17010_new_threat.html</loc>
     <lastmod>2018-01-30T13:46:17+08:00</lastmod>
   </url>
@@ -107,6 +112,12 @@
   </url>
   
   <url>
+    <loc>http://blog.shellpub.com/tags/amazon-web-service/</loc>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.shellpub.com/tags/asp/</loc>
     <lastmod>2017-08-03T10:01:17+08:00</lastmod>
     <priority>0</priority>
@@ -115,6 +126,12 @@
   <url>
     <loc>http://blog.shellpub.com/topics/asp/</loc>
     <lastmod>2017-08-03T10:01:17+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.shellpub.com/topics/aws/</loc>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -168,7 +185,13 @@
   
   <url>
     <loc>http://blog.shellpub.com/post/</loc>
-    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.shellpub.com/tags/privilege-escalation/</loc>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -180,7 +203,7 @@
   
   <url>
     <loc>http://blog.shellpub.com/</loc>
-    <lastmod>2018-01-30T13:46:17+08:00</lastmod>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -199,6 +222,12 @@
   <url>
     <loc>http://blog.shellpub.com/topics/</loc>
     <lastmod>2017-08-03T10:01:17+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.shellpub.com/tags/ubuntu/</loc>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -287,6 +316,18 @@
   </url>
   
   <url>
+    <loc>http://blog.shellpub.com/tags/%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83/</loc>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.shellpub.com/topics/%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83/</loc>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://blog.shellpub.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2017-10-11T21:15:21+08:00</lastmod>
     <priority>0</priority>
@@ -301,6 +342,12 @@
   <url>
     <loc>http://blog.shellpub.com/topics/%E6%B2%B3%E9%A9%ACwebshell/</loc>
     <lastmod>2017-11-23T10:31:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.shellpub.com/topics/%E6%BC%8F%E6%B4%9E/</loc>
+    <lastmod>2018-03-16T16:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
