@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Download on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/tags/download/</link>
+    <link>/tags/download/</link>
     <description>Recent content in Download on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Thu, 23 Nov 2017 10:31:21 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/tags/download/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/download/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>河马下载地址修复公告</title>
-      <link>http://blog.shellpub.com/2017/10/23/down_fix.html</link>
+      <link>/2017/10/23/down_fix.html</link>
       <pubDate>Thu, 23 Nov 2017 10:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/10/23/down_fix.html</guid>
+      <guid>/2017/10/23/down_fix.html</guid>
       <description>河马WEBSHELL扫描软件下载修复公告 河马WEBSHELL扫描器软件下载原来是托管在GITHUB上的; 因19大召开，部分用户出现无法正常下载或者下载缓慢的现象。现已将国内的用户下载从GITHUB修改到独立的线路上了，给您带来的不便，敬请原谅。
 WINDOWS版下载
 Linux 64位版下载

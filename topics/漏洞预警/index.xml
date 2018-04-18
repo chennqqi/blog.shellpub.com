@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>漏洞预警 on SHELLPUB BLOG</title>
+    <link>/topics/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6/</link>
+    <description>Recent content in 漏洞预警 on SHELLPUB BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 18 Apr 2018 10:02:19 +0800</lastBuildDate>
+    
+	<atom:link href="/topics/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>漏洞预警-Weblogic反序列化远程代码执行</title>
+      <link>/2018/04/18/weblogic_rce_alarm.html</link>
+      <pubDate>Wed, 18 Apr 2018 10:02:19 +0800</pubDate>
+      
+      <guid>/2018/04/18/weblogic_rce_alarm.html</guid>
+      <description>预警 今日(2018-04-18)凌晨Oracle官方发布CPU（Critical Patch Update关键更新补丁), 本次更新修复了一个未授权远程代码执行的反序列化漏洞，建议用户第一时间更新。河马安全已就此漏洞进行了验证，已经成功复现此漏洞。
+
+影响范围  Weblogic 10.3.6.0 Weblogic 12.1.3.0 Weblogic 12.2.1.2 Weblogic 12.2.1.3  修复建议 目前Oracle官方已经发布补丁，请移步 http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html 安装对应的补丁 如果在生产环境中，也可以临时禁用Weblogic T3协议，据称此种方法存在被绕过风险，建议及时验证兼容性，并安装最新官方补丁 在安装补丁后建议使用河马WEBSHELL查杀客户端进行WEBSHELL检测和清理。  关于河马 专注WEB安全研究与产品开发，有多年WEBSHELL清理检测经验  参考 oracle官方通告 http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html
+绿盟威胁情报 http://blog.nsfocus.net/category/threatalerts/
+白帽汇 漏洞预警</description>
+    </item>
+    
+  </channel>
+</rss>

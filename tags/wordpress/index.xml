@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/tags/wordpress/</link>
+    <link>/tags/wordpress/</link>
     <description>Recent content in Wordpress on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Wed, 03 May 2017 13:46:17 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>漏洞预警-WordPress Core远程代码执行</title>
-      <link>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</link>
+      <link>/2017/05/03/wordpress_core_remote_code_excute.html</link>
       <pubDate>Wed, 03 May 2017 13:46:17 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</guid>
+      <guid>/2017/05/03/wordpress_core_remote_code_excute.html</guid>
       <description>漏洞预警-WordPress Core远程代码执行(无需验证和插件) 
 2017年5月1日，WordPress 4.6版本被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞在不需要验证，同时不需要安装任何插件即可获取反弹的shell。北京时间2017年5月4日，legalhackers发布了相关漏洞利用代码。
 WordPress是一款由PHP语言开发的内容管理系统（CMS）系统。是当今最流行的cms，很适合二次开发，使用量超过百万。潜在影响范围广泛，请大家在官方补丁出来之前，提早做好防范。以免带来不必要的麻烦。

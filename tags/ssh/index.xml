@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/tags/ssh/</link>
+    <link>/tags/ssh/</link>
     <description>Recent content in Ssh on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Mon, 14 Aug 2017 15:31:21 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>XSHELL多版本存在后门</title>
-      <link>http://blog.shellpub.com/2017/08/14/xshell_with_backdoor.html</link>
+      <link>/2017/08/14/xshell_with_backdoor.html</link>
       <pubDate>Mon, 14 Aug 2017 15:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/08/14/xshell_with_backdoor.html</guid>
+      <guid>/2017/08/14/xshell_with_backdoor.html</guid>
       <description>安全通告&amp;ndash;终端软件XSHELL多版本存在后门 据360安全客与360CERT消息，知名linux终端软件XSHELL存在后门，而且是官方版本。包括XSHELL软件单体和其安装套件Xmanager.
 XSHELL是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。详细介绍请看这里
 存在后门的版本  Xshell Build 5.0.1322

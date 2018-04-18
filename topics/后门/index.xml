@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>后门 on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/topics/%E5%90%8E%E9%97%A8/</link>
+    <link>/topics/%E5%90%8E%E9%97%A8/</link>
     <description>Recent content in 后门 on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Mon, 29 Jan 2018 21:31:21 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/topics/%E5%90%8E%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/topics/%E5%90%8E%E9%97%A8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>河马WEBSHELL扫描器1.4.0发布</title>
-      <link>http://blog.shellpub.com/2018/01/29/hm_new_version140.html</link>
+      <link>/2018/01/29/hm_new_version140.html</link>
       <pubDate>Mon, 29 Jan 2018 21:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2018/01/29/hm_new_version140.html</guid>
+      <guid>/2018/01/29/hm_new_version140.html</guid>
       <description>河马查杀1.4.0 发布  
 随着weblogic漏洞（CVE-2017-3506)的爆发，近期挖矿程序猖獗; 本次更新主要增加了几个挖矿程序的检测规则。
 增加:
@@ -35,10 +35,10 @@ linux环境下您可以在软件所在目录执行`hm update`命令，软件会�
     
     <item>
       <title>河马WEBSHELL扫描器1.3.2发布</title>
-      <link>http://blog.shellpub.com/2017/12/22/hm_new_version132.html</link>
+      <link>/2017/12/22/hm_new_version132.html</link>
       <pubDate>Fri, 22 Dec 2017 09:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/12/22/hm_new_version132.html</guid>
+      <guid>/2017/12/22/hm_new_version132.html</guid>
       <description>河马查杀1.3.2 发布  
 近期不少用户反馈扫描时异常崩溃，我们调试后发现在获取版本失败导致的此问题，这个版本主要是修复这个BUG。 今日冬至，大家大吉大利，晚上吃鸡和饺子！
 下载地址 windows版下载
@@ -56,10 +56,10 @@ linux环境下您可以在软件所在目录执行`hm update`命令，软件会�
     
     <item>
       <title>河马WEBSHELL扫描器1.3.1发布</title>
-      <link>http://blog.shellpub.com/2017/11/29/hm_new_version.html</link>
+      <link>/2017/11/29/hm_new_version.html</link>
       <pubDate>Wed, 29 Nov 2017 09:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/11/29/hm_new_version.html</guid>
+      <guid>/2017/11/29/hm_new_version.html</guid>
       <description>下载地址 windows版下载
 linux64位下载
 linux32位下载
@@ -76,10 +76,10 @@ linux环境下您可以在软件所在目录执行`hm update`命令，软件会�
     
     <item>
       <title>XSHELL多版本存在后门</title>
-      <link>http://blog.shellpub.com/2017/08/14/xshell_with_backdoor.html</link>
+      <link>/2017/08/14/xshell_with_backdoor.html</link>
       <pubDate>Mon, 14 Aug 2017 15:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/08/14/xshell_with_backdoor.html</guid>
+      <guid>/2017/08/14/xshell_with_backdoor.html</guid>
       <description>安全通告&amp;ndash;终端软件XSHELL多版本存在后门 据360安全客与360CERT消息，知名linux终端软件XSHELL存在后门，而且是官方版本。包括XSHELL软件单体和其安装套件Xmanager.
 XSHELL是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。详细介绍请看这里
 存在后门的版本  Xshell Build 5.0.1322

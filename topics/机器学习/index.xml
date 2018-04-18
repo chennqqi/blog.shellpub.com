@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>机器学习 on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/topics/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
+    <link>/topics/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 机器学习 on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Wed, 11 Oct 2017 21:15:21 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/topics/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/topics/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>河马-利用机器学习检测WEBSHELL</title>
-      <link>http://blog.shellpub.com/2017/10/11/%E6%B2%B3%E9%A9%ACwebshell%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</link>
+      <link>/2017/10/11/%E6%B2%B3%E9%A9%ACwebshell%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</link>
       <pubDate>Wed, 11 Oct 2017 21:15:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/10/11/%E6%B2%B3%E9%A9%ACwebshell%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</guid>
+      <guid>/2017/10/11/%E6%B2%B3%E9%A9%ACwebshell%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</guid>
       <description>河马-利用机器学习检测WEBSHELL 1. START 近些年机器学习火的一塌糊涂，机器学习、人工智能、深度学习、数据挖掘这些词汇耳熟能详。这些术语的背后是数学、统计学、计算机科学等多门学科的融合。利用这些技术使计算机具有归纳总结等学习能力来服务人类。
 2. DO 借着这个国庆+中秋双节8天假日，做了一个简单的demo，算是河马安全在机器学习上第一次尝试。
 查杀传送门 http://ml.shellpub.com

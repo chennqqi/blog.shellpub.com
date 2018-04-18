@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>公告 on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/tags/%E5%85%AC%E5%91%8A/</link>
+    <link>/tags/%E5%85%AC%E5%91%8A/</link>
     <description>Recent content in 公告 on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Thu, 13 Jul 2017 15:31:21 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/tags/%E5%85%AC%E5%91%8A/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E5%85%AC%E5%91%8A/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>更换域名 紧急通告</title>
-      <link>http://blog.shellpub.com/2017/07/13/domainblock_alert.html</link>
+      <link>/2017/07/13/domainblock_alert.html</link>
       <pubDate>Thu, 13 Jul 2017 15:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/07/13/domainblock_alert.html</guid>
+      <guid>/2017/07/13/domainblock_alert.html</guid>
       <description>紧急公告 http://webhsell.pub 后门查杀，域名无法在国内备案（管局不支持.PUB）,现已准备全面迁移到http://shellpub.com
 更新 2017-07-13 17:00 云查杀功能 已经恢复
 目前已经恢复全部功能，有任何问题欢迎随时反馈

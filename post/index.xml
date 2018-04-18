@@ -2,21 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on SHELLPUB BLOG</title>
-    <link>http://blog.shellpub.com/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Fri, 16 Mar 2018 16:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Apr 2018 10:02:19 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.shellpub.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>漏洞预警-Weblogic反序列化远程代码执行</title>
+      <link>/2018/04/18/weblogic_rce_alarm.html</link>
+      <pubDate>Wed, 18 Apr 2018 10:02:19 +0800</pubDate>
+      
+      <guid>/2018/04/18/weblogic_rce_alarm.html</guid>
+      <description>预警 今日(2018-04-18)凌晨Oracle官方发布CPU（Critical Patch Update关键更新补丁), 本次更新修复了一个未授权远程代码执行的反序列化漏洞，建议用户第一时间更新。河马安全已就此漏洞进行了验证，已经成功复现此漏洞。
+
+影响范围  Weblogic 10.3.6.0 Weblogic 12.1.3.0 Weblogic 12.2.1.2 Weblogic 12.2.1.3  修复建议 目前Oracle官方已经发布补丁，请移步 http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html 安装对应的补丁 如果在生产环境中，也可以临时禁用Weblogic T3协议，据称此种方法存在被绕过风险，建议及时验证兼容性，并安装最新官方补丁 在安装补丁后建议使用河马WEBSHELL查杀客户端进行WEBSHELL检测和清理。  关于河马 专注WEB安全研究与产品开发，有多年WEBSHELL清理检测经验  参考 oracle官方通告 http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html
+绿盟威胁情报 http://blog.nsfocus.net/category/threatalerts/
+白帽汇 漏洞预警</description>
+    </item>
+    
+    <item>
       <title>漏洞预警-ubuntu系统存本地提权漏洞</title>
-      <link>http://blog.shellpub.com/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html</link>
+      <link>/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html</link>
       <pubDate>Fri, 16 Mar 2018 16:10:00 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html</guid>
+      <guid>/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html</guid>
       <description>漏洞预警&amp;ndash;ubuntu 系统存在本地提权漏洞 
 近日相关安全社群了解到内核版本 4.4.0-116的Ubuntu系统最新的本地提权漏洞。目前相关利用代码已经开始流传扩散，请广大站长，运维人员尽早做出应对措施，并跟进Ubuntu官方公告以便及时更新官方修复补丁。
 1. 存在漏洞的版本 
@@ -28,10 +41,10 @@
     
     <item>
       <title>漏洞预警-MS17010 Wanncry再次来袭</title>
-      <link>http://blog.shellpub.com/2018/01/30/ms17010_new_threat.html</link>
+      <link>/2018/01/30/ms17010_new_threat.html</link>
       <pubDate>Tue, 30 Jan 2018 13:46:17 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2018/01/30/ms17010_new_threat.html</guid>
+      <guid>/2018/01/30/ms17010_new_threat.html</guid>
       <description>漏洞预警-MS17010最新利用工具公布，Wanncry再次来袭 影响Windows2000至2016所有版本 2018年01月29日，著名漏洞利用框架Metasploit添加了最新的针对MS17010（永恒之蓝）漏洞的最新利用模块。该利用模块可以攻击包括windows2000至2016的所有未打该补丁的Windows操作系统。shellpub.com 提醒广大站长更新系统补丁，做好防范工作，以免受到该漏洞的影响。
 MS17010(永恒之蓝)是从网络中泄露的NSA攻击工具包中针对SMB协议的远程代码执行漏洞。该漏洞在2017年被公布，微软公司在4月份发布补丁，但是未引起广泛关注。导致后面的wanncry利用该漏洞大肆传播，影响全球计算机系统。造成了巨大的影响。而最新公布的利用代码同样影响Windows 2016的系统。
  利用工具利用成功截图 
@@ -41,10 +54,10 @@ MS17010(永恒之蓝)是从网络中泄露的NSA攻击工具包中针对SMB协�
     
     <item>
       <title>河马WEBSHELL扫描器1.4.0发布</title>
-      <link>http://blog.shellpub.com/2018/01/29/hm_new_version140.html</link>
+      <link>/2018/01/29/hm_new_version140.html</link>
       <pubDate>Mon, 29 Jan 2018 21:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2018/01/29/hm_new_version140.html</guid>
+      <guid>/2018/01/29/hm_new_version140.html</guid>
       <description>河马查杀1.4.0 发布  
 随着weblogic漏洞（CVE-2017-3506)的爆发，近期挖矿程序猖獗; 本次更新主要增加了几个挖矿程序的检测规则。
 增加:
@@ -63,10 +76,10 @@ linux环境下您可以在软件所在目录执行`hm update`命令，软件会�
     
     <item>
       <title>河马WEBSHELL扫描器1.3.2发布</title>
-      <link>http://blog.shellpub.com/2017/12/22/hm_new_version132.html</link>
+      <link>/2017/12/22/hm_new_version132.html</link>
       <pubDate>Fri, 22 Dec 2017 09:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/12/22/hm_new_version132.html</guid>
+      <guid>/2017/12/22/hm_new_version132.html</guid>
       <description>河马查杀1.3.2 发布  
 近期不少用户反馈扫描时异常崩溃，我们调试后发现在获取版本失败导致的此问题，这个版本主要是修复这个BUG。 今日冬至，大家大吉大利，晚上吃鸡和饺子！
 下载地址 windows版下载
@@ -84,10 +97,10 @@ linux环境下您可以在软件所在目录执行`hm update`命令，软件会�
     
     <item>
       <title>河马WEBSHELL扫描器1.3.1发布</title>
-      <link>http://blog.shellpub.com/2017/11/29/hm_new_version.html</link>
+      <link>/2017/11/29/hm_new_version.html</link>
       <pubDate>Wed, 29 Nov 2017 09:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/11/29/hm_new_version.html</guid>
+      <guid>/2017/11/29/hm_new_version.html</guid>
       <description>下载地址 windows版下载
 linux64位下载
 linux32位下载
@@ -104,10 +117,10 @@ linux环境下您可以在软件所在目录执行`hm update`命令，软件会�
     
     <item>
       <title>河马下载地址修复公告</title>
-      <link>http://blog.shellpub.com/2017/10/23/down_fix.html</link>
+      <link>/2017/10/23/down_fix.html</link>
       <pubDate>Thu, 23 Nov 2017 10:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/10/23/down_fix.html</guid>
+      <guid>/2017/10/23/down_fix.html</guid>
       <description>河马WEBSHELL扫描软件下载修复公告 河马WEBSHELL扫描器软件下载原来是托管在GITHUB上的; 因19大召开，部分用户出现无法正常下载或者下载缓慢的现象。现已将国内的用户下载从GITHUB修改到独立的线路上了，给您带来的不便，敬请原谅。
 WINDOWS版下载
 Linux 64位版下载
@@ -116,10 +129,10 @@ Linux 32位版下载</description>
     
     <item>
       <title>河马-利用机器学习检测WEBSHELL</title>
-      <link>http://blog.shellpub.com/2017/10/11/%E6%B2%B3%E9%A9%ACwebshell%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</link>
+      <link>/2017/10/11/%E6%B2%B3%E9%A9%ACwebshell%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</link>
       <pubDate>Wed, 11 Oct 2017 21:15:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/10/11/%E6%B2%B3%E9%A9%ACwebshell%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</guid>
+      <guid>/2017/10/11/%E6%B2%B3%E9%A9%ACwebshell%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</guid>
       <description>河马-利用机器学习检测WEBSHELL 1. START 近些年机器学习火的一塌糊涂，机器学习、人工智能、深度学习、数据挖掘这些词汇耳熟能详。这些术语的背后是数学、统计学、计算机科学等多门学科的融合。利用这些技术使计算机具有归纳总结等学习能力来服务人类。
 2. DO 借着这个国庆+中秋双节8天假日，做了一个简单的demo，算是河马安全在机器学习上第一次尝试。
 查杀传送门 http://ml.shellpub.com
@@ -138,10 +151,10 @@ service@shellpub.com</description>
     
     <item>
       <title>XSHELL多版本存在后门</title>
-      <link>http://blog.shellpub.com/2017/08/14/xshell_with_backdoor.html</link>
+      <link>/2017/08/14/xshell_with_backdoor.html</link>
       <pubDate>Mon, 14 Aug 2017 15:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/08/14/xshell_with_backdoor.html</guid>
+      <guid>/2017/08/14/xshell_with_backdoor.html</guid>
       <description>安全通告&amp;ndash;终端软件XSHELL多版本存在后门 据360安全客与360CERT消息，知名linux终端软件XSHELL存在后门，而且是官方版本。包括XSHELL软件单体和其安装套件Xmanager.
 XSHELL是一个强大的安全终端模拟软件，它支持SSH1, SSH2, 以及Microsoft Windows 平台的TELNET 协议。详细介绍请看这里
 存在后门的版本  Xshell Build 5.0.1322
@@ -160,10 +173,10 @@ http://blog.csdn.net/zhi_heart/article/details/48656467</description>
     
     <item>
       <title>河马WEBSHELL扫描器1.2发布</title>
-      <link>http://blog.shellpub.com/2017/08/09/%E6%B2%B3%E9%A9%ACwebshell%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html</link>
+      <link>/2017/08/09/%E6%B2%B3%E9%A9%ACwebshell%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html</link>
       <pubDate>Wed, 09 Aug 2017 15:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/08/09/%E6%B2%B3%E9%A9%ACwebshell%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html</guid>
+      <guid>/2017/08/09/%E6%B2%B3%E9%A9%ACwebshell%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html</guid>
       <description>河马WEBSHELL扫描器1.2 更新日志  开发了windows版的图形界面
  查杀引擎升级到1.2
  支持自定义过扩展名白名单
@@ -187,10 +200,10 @@ EMAIL: service@shellpub.com</description>
     
     <item>
       <title>asp 限制多IP登录</title>
-      <link>http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html</link>
+      <link>/2017/08/03/asp_off-site-landing-warning.html</link>
       <pubDate>Thu, 03 Aug 2017 10:01:17 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/08/03/asp_off-site-landing-warning.html</guid>
+      <guid>/2017/08/03/asp_off-site-landing-warning.html</guid>
       <description>目的 限制同一账号多IP登录
 原理  前端不断发送Ajax请求后端ASP，每隔几秒钟更新一次登陆请求。 后端记录登陆IP和最后登录时间。 如发现登录IP与最后登录IP不同，则登陆失败。 为了防止请求被缓存, 在请求中加随机数。 需要注意的是NAT环境下（网吧或者企业学校等公用出口）, 使用这个代码会导致其他用户登陆失败  代码 ajax_update.js
 //author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &amp;quot;updateLogin.asp&amp;quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&amp;quot;GET&amp;quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&amp;quot;Microsoft.XMLHTTP&amp;quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.</description>
@@ -198,10 +211,10 @@ EMAIL: service@shellpub.com</description>
     
     <item>
       <title>更换域名 紧急通告</title>
-      <link>http://blog.shellpub.com/2017/07/13/domainblock_alert.html</link>
+      <link>/2017/07/13/domainblock_alert.html</link>
       <pubDate>Thu, 13 Jul 2017 15:31:21 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/07/13/domainblock_alert.html</guid>
+      <guid>/2017/07/13/domainblock_alert.html</guid>
       <description>紧急公告 http://webhsell.pub 后门查杀，域名无法在国内备案（管局不支持.PUB）,现已准备全面迁移到http://shellpub.com
 更新 2017-07-13 17:00 云查杀功能 已经恢复
 目前已经恢复全部功能，有任何问题欢迎随时反馈
@@ -217,10 +230,10 @@ EMAIL: service@shellpub.com</description>
     
     <item>
       <title>漏洞预警-WordPress Core远程代码执行</title>
-      <link>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</link>
+      <link>/2017/05/03/wordpress_core_remote_code_excute.html</link>
       <pubDate>Wed, 03 May 2017 13:46:17 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/2017/05/03/wordpress_core_remote_code_excute.html</guid>
+      <guid>/2017/05/03/wordpress_core_remote_code_excute.html</guid>
       <description>漏洞预警-WordPress Core远程代码执行(无需验证和插件) 
 2017年5月1日，WordPress 4.6版本被曝出远程代码执行（RCE）漏洞，国外legalhackers发布该漏洞利用视频，从被曝出的视频中可以看到该漏洞在不需要验证，同时不需要安装任何插件即可获取反弹的shell。北京时间2017年5月4日，legalhackers发布了相关漏洞利用代码。
 WordPress是一款由PHP语言开发的内容管理系统（CMS）系统。是当今最流行的cms，很适合二次开发，使用量超过百万。潜在影响范围广泛，请大家在官方补丁出来之前，提早做好防范。以免带来不必要的麻烦。
@@ -232,10 +245,10 @@ WordPress是一款由PHP语言开发的内容管理系统（CMS）系统。是�
     
     <item>
       <title>1</title>
-      <link>http://blog.shellpub.com/post/1/</link>
+      <link>/post/1/</link>
       <pubDate>Sun, 19 Mar 2017 10:44:50 +0800</pubDate>
       
-      <guid>http://blog.shellpub.com/post/1/</guid>
+      <guid>/post/1/</guid>
       <description>##webshell.pub 第一篇博文
 #关于我们 WEBSHELL.PUB
 团队成员来自国内顶尖安全团队，专注webshell查杀研究。拥有海量webshell样本和自主查杀技术，采用传统特征+云端大数据双引擎的查杀技术。查杀速度快、精度高、误报低。</description>
