@@ -1,8 +1,8 @@
 +++
 draft = true
 author = "admin@shellpub.com"
-title = "{{ replace .TranslationBaseName "-" " " | title }}"
-date = {{ .Date }}
+title = "Weblogicnew"
+date = 2018-04-18T10:02:19+08:00
 description = ""
 keywords = [""]
 title = ""
