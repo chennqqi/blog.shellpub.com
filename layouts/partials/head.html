@@ -8,6 +8,7 @@
 
   <!-- CSS -->
   {{ $purecss := "//lib.baomitu.com/pure/1.0.0/" }}
+
   <link rel="stylesheet" href="{{ $purecss }}pure-min.css">
 
   {{ "<!--[if lte IE 8]>" | safeHTML }}
@@ -32,7 +33,10 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
-  <!-- RSS -->
+  <!-- MathJax -->
+  <script src="//lib.baomitu.com/mathjax/2.7.0-beta.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+
+ <!-- RSS -->
   {{ if .RSSLink }}
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ .RSSLink }}" />
   {{ end }}
@@ -46,10 +50,18 @@
   {{ partial "favicon.html" . }}
 
   {{ range .Site.Params.custom_css }}
-    <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+    {{ if findRE "https?://" . }}
+        <link rel="stylesheet" href="{{ . }}">
+    {{ else }}
+        <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+    {{ end }}
   {{ end }}
   {{ range .Site.Params.custom_js }}
-    <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+    {{ if findRE "https?://" . }}
+        <script src="{{ . }}"></script>
+    {{ else }}
+        <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
+    {{ end }}
   {{ end }}
 
 </head>
