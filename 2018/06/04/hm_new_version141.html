@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CVE-2018-2628 Weblogic反序列化远程代码执行">
+  <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37.1" />
 
-  <title>漏洞预警-WebLogic反序列化远程代码执行 &middot; SHELLPUB BLOG</title>
+  <title>河马WEBSHELL扫描器1.4.1发布 &middot; SHELLPUB BLOG</title>
 
   
   
@@ -230,8 +230,8 @@
 
 
 <div class="header">
-  <h1>漏洞预警-WebLogic反序列化远程代码执行</h1>
-  <h2>CVE-2018-2628 Weblogic反序列化远程代码执行</h2>
+  <h1>河马WEBSHELL扫描器1.4.1发布</h1>
+  <h2></h2>
 </div>
 <div class="content">
 
@@ -239,7 +239,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>2018-04-18 10:02</time>
+    <time>2018-06-04 14:05</time>
   </div>
 
   
@@ -250,9 +250,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="topics/weblogic">weblogic</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
+      <a class="post-taxonomy-topic" href="topics/%E5%90%8E%E9%97%A8">后门</a>
     
   </div>
   
@@ -272,11 +270,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="tags/weblogic">weblogic</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="tags/%E5%8F%91%E7%89%88">发版</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="tags/%E9%A2%84%E8%AD%A6">预警</a>
+      <a class="post-taxonomy-tag" href="tags/hm">hm</a>
     
   </div>
   
@@ -286,64 +282,96 @@
 
   
 
-<p><center><img src="https://s1.ax1x.com/2018/04/18/CnaXrV.png" alt="" /></center></p>
+<h1 id="河马查杀1-4-1-发布">河马查杀1.4.1 发布</h1>
 
-<h2 id="预警">预警</h2>
+<p><center>
+<img src="http://blog.shellpub.com/images/2.png" alt="" />
+</center></p>
 
-<p>今日凌晨(北京时间2018-04-18)Oracle官方发布CPU（Critical Patch Update关键更新补丁)通告, 本次更新修复了一个未授权远程代码执行的反序列化漏洞CVE-2018-2628。河马安全研究员已就此漏洞进行了验证，已经成功复现此漏洞。本漏洞危害较大可被利用来挖矿，对用户造成严重损失，建议用户第一时间更新。</p>
+<p>本次更新为修复性更新</p>
 
-<p><center><img src="https://s1.ax1x.com/2018/04/18/CnwgnP.png" alt="" /></center></p>
+<p>增加:</p>
 
-<h2 id="关于weblogic">关于WebLogic</h2>
+<h2 id="下载地址">下载地址</h2>
 
-<p>WebLogic是美国Oracle公司出品的一个application server，确切的说是一个基于JAVAEE架构的中间件，WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用的Java应用服务器。将Java的动态功能和Java Enterprise标准的安全性引入大型网络应用的开发、集成、部署和管理之中。</p>
+<p><a href="http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.4.1">windows版下载</a><br />
+<a href="http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.4.1">linux64位下载</a><br />
+<a href="http://down.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.4.1">linux32位下载</a></p>
 
-<h2 id="影响范围">影响范围</h2>
+<h2 id="功能更新">功能更新</h2>
 
 <ul>
-<li>Weblogic 10.3.6.0</li>
-<li>Weblogic 12.1.3.0</li>
-<li>Weblogic 12.2.1.2</li>
-<li>Weblogic 12.2.1.3</li>
+<li>移除了一条存在误报的黑链检测规则</li>
 </ul>
 
-<h2 id="修复建议">修复建议</h2>
+<h2 id="bug修正">BUG修正</h2>
 
-<pre><code>目前Oracle官方已经发布补丁，请移步
-http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html
-安装对应的补丁
+<ul>
+<li>windows 图形界面体验优化，在添加扫描目录时现在点击<code>添加扫描路径</code>的文字也能添加</li>
+</ul>
 
-如果在生产环境中，也可以临时禁用Weblogic T3协议，
-据称此种方法存在被绕过风险，建议及时验证兼容性，并安装最新官方补丁
+<h2 id="已知问题">已知问题</h2>
 
-在安装补丁后建议使用河马WEBSHELL查杀客户端进行WEBSHELL检测和清理。
-</code></pre>
+<ul>
+<li>最新版的kali下可能无法运行(内核4.14, 增加了一个GCC选项 <a href="https://github.com/golang/go/issues/20427">https://github.com/golang/go/issues/20427</a>), 如果您须要这个环境下的程序请通过本文下方的联系方式联系我们免费获取。
+<br /></li>
+</ul>
 
-<h2 id="关于河马">关于河马</h2>
+<h2 id="常见问题">常见问题</h2>
 
-<pre><code>专注WEB安全研究与产品开发，有多年WEBSHELL清理检测经验
-</code></pre>
+<ol>
+<li><p>扫描失败，或者扫描文件数目为0</p>
 
-<p><img src="http://open.weixin.qq.com/qr/code?username=gh_d110440c4890" alt="" /></p>
+<pre><code>软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等
+</code></pre></li>
 
-<h2 id="参考">参考</h2>
+<li><p>扫描时崩溃</p>
 
-<p><a href="http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html">oracle官方通告 http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html</a><br />
-<a href="http://blog.nsfocus.net/category/threatalerts/">绿盟威胁情报 http://blog.nsfocus.net/category/threatalerts/</a><br />
-<a href="https://nosec.org/?token=xycxwt56je">白帽汇 漏洞预警</a></p>
+<pre><code>请检查您使用的软件版本和操作系统版本是否匹配
+情检查您当前的用户是否为管理员用户
+</code></pre></li>
+
+<li><p>linux下没有找到可执行的文件</p>
+
+<pre><code>请检查是否配置了环境变量或者使用./hm的方式来运行程序
+</code></pre></li>
+
+<li><p>如何配置扩展名白名单</p>
+
+<pre><code>在软件目录下有hm.yml文件，按照默认格式添加不需要被扫描的文件类型的扩展名
+jpg,png,gif不建议添加，有一类后门是隐藏在图片之中的。
+</code></pre></li>
+
+<li><p>如何查看扫描结果</p>
+
+<pre><code>扫描结果在扫描结束之后会保存到软件目录下的result.csv文件中，windows版可以在界面上直接查看结果
+</code></pre></li>
+
+<li><p>如何实现定时扫描</p>
+
+<pre><code>linux利用系统crontab，在crontab中添加定时扫描任务。
+</code></pre></li>
+
+<li><p>如果安装了旧版软件是否能够自动更新</p>
+
+<pre><code>linux环境下您可以在软件所在目录执行`hm update`命令，软件会自动升级到最新版本
+</code></pre></li>
+</ol>
+
+<p>如果在使用过程中遇到问题，可以在本文下面留言或加<a href="tencent://message/?uin=1494922137&amp;Site=&amp;Menu=yes">QQ:1494922137</a></p>
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html"><i class="fa fa-chevron-left"></i></a>
+    <a href="/2018/04/18/weblogic_rce_alarm.html"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html">漏洞预警-ubuntu系统存本地提权漏洞</a>
+      <a href="/2018/04/18/weblogic_rce_alarm.html">漏洞预警-WebLogic反序列化远程代码执行</a>
     </nav>
     
   </div>
@@ -352,14 +380,8 @@ http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="/2018/06/04/hm_new_version141.html">河马WEBSHELL扫描器1.4.1发布</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="/2018/06/04/hm_new_version141.html"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
