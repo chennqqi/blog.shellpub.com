@@ -44,12 +44,12 @@ paginate = 10
     weight = 2
     identifier = "post"
     url = "/post/"
-  [[menu.main]]
-    name = "FAQ"
-    pre = "<i class='fa fa-flag fa-fw'></i>"
-    weight = 3
-    identifier = "faq"
-    url = "/faq/"   
+#  [[menu.main]]
+#    name = "FAQ"
+#    pre = "<i class='fa fa-flag fa-fw'></i>"
+#    weight = 3
+#    identifier = "faq"
+#    url = "/faq/"   
   [[menu.main]]
     name = "BUG"
     pre = "<i class='fa fa-bug fa-fw'></i>"
