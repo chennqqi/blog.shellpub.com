@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bug on SHELLPUB BLOG</title>
+    <link>/tags/bug/</link>
+    <description>Recent content in Bug on SHELLPUB BLOG</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2017. All rights reserved.</copyright>
+    <lastBuildDate>Tue, 10 Apr 2018 15:31:21 +0800</lastBuildDate>
+    
+	<atom:link href="/tags/bug/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>河马查杀BUG跟踪</title>
+      <link>/bug/</link>
+      <pubDate>Tue, 10 Apr 2018 15:31:21 +0800</pubDate>
+      
+      <guid>/bug/</guid>
+      <description>id， bug编号 状态，是否已修复 计划, 修复计划 范围，受影响版本范围
+  id 状态 范围 计划 描述    1   已修复   小于1.3.2   已修复(=1.3.2)   请求dns崩溃参考https://yq.aliyun.com/articles/238940    2   未修复   所有版本   修复中   linux内核版本4.4时，扫描时会崩溃    </description>
+    </item>
+    
+  </channel>
+</rss>

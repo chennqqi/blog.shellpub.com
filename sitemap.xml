@@ -13,6 +13,21 @@
   </url>
   
   <url>
+    <loc>/bug/</loc>
+    <lastmod>2018-04-10T15:31:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/faq/</loc>
+    <lastmod>2018-04-10T15:31:21+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/history/</loc>
+    <lastmod>2018-04-10T15:31:21+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/online/</loc>
     <lastmod>2018-04-09T00:00:00+00:00</lastmod>
   </url>
@@ -146,8 +161,20 @@
   </url>
   
   <url>
+    <loc>/tags/bug/</loc>
+    <lastmod>2018-04-10T15:31:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/download/</loc>
     <lastmod>2017-11-23T10:31:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/faq/</loc>
+    <lastmod>2018-04-10T15:31:21+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -364,6 +391,18 @@
   <url>
     <loc>/topics/%E6%B2%B3%E9%A9%ACwebshell/</loc>
     <lastmod>2017-11-23T10:31:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/topics/%E6%B2%B3%E9%A9%AC%E5%B4%A9%E6%BA%83/</loc>
+    <lastmod>2018-04-10T15:31:21+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/topics/%E6%B2%B3%E9%A9%AC%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2018-04-10T15:31:21+08:00</lastmod>
     <priority>0</priority>
   </url>
   
