@@ -21,11 +21,11 @@ url = "/2018/07/18/weblogic_vul_alarm.html"
  今日(北京时间2018-07-18)Oracle官方发布CPU（Critical Patch Update关键更新补丁)通告, 本次通告包含的一个反序列化漏洞CVE-2018-2893和远程命令执行CVE-2018-2894危害较大，可被利用来挖矿； 其中CVE-2018-2894漏洞可以直接通过HTTP方式利用，**[安全漏洞评分系统(CVSS)](https://blog.csdn.net/u012063507/article/details/72081820)高达9.8**，请站长朋友及时更新，或者使用一些防护产品，以免造成严重损失。
 
  	
-![](http://resource.shellpub.com/images/CVE20182894.png)
+<center>![](http://resource.shellpub.com/images/CVE20182894.png)</center>
 
 ## 关于WebLogic
 
-WebLogic是美国Oracle公司出品的一个application server，确切的说是一个基于JAVAEE架构的中间件，WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用的Java应用服务器。将Java的动态功能和Java Enterprise标准的安全性引入大型网络应用的开发、集成、部署和管理之中。
+WebLogic是美国Oracle公司出品的一个Application Server，确切的说是一个基于JAVAEE架构的中间件，WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用的Java应用服务器。将Java的动态功能和Java Enterprise标准的安全性引入大型网络应用的开发、集成、部署和管理之中。
 
 Oracle 一般会在1，4，7，10月中距离17号最近的周二发布安全补丁包。本站上次WebLogic预警也是今年4月份的18号。
 
@@ -41,12 +41,15 @@ Oracle 一般会在1，4，7，10月中距离17号最近的周二发布安全补
 
 	目前Oracle官方更新建议请访问
 	http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html
+
+	建议使用河马查杀客户端检测WEBSHELL, 
+<center>![](https://s1.ax1x.com/2018/07/18/P1t9fA.png)</center>
 	
 ## 关于河马
 
 	专注WEB安全研究与产品开发，有多年WEBSHELL清理检测经验
 
-![](http://open.weixin.qq.com/qr/code?username=gh_d110440c4890)
+<center>![](http://open.weixin.qq.com/qr/code?username=gh_d110440c4890)</center>
 
 
 
