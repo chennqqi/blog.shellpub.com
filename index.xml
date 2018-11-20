@@ -6,10 +6,24 @@
     <description>Recent content on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 18 Jul 2018 14:12:10 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 20 Nov 2018 12:08:32 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>河马WEBSHELL扫描器1.5.0发布</title>
+      <link>/2018/11/20/hm_new_version150.html</link>
+      <pubDate>Tue, 20 Nov 2018 12:08:32 +0800</pubDate>
+      
+      <guid>/2018/11/20/hm_new_version150.html</guid>
+      <description>河马查杀1.5.0 发布  
+本次更新为修复性更新
+下载地址 windows版下载
+linux64位下载
+linux32位下载
+功能更新  现在可以通过配置文件hm.yml（首次扫描后自动生成)指定只扫描的文件类型  注意如果配置了只扫描的类型，那么排除类型将不会生效，不在名单中的类型都不会扫描，建议新手不要使用这种配置  修复了一个崩溃后不能正常退出的BUG  BUG修正  windows 图形界面体验优化，在添加扫描目录时现在点击添加扫描路径的文字也能添加  已知问题  最新版的kali下可能无法运行(内核4.14, 增加了一个GCC选项 https://github.com/golang/go/issues/20427), 如果您须要这个环境下的程序请通过本文下方的联系方式联系我们免费获取。  已测试环境 | OS | kernel | arch | result | |------------|-----------------|-------|--------| | windows7 | 6.1.7601 | amd64 | OK | | CentoOS7.4 | 3.10.0-693.21.1 | amd64 | OK | | CentOS6.0 | 2.6.32-71 | 386 | OK | |Ubuntu18.04 |4.15.0-29-generic| amd64 | OK | | Kali2.</description>
+    </item>
     
     <item>
       <title>漏洞预警-WebLogic远程命令执行 CVE-2018-2893&amp;CVE-2018-2894</title>
