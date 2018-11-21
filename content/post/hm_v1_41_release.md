@@ -21,9 +21,9 @@ url = "/2018/06/04/hm_new_version141.html"
 
 ## 下载地址
 
-[windows版下载](http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.4.1)  
-[linux64位下载](http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.4.1)  
-[linux32位下载](http://down.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.4.1)  
+[windows版下载](http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.5.0)  
+[linux64位下载](http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.5.0)  
+[linux32位下载](http://down.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.5.0)  
 
 
 ## 功能更新

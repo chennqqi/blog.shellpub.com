@@ -22,9 +22,9 @@ url = "/2017/12/22/hm_new_version132.html"
 
 ## 下载地址
 
-[windows版下载](http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.4.0)  
-[linux64位下载](http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.4.0)  
-[linux32位下载](http://down.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.4.0)  
+[windows版下载](http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.5.0)  
+[linux64位下载](http://down.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.5.0)  
+[linux32位下载](http://down.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.5.0)  
 
 
 ## 功能更新

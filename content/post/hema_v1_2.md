@@ -27,7 +27,7 @@ url = "/2017/08/09/河马WEBSHELL扫描器V1_2.html"
 
 1. 下载安装 
 
-	访问[官网](http://www.shellpub.com) 或者[点此直接下载](http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.4.0)
+	访问[官网](http://www.shellpub.com) 或者[点此直接下载](http://down.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.5.0)
 		
 	解压缩zip文件
 	

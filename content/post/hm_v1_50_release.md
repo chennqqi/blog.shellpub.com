@@ -24,7 +24,8 @@ url = "/2018/11/20/hm_new_version150.html"
 [windows版下载](http://dl.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.5.0)  
 [linux64位下载](http://dl.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.5.0)  
 [linux32位下载](http://dl.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.5.0)  
-
+[Linux版使用教程](http://www.shellpub.com/doc/hm_linux_usage.html)
+[windows版使用教程](http://blog.shellpub.com/2017/08/09/%E6%B2%B3%E9%A9%ACwebshell%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html)
 
 ## 功能更新
 
