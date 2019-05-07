@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="XMLDecoder解析流程分析">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  <title>XMLDecoder解析流程分析 &middot; SHELLPUB BLOG</title>
+
+  
+  
+
+  <link rel="stylesheet" href="//lib.baomitu.com/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//lib.baomitu.com/highlight.js/9.1.0/styles/androidstudio.min.css">
+  <script src="//lib.baomitu.com/highlight.js/9.1.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="css/custom.css">
+    
+  
+  
+    
+        <script src="js/baidu.js"></script>
+    
+  
+    
+        <script src="js/baidupush.js"></script>
+    
+  
+    
+        <script src="js/cnzz.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="/">SHELLPUB</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>HOME</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>POSTS</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/bug/"><i class='fa fa-bug fa-fw'></i>BUG</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/contact/"><i class='fa fa-phone fa-fw'></i>CONTACT</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://www.shellpub.com"><i class='fa fa-globe fa-fw'></i>官网</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://n.shellpub.com"><i class='fa fa-chrome fa-fw'></i>在线查杀</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>ABOUT</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/chennqqi" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/webshellpub" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>XMLDecoder解析流程分析</h1>
+  <h2>XMLDecoder解析流程分析</h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-05-07 22:18</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/cve">CVE</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/rce">RCE</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2019-2725">CVE-2019-2725</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2019-2725">CVE-2019-2725</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2017-3506">CVE-2017-3506</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2017-10352">CVE-2017-10352</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/rce">RCE</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h1 id="xmldecoder解析流程分析">XMLDecoder解析流程分析</h1>
+
+<h2 id="前言">前言</h2>
+
+<p>经过了Weblogic的几个XMLDecoder相关的CVE(CVE-2017-3506、CVE-2017-10352、CVE-2019-2725)，好好看了一下XMLDecoder的分析流程。</p>
+
+<p><strong>本文以jdk7版本的XMLDecoder进行分析,jdk6的XMLDecoder流程都写在了一个类里面（com.sun.beans.ObjectHandler）</strong></p>
+
+<p>此处只分析XMLDecoder的解析流程，具体Weblogic的漏洞请看其它几位师傅写的Paper。</p>
+
+<p><a href="https://paper.seebug.org/909/">WebLogic RCE(CVE-2019-2725)漏洞之旅-Badcode</a></p>
+
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU0NzYzMzU0Mw==&amp;mid=2247483722&amp;idx=1&amp;sn=46ae6dc8d24efd3abc5d43e7caec412a&amp;chksm=fb4a21a2cc3da8b43a52bd08c8170723fb38ddab27c836dad67c053551dde68151839e330ce2&amp;mpshare=1&amp;scene=1&amp;srcid=0430zsBdpZPJ1Qp7Cy46H8S4">Weblogic CVE-2019-2725 分析报告-廖新喜</a></p>
+
+<p>不喜欢看代码的可以看官方关于XMLDecoder的文档：
+<a href="https://www.oracle.com/technetwork/java/persistence3-139471.html">Long Term Persistence of JavaBeans Components: XML Schema</a></p>
+
+<h2 id="xmldecoder的几个关键类">XMLDecoder的几个关键类</h2>
+
+<p>XMLDecoder的整体解析过程是基于Java自带的SAX XML解析进行的。</p>
+
+<p>以下所有类都在com.sun.beans.decoder包中</p>
+
+<h3 id="documenthandler">DocumentHandler</h3>
+
+<p>DocumentHandler继承自DefaultHandler，DefaultHandler是使用SAX进行XML解析的默认Handler，所以Weblogic在对XML对象进行validate的时候也使用了SAX，保证过程的一致性。</p>
+
+<p>DefaultHandler实现了EntityResolver, DTDHandler, ContentHandler, ErrorHandler四个接口。</p>
+
+<p>DocumentHandler主要改写了ContentHandler中的几个接口，毕竟主要是针对内容进行解析的，其它的保留默认就好。</p>
+
+<h3 id="elementhandler及相关继承类">ElementHandler及相关继承类</h3>
+
+<p>XMLDecoder对每种支持的标签都实现了一个继承与ElementHandler的类，具体可以在DocumentHandler的构造函数中看到：</p>
+
+<p><img src="/images/XMLDecoder.asset/DocumentHandler_Constructor.png" alt="DocumentHandler_Constructor" /></p>
+
+<p>所以XMLDecoder只能使用如上标签。</p>
+
+<p>其中继承关系与函数重写关系如下（很大，可以看大图或者自己用idea生成再看）：</p>
+
+<p><img src="/images/XMLDecoder.asset/ElementHandlers.png" alt="ElementHandlers" /></p>
+
+<p>如上的继承关系也是object标签可以用void标签替代用的原因，后面详说。</p>
+
+<h3 id="valueobject及其相关继承类">ValueObject及其相关继承类</h3>
+
+<p>ValueObject是一个包装类接口，包裹了实际解析过程中产生的对象（包括null)</p>
+
+<p>继承关系：</p>
+
+<p><img src="/images/XMLDecoder.asset/ValueObject.png" alt="ValueObject" /></p>
+
+<p>一般的对像由ValueObjectImpl进行包裹，而null\true\false（非boolean标签）则直接由自身Handler进行代表，实现相关接口。</p>
+
+<h2 id="xmldecoder过程中的几个关键函数">XMLDecoder过程中的几个关键函数</h2>
+
+<p>DocumentHandler的XML解析相关函数的详细内容可以参考Java Sax的<a href="https://docs.oracle.com/javase/7/docs/api/org/xml/sax/ContentHandler.html">ContentHandler的文档</a>。</p>
+
+<p>ElementHandler相关函数可以参考<a href="[http://www.docjar.com/docs/api/com/sun/beans/decoder/ElementHandler.html](http://www.docjar.com/docs/api/com/sun/beans/decoder/ElementHandler.html)">ElementHandler的文档</a>。</p>
+
+<p>DocumentHandler创建各个标签对应的ElementHandler并进行调用。</p>
+
+<h3 id="startelement">startElement</h3>
+
+<p>处理开始标签，包括属性的添加
+<strong>DocumentHandler:</strong>。XML解析处理过程中参数包含命名空间URL、标签名、完整标签名、属性列表。根据完整标签名创建对应的ElementHandler并添加相关属性，继续调用其startElement。</p>
+
+<p><strong>ElementHandler:</strong> 除了array标签以外，都无操作。</p>
+
+<h3 id="endelement">endElement</h3>
+
+<p>结束标签处理函数
+<strong>DocumentHandler:</strong> 调用对应ElementHandler的endElement函数，并将当前ElementHandler回溯到上一级的ElementHandler。</p>
+
+<p><strong>ElementHandler:</strong> 没看有重写的，都是调用抽象类ElementHandler的endElement函数，判断是否需要向parent写入参数和是否需要注册标签对象ID。</p>
+
+<h3 id="characters">characters</h3>
+
+<p><strong>DocumentHandler:</strong> 标签包裹的文本内容处理函数，比如处理<code>&lt;string&gt;java.lang.ProcessBuilder&lt;/string&gt;</code>包裹的文本内容就会从这个函数走。函数中最终调用了对应ElementHandler的addCharacter函数。</p>
+
+<h3 id="addcharacter">addCharacter</h3>
+
+<p><strong>ElementHandler:</strong> ElementHandler里的addCharacter只接受接种空白字符(空格\n\t\r)，其余的会抛异常，而StringElementHandler中则进行了重写，会记录完整的字符串值。</p>
+
+<h3 id="addattribute">addAttribute</h3>
+
+<p><strong>ElementHandler:</strong> 添加属性，每种标签支持的相应的属性，出现其余属性会报错。</p>
+
+<h3 id="getcontextbean">getContextBean</h3>
+
+<p><strong>ElementHandler:</strong> 获取操作对象，比如method标签在执行方法时，要从获取上级object/void/new标签Handler所创建的对象。该方法<strong>一般</strong>会触发上一级的getValueObject方法。</p>
+
+<h3 id="getvalueobject">getValueObject</h3>
+
+<p><strong>ElementHandler:</strong> 获取当前标签所产生的对象对应的ValueObject实例。具体实现需要看每个ElementHandler类。</p>
+
+<h3 id="isargument">isArgument</h3>
+
+<p><strong>ElementHandler:</strong> 判断是否为上一级标签Handler的参数。</p>
+
+<h3 id="addargument">addArgument</h3>
+
+<p><strong>ElementHandler:</strong> 为当前级标签Handler添加参数。</p>
+
+<h2 id="xmldecoder相关的其它">XMLDecoder相关的其它</h2>
+
+<p>两个成员变量，在类的实例化之前，通过对parent的调用进行增加参数。</p>
+
+<h3 id="parent">parent</h3>
+
+<p>最外层标签的ElementHandler的parent为null，而后依次为上一级标签对应的ElementHandler。</p>
+
+<h2 id="owner">owner</h2>
+
+<p><strong>ElementHandler:</strong> 固定owner为所属DocumentHandler对象。</p>
+
+<p><strong>DocumentHandler:</strong> owner固定为所属XMLDecoder对象。</p>
+
+<h2 id="简易版解析流程图">简易版解析流程图</h2>
+
+<p>PPT画的:-D</p>
+
+<p><img src="/images/XMLDecoder.asset/flowchart.png" alt="" /></p>
+
+<h2 id="跟着漏洞来波跟踪-weblogic">跟着漏洞来波跟踪(Weblogic)</h2>
+
+<p>来一份简单的代码：</p>
+
+<pre><code class="language-java">public static void main(String[] args) throws FileNotFoundException {
+    String filename = &quot;1.xml&quot;;
+    XMLDecoder XD =new XMLDecoder(new FileInputStream(filename));
+    Object o = XD.readObject();
+    System.out.println(o);
+}
+</code></pre>
+
+<h3 id="level1-什么过滤都没有">Level1:什么过滤都没有</h3>
+
+<pre><code class="language-XML">&lt;java&gt;
+    &lt;object class=&quot;java.lang.ProcessBuilder&quot;&gt;
+        &lt;array class=&quot;java.lang.String&quot; length=&quot;1&quot;&gt;
+            &lt;void index=&quot;0&quot;&gt;
+                &lt;string&gt;calc&lt;/string&gt;
+            &lt;/void&gt;
+        &lt;/array&gt;
+        &lt;void method=&quot;start&quot;/&gt;
+    &lt;/object&gt;
+&lt;/java&gt;
+</code></pre>
+
+<p>首先看下DocumentHandler的startElement:
+<img src="/images/XMLDecoder.asset/DocumentHandler_startElement.png" alt="" />
+1. 创建对应Handler，设置owner与parent
+2. 为Handler添加属性
+3. 调用Handler的startElement</p>
+
+<p>(后面DocumentHandler的部分忽略，直接从ElementHandler开始)
+下面从object标签对应的ObjectElementHandler开始看：
+进入obejct标签，object标签带有class属性，进入：
+<img src="/images/XMLDecoder.asset/ObjectElementHandler_addAttribute.png" alt="" />
+可以看到判断的列表里没有class标签，会调用父类(NewElementHandler)的addAttribute方法。
+<img src="/images/XMLDecoder.asset/NewElementHandler_addAttribute.png" alt="" />
+给type赋值为java.lang.ProcessBuilder对应的Class对象。</p>
+
+<p>中间创建array参数的部分略过，有兴趣的同学可以自己跟一下。</p>
+
+<p>进入void标签，设置好method参数，由于继承关系，看上面那张addAttribute图就好。</p>
+
+<p>退出void标签，进入elementHandler的endElement函数：
+<img src="/images/XMLDecoder.asset/ElementHandler_endElement.png" alt="" /></p>
+
+<p>由于继承关系，调用NewElementHandler的getValueObject函数：
+<img src="/images/XMLDecoder.asset/NewElementHandler_getValueObject.png" alt="" /></p>
+
+<p>继续进入进入ObjectElementHandler的带参数getValueObject函数：
+<img src="/images/XMLDecoder.asset/ObjectElementHandler_getValueObject.png" alt="" />
+此处的getContextBean会调用上一级也就是Object标签的getValueObject来获取操作对象。</p>
+
+<p>略过中间步骤，再次进入ObjectElementHandler的getValueObject方法：</p>
+
+<p>最终通过Expression创建了对象：
+<img src="/images/XMLDecoder.asset/Expression_new.png" alt="" />
+(可以看出此处的Expression的首个参数是来自于上面getContextBean获取的Class对象，先记住，后面会用)</p>
+
+<p>再次回到Void标签对应的getValueObject函数：
+最终通过Expression调用了start函数：
+<img src="/images/XMLDecoder.asset/Expression_start.png" alt="" /></p>
+
+<p>如果对继承关系感觉比较蒙的话，可以看下一节的继承关系图。</p>
+
+<p><strong>PS:</strong> 虽然ObjectElementHandler继承自NewElementHandler，但是其重写了getValueObject函数，两者是使用不同方法创建类的实例的。
+<strong>再PS:</strong> 其实不加java标签也能用,但是没法包含多个对象了。</p>
+
+<h3 id="level2-只过滤了object标签">Level2:只过滤了object标签</h3>
+
+<p>把上面的object标签替换为void即可。</p>
+
+<p>VoidElementHandler的继承关系：</p>
+
+<p><img src="/images/XMLDecoder.asset/VoidElementHandler.png" alt="VoidElementHandler" /></p>
+
+<p>可以看到只改写了isArgument,而在整个触发过程中并无影响，所以此处使用void标签与object标签完全没有区别。</p>
+
+<h3 id="level3-过滤一堆">Level3:过滤一堆</h3>
+
+<p>过滤了object/new/method标签，void标签只允许用index，array的class只能用byte，并限制了长度。</p>
+
+<p>CNVD-2018-2725(CVE-2019-2725)最初的poc使用了UnitOfWorkChangeSet这个类，这个类的构造方法如下（从Badcode师傅的Paper里盗的图）:</p>
+
+<p><img src="/images/XMLDecoder.asset/UnitOfWorkChangeSet_Constructor.png" alt="UnitOfWorkChangeSet_Constructor" /></p>
+
+<p>最初的poc主要利用<code>UnitOfWorkChangeSet</code>类在构造函数中，会将输入的byte数组的内容进行反序列化，所以说刚开始说是反序列化漏洞。</p>
+
+<p>其实这个洞是利用了存在问题的类的构造函数，因为没法用调用method了，就取了这种比较折中的方法。（其实还是有部分方法可以调用的:-D）。</p>
+
+<p>在做这个实验时需要导入weblogic 10.3.6的modules目录下com.oracle.toplink_1.1.0.0_11-1-1-6-0.jar文件。</p>
+
+<pre><code class="language-XML">&lt;java&gt;
+    &lt;class&gt;&lt;string&gt;oracle.toplink.internal.sessions.UnitOfWorkChangeSet&lt;/string&gt;&lt;void&gt;
+            &lt;array class=&quot;byte&quot; length=&quot;2&quot;&gt;
+                &lt;void index=&quot;0&quot;&gt;
+                    &lt;byte&gt;-84&lt;/byte&gt;
+                &lt;/void&gt;
+                &lt;void index=&quot;0&quot;&gt;
+                    &lt;byte&gt;-19&lt;/byte&gt;
+                &lt;/void&gt;
+            &lt;/array&gt;
+        &lt;/void&gt;
+    &lt;/class&gt;
+&lt;/java&gt; 
+</code></pre>
+
+<p>由于class标签继承了继承了string标签的<code>addCharacter</code>函数，导致其会将标签中包裹的空白字符(空格\r\n\t)也加入到classname中，导致找class失败，所以至少要将&lt;class&gt;到&lt;void&gt;之间的空白字符删除。</p>
+
+<p><strong>PS：</strong> 其实这里不加string标签也没问题。</p>
+
+<p>Level1中说到：
+&gt; Expression的首个参数是来自于上面getContextBean获取的Class对象</p>
+
+<p>也就是说，如果能够找到替代上面object/void+class属性的方法令getContextBean可以获取到Class对象，也久可以调用构造函数进行对象的创建。</p>
+
+<p>我们来看下此处调用的getContextBean的实现：
+<img src="/images/XMLDecoder.asset/NewElementHandler_getContextBean.png" alt="UnitOfWorkChangeSet_Constructor" /></p>
+
+<p>Level1/2中由于Object(Void)设置了class属性，那么type是有值的，所以直接返回type。</p>
+
+<p>而父类的getContextBean是调用parent的getValueObject函数，来获取上一级对象，所以此时我们令上一级获取到的对象为Class即可，所以此处使用了class标签令void的上一级获取的对象为Class对象。</p>
+
+<p>因为void标签只允许使用index属性，所以此处无法使用method属性来调用具体函数，所以只能寄期望于构造方法，就有了上面利用UnitOfWorkChangeSet类的构造方法来利用反序列化漏洞的手法。</p>
+
+<p>同样可利用的类还有之前<a href="https://github.com/irsl/jackson-rce-via-spel/">jackson rce</a>用的FileSystemXmlApplicationContext类。</p>
+
+<h2 id="总结">总结</h2>
+
+<p>XMLDecoder的流程还是蛮有意思的，具体各标签的功能、详细解析流程，还需要大家自己看一下。</p>
+
+<p>顺便重要的事情说三遍：
+一定要自己跟一下！
+一定要自己跟一下！
+一定要自己跟一下！</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="/2018/11/20/hm_new_version150.html"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="/2018/11/20/hm_new_version150.html">河马WEBSHELL扫描器1.5.0发布</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+  
+  
+  
+  ﻿
+
+<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTUxNC82MDgy">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
+
+</div>
+
+</div>
+</div>
+<script src="js/ui.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'Your Google Analytics tracking ID', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</body>
+</html>
+

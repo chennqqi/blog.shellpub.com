@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37.1" />
 
-  <title>河马WEBSHELL扫描器1.5.0发布 &middot; SHELLPUB BLOG</title>
+  <title>Rce &middot; SHELLPUB BLOG</title>
 
   
   
@@ -40,6 +40,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="SHELLPUB BLOG" href="/tags/rce/index.xml" />
   
 
   
@@ -137,6 +139,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="/tags/rce/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -240,16 +246,20 @@
 
 
 <div class="header">
-  <h1>河马WEBSHELL扫描器1.5.0发布</h1>
-  <h2></h2>
+  <h1>Rce</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="/2019/05/07/xmldecode_ana.html">XMLDecoder解析流程分析</a></h2>
+
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>2018-11-20 12:08</time>
+    <time>2019-05-07 22:18</time>
   </div>
 
   
@@ -260,7 +270,9 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="topics/%E5%90%8E%E9%97%A8">后门</a>
+      <a class="post-taxonomy-topic" href="topics/cve">CVE</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/rce">RCE</a>
     
   </div>
   
@@ -280,9 +292,15 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="tags/%E5%8F%91%E7%89%88">发版</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="tags/cve-2019-2725">CVE-2019-2725</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="tags/hm">hm</a>
+      <a class="post-taxonomy-tag" href="tags/cve-2019-2725">CVE-2019-2725</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2017-3506">CVE-2017-3506</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2017-10352">CVE-2017-10352</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/rce">RCE</a>
     
   </div>
   
@@ -290,159 +308,49 @@
 
 </div>
 
-  
+  </header>
 
-<h1 id="河马查杀1-5-0-发布">河马查杀1.5.0 发布</h1>
-
-<p><center>
-<img src="http://blog.shellpub.com/images/2.png" alt="" />
-</center></p>
-
-<p>本次更新为修复性更新</p>
-
-<h2 id="下载地址">下载地址</h2>
-
-<p><a href="http://dl.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.5.0">windows版下载</a><br />
-<a href="http://dl.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.5.0">linux64位下载</a><br />
-<a href="http://dl.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.5.0">linux32位下载</a><br />
-<a href="http://www.shellpub.com/doc/hm_linux_usage.html">Linux版使用教程</a>
-<a href="http://blog.shellpub.com/2017/08/09/%E6%B2%B3%E9%A9%ACwebshell%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html">windows版使用教程</a></p>
-
-<h2 id="功能更新">功能更新</h2>
-
-<ul>
-<li>现在可以通过配置文件hm.yml（首次扫描后自动生成)指定只扫描的文件类型
-
-<ul>
-<li>注意如果配置了只扫描的类型，那么排除类型将不会生效，不在名单中的类型都不会扫描，建议新手不要使用这种配置</li>
-</ul></li>
-</ul>
-
-<h2 id="bug修正">BUG修正</h2>
-
-<ul>
-<li>修复了一个崩溃后不能正常退出的BUG</li>
-</ul>
-
-<h2 id="已知问题">已知问题</h2>
-
-<ul>
-<li>最新版的kali下可能无法运行(内核4.14, 增加了一个GCC选项 <a href="https://github.com/golang/go/issues/20427">https://github.com/golang/go/issues/20427</a>), 如果您须要这个环境下的程序请通过本文下方的联系方式联系我们免费获取。</li>
-</ul>
-
-<h2 id="已测试环境">已测试环境</h2>
-
-<pre><code>|      OS    |      kernel     |  arch | result |
-|------------|-----------------|-------|--------|
-|  windows7  |     6.1.7601    | amd64 |   OK   |
-| CentoOS7.4 | 3.10.0-693.21.1 | amd64 |   OK   |
-| CentOS6.0  |    2.6.32-71    | 386   |   OK   |
-|Ubuntu18.04 |4.15.0-29-generic| amd64 |   OK   |
-|  Kali2.0   |  4.14.0-kali3   | amd64 | FAIELD |
-</code></pre>
-
-<h2 id="常见问题">常见问题</h2>
-
-<ol>
-<li><p>扫描失败，或者扫描文件数目为0</p>
-
-<pre><code>软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等
-</code></pre></li>
-
-<li><p>扫描时崩溃</p>
-
-<pre><code>请检查您使用的软件版本和操作系统版本是否匹配
-情检查您当前的用户是否为管理员用户
-</code></pre></li>
-
-<li><p>linux下没有找到可执行的文件</p>
-
-<pre><code>请检查是否配置了环境变量或者使用./hm的方式来运行程序
-</code></pre></li>
-
-<li><p>如何配置扩展名白名单</p>
-
-<pre><code>在软件目录下有hm.yml文件，按照默认格式添加不需要被扫描的文件类型的扩展名
-jpg,png,gif不建议添加，有一类后门是隐藏在图片之中的。
-</code></pre></li>
-
-<li><p>如何查看扫描结果</p>
-
-<pre><code>扫描结果在扫描结束之后会保存到软件目录下的result.csv文件中，windows版可以在界面上直接查看结果
-</code></pre></li>
-
-<li><p>如何实现定时扫描</p>
-
-<pre><code>linux利用系统crontab，在crontab中添加定时扫描任务。
-</code></pre></li>
-
-<li><p>如果安装了旧版软件是否能够自动更新</p>
-
-<pre><code>linux环境下您可以在软件所在目录执行`hm update`命令，软件会自动升级到最新版本
-</code></pre></li>
-</ol>
-
-<p>如果在使用过程中遇到问题，可以在本文下面留言或加<a href="tencent://message/?uin=1494922137&amp;Site=&amp;Menu=yes">QQ:1494922137</a></p>
-
+  <p>
+  XMLDecoder解析流程分析 前言 经过了Weblogic的几个XMLDecoder相关的CVE(CVE-2017-3506、CVE-2017-10352、CVE-2019-2725)，好好看了一下XMLDecoder的分析流程。
+本文以jdk7版本的XMLDecoder进行分析,jdk6的XMLDecoder流程都写在了一个类里面（com.sun.beans.ObjectHandler）
+此处只分析XMLDecoder的解析流程，具体Weblogic的漏洞请看其它几位师傅写的Paper。
+WebLogic RCE(CVE-2019-2725)漏洞之旅-Badcode
+Weblogic CVE-2019-2725 分析报告-廖新喜
+不喜欢看代码的可以看官方关于XMLDecoder的文档： Long Term Persistence of JavaBeans Components: XML Schema
+XMLDecoder的几个关键类 XMLDecoder的整体解析过程是基于Java自带的SAX XML解析进行的。
+以下所有类都在com.sun.beans.decoder包中
+DocumentHandler DocumentHandler继承自DefaultHandler，DefaultHandler是使用SAX进行XML解析的默认Handler，所以Weblogic在对XML对象进行validate的时候也使用了SAX，保证过程的一致性。
+DefaultHandler实现了EntityResolver, DTDHandler, ContentHandler, ErrorHandler四个接口。
+DocumentHandler主要改写了ContentHandler中的几个接口，毕竟主要是针对内容进行解析的，其它的保留默认就好。
+ElementHandler及相关继承类 XMLDecoder对每种支持的标签都实现了一个继承与ElementHandler的类，具体可以在DocumentHandler的构造函数中看到：
+所以XMLDecoder只能使用如上标签。
+其中继承关系与函数重写关系如下（很大，可以看大图或者自己用idea生成再看）：
+如上的继承关系也是object标签可以用void标签替代用的原因，后面详说。
+ValueObject及其相关继承类 ValueObject是一个包装类接口，包裹了实际解析过程中产生的对象（包括null)
+继承关系：
+一般的对像由ValueObjectImpl进行包裹，而null\true\false（非boolean标签）则直接由自身Handler进行代表，实现相关接口。
+XMLDecoder过程中的几个关键函数 DocumentHandler的XML解析相关函数的详细内容可以参考Java Sax的ContentHandler的文档。
+ElementHandler相关函数可以参考ElementHandler的文档。
+DocumentHandler创建各个标签对应的ElementHandler并进行调用。
+startElement 处理开始标签，包括属性的添加 DocumentHandler:。XML解析处理过程中参数包含命名空间URL、标签名、完整标签名、属性列表。根据完整标签名创建对应的ElementHandler并添加相关属性，继续调用其startElement。
+ElementHandler: 除了array标签以外，都无操作。
+endElement 结束标签处理函数 DocumentHandler: 调用对应ElementHandler的endElement函数，并将当前ElementHandler回溯到上一级的ElementHandler。
+ElementHandler: 没看有重写的，都是调用抽象类ElementHandler的endElement函数，判断是否需要向parent写入参数和是否需要注册标签对象ID。
+characters DocumentHandler: 标签包裹的文本内容处理函数，比如处理&lt;string&gt;java.lang.ProcessBuilder&lt;/string&gt;包裹的文本内容就会从这个函数走。函数中最终调用了对应ElementHandler的addCharacter函数。
+addCharacter ElementHandler: ElementHandler里的addCharacter只接受接种空白字符(空格\n\t\r)，其余的会抛异常，而StringElementHandler中则进行了重写，会记录完整的字符串值。
+addAttribute ElementHandler: 添加属性，每种标签支持的相应的属性，出现其余属性会报错。
+getContextBean ElementHandler: 获取操作对象，比如method标签在执行方法时，要从获取上级object/void/new标签Handler所创建的对象。该方法一般会触发上一级的getValueObject方法。
+getValueObject ElementHandler: 获取当前标签所产生的对象对应的ValueObject实例。具体实现需要看每个ElementHandler类。
+  </p>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="/2018/07/18/weblogic_vul_alarm.html"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="/2018/07/18/weblogic_vul_alarm.html">漏洞预警-WebLogic远程命令执行 CVE-2018-2893&amp;CVE-2018-2894</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="/2019/05/07/xmldecode_ana.html">XMLDecoder解析流程分析</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="/2019/05/07/xmldecode_ana.html"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+  <footer>
+    <a href="/2019/05/07/xmldecode_ana.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
 
   
-  
-  
-  
-  ﻿
-
-<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTUxNC82MDgy">
-<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-</script>
-<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-
-
-
 </div>
 
 </div>
@@ -467,4 +375,3 @@ jpg,png,gif不建议添加，有一类后门是隐藏在图片之中的。
 
 </body>
 </html>
-
