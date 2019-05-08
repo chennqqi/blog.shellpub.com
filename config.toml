@@ -26,8 +26,8 @@ paginate = 10
   dateFormat = "2006-01-02 15:04"
   # Include any custom CSS and/or JS files
   # (relative to /static folder)
-  custom_css = ["css/custom.css"]
-  custom_js = ["js/baidu.js","js/baidupush.js","js/cnzz.js"]
+  custom_css = ["/css/custom.css"]
+  custom_js = ["/js/baidu.js","/js/baidupush.js","/js/cnzz.js"]
   BaiduShare = "89860593"
 
 [menu]
