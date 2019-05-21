@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on SHELLPUB BLOG</title>
-    <link>/topics/windows/</link>
-    <description>Recent content in Windows on SHELLPUB BLOG</description>
+    <title>漏洞修复 on SHELLPUB BLOG</title>
+    <link>/tags/%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/</link>
+    <description>Recent content in 漏洞修复 on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
     <lastBuildDate>Tue, 21 May 2019 10:18:30 +0800</lastBuildDate>
     
-	<atom:link href="/topics/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,17 +20,6 @@
       <description>CVE-2019-0708漏洞预警及修复建议  
 漏洞概述 2019年5月14日，微软发布阅读安全更新，其中包含一个RDP(远程桌面3389）远程代码执行的漏洞安全补丁。该漏洞用允许攻击者利用对外开放的RDP服务直接入侵系统，远程执行代码。
 受影响的系统  Windows 7 Windows Server 2008 R2 Windows Server 2008 Windows XP Windows 2003  修复建议  如果您使用的是桌面版的系统，如飞必要，请关闭远程桌面功能 如果是服务器版本，请尽快安装windows漏洞补丁 打开操作系统的自动更新功能 使用杀毒软件  补丁下载地址  windows 7 x64 补丁下载 windows 7 x86 补丁下载 Windows Server 2008 x86 补丁下载 Windows Server 2008 x64 补丁下载 Windows Server 2008 R2 Itanium 补丁下载 Windows Server 2008 R2 x64 Windows Server 2008 Itanium Windows Server 2003 x86 Windows Server 2003 x64 Windows XP SP3 x86 Windows XP SP2 x64 Windows XP SP3 for XPe  备注：x64 表示64位操作系统, x86 表示32位系统</description>
-    </item>
-    
-    <item>
-      <title>asp 限制多IP登录</title>
-      <link>/2017/08/03/asp_off-site-landing-warning.html</link>
-      <pubDate>Thu, 03 Aug 2017 10:01:17 +0800</pubDate>
-      
-      <guid>/2017/08/03/asp_off-site-landing-warning.html</guid>
-      <description>目的 限制同一账号多IP登录
-原理  前端不断发送Ajax请求后端ASP，每隔几秒钟更新一次登陆请求。 后端记录登陆IP和最后登录时间。 如发现登录IP与最后登录IP不同，则登陆失败。 为了防止请求被缓存, 在请求中加随机数。 需要注意的是NAT环境下（网吧或者企业学校等公用出口）, 使用这个代码会导致其他用户登陆失败  代码 ajax_update.js
-//author :x@shellpub.com //website:www.shellpub.com function makeRequest() { var guid = rnd(); //记住给个随机数，不然的话有缓存 var url = &amp;quot;updateLogin.asp&amp;quot;; createXMLHttpRequest(); xmlHttp.onreadystatechange = handleRefresh; xmlHttp.open(&amp;quot;GET&amp;quot;, url, false); xmlHttp.send(null); } //创建xmlHttp var xmlHttp; function createXMLHttpRequest() { if (window.ActiveXObject) { xmlHttp = new ActiveXObject(&amp;quot;Microsoft.XMLHTTP&amp;quot;); } else if (window.XMLHttpRequest) { xmlHttp = new XMLHttpRequest(); } } //返回信息 function handleRefresh() { if (xmlHttp.readyState == 4) { if (xmlHttp.</description>
     </item>
     
   </channel>

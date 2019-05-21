@@ -6,10 +6,21 @@
     <description>Recent content in Windows on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 30 Jan 2018 13:46:17 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2019 10:18:30 +0800</lastBuildDate>
     
 	<atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CVE-2019-0708漏洞预警及修复建议</title>
+      <link>/2019/05/21/cve-2019-0708_warning_fix.html</link>
+      <pubDate>Tue, 21 May 2019 10:18:30 +0800</pubDate>
+      
+      <guid>/2019/05/21/cve-2019-0708_warning_fix.html</guid>
+      <description>CVE-2019-0708漏洞预警及修复建议  
+漏洞概述 2019年5月14日，微软发布阅读安全更新，其中包含一个RDP(远程桌面3389）远程代码执行的漏洞安全补丁。该漏洞用允许攻击者利用对外开放的RDP服务直接入侵系统，远程执行代码。
+受影响的系统  Windows 7 Windows Server 2008 R2 Windows Server 2008 Windows XP Windows 2003  修复建议  如果您使用的是桌面版的系统，如飞必要，请关闭远程桌面功能 如果是服务器版本，请尽快安装windows漏洞补丁 打开操作系统的自动更新功能 使用杀毒软件  补丁下载地址  windows 7 x64 补丁下载 windows 7 x86 补丁下载 Windows Server 2008 x86 补丁下载 Windows Server 2008 x64 补丁下载 Windows Server 2008 R2 Itanium 补丁下载 Windows Server 2008 R2 x64 Windows Server 2008 Itanium Windows Server 2003 x86 Windows Server 2003 x64 Windows XP SP3 x86 Windows XP SP2 x64 Windows XP SP3 for XPe  备注：x64 表示64位操作系统, x86 表示32位系统</description>
+    </item>
     
     <item>
       <title>漏洞预警-MS17010 Wanncry再次来袭</title>
