@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="XMLDecoder解析流程分析">
-  <meta name="generator" content="Hugo 0.37.1" />
+  <meta name="generator" content="Hugo 0.58.3" />
 
   <title>XMLDecoder解析流程分析 &middot; SHELLPUB BLOG</title>
 
@@ -430,10 +430,10 @@
 <p>来一份简单的代码：</p>
 
 <pre><code class="language-java">public static void main(String[] args) throws FileNotFoundException {
-    String filename = &quot;1.xml&quot;;
-    XMLDecoder XD =new XMLDecoder(new FileInputStream(filename));
-    Object o = XD.readObject();
-    System.out.println(o);
+	String filename = &quot;1.xml&quot;;
+	XMLDecoder XD =new XMLDecoder(new FileInputStream(filename));
+	Object o = XD.readObject();
+	System.out.println(o);
 }
 </code></pre>
 
@@ -447,7 +447,7 @@
             &lt;/void&gt;
         &lt;/array&gt;
         &lt;void method=&quot;start&quot;/&gt;
-    &lt;/object&gt;
+  	&lt;/object&gt;
 &lt;/java&gt;
 </code></pre>
 
@@ -600,7 +600,7 @@
   
   
   
-  ﻿
+  
 
 <div id="lv-container" data-id="city" data-uid="MTAyMC8yOTUxNC82MDgy">
 <script type="text/javascript">

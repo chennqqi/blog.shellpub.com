@@ -6,10 +6,26 @@
     <description>Recent content in Posts on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 21 May 2019 10:18:30 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Sep 2019 09:08:32 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>河马WEBSHELL扫描器1.6.0发布</title>
+      <link>/2019/09/25/hm_new_version160.html</link>
+      <pubDate>Wed, 25 Sep 2019 09:08:32 +0800</pubDate>
+      
+      <guid>/2019/09/25/hm_new_version160.html</guid>
+      <description>河马查杀1.6.0 发布  
+本次更新为修复性更新
+下载地址 windows版下载
+linux64位下载
+linux32位下载
+Linux版使用教程
+windows版使用教程
+功能更新  新增hmdocker &amp;ndash;docker版的查杀，以适配更多的linux发行版 重写了asp解码，取消跨语言调用；这个特性会导致扫描asp文件速度变慢，但可以检出更多的asp文件webshell 增加jar文件检测，检测方法同war文件； 如果您不需要检测jar文件，可以在hm.yml中忽略jar文件 适配Kali系统 新增规则 支持检测phpstudy DLL后门  BUG修正  修复扫描文件时指定输出路径(-output参数)无效的BUG  已知问题  不支持内核2.6.18以下版本（即centos5系统默认内核版本)且无支持计划  兼容性测试 | OS | kernel | version | arch | result | |------------|-----------------|---------|------|-------- | windows | - | &amp;gt;=2003 | 32/64| OK | | CentOS | &amp;gt;=2.6.18 | &amp;gt;=5 | | OK | | CentOS | &amp;lt;2.6.18 | &amp;lt; 5 | 32/64| 不支持 | | Ubuntu | - | - | | OK | | Kali | - | 2.</description>
+    </item>
     
     <item>
       <title>CVE-2019-0708漏洞预警及修复建议 附POC</title>
