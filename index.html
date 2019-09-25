@@ -5,7 +5,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
-  <meta name="generator" content="Hugo 0.58.3" />
+  <meta name="generator" content="Hugo 0.37.1" />
 
   <title>SHELLPUB BLOG</title>
 
@@ -93,7 +93,7 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>HOME</a>
+          <a class="pure-menu-link" href="/post/"><i class='fa fa-home fa-fw'></i>HOME</a>
       
         </li>
       
@@ -254,7 +254,7 @@
   
     <article>
   <header>
-    <h2><a href="/post/">Posts</a></h2>
+    <h2><a href="/2019/09/25/hm_new_version160.html">河马WEBSHELL扫描器1.6.0发布</a></h2>
 
     <div class="post-meta">
 
@@ -266,7 +266,37 @@
   
 
   
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E5%90%8E%E9%97%A8">后门</a>
+    
+  </div>
+  
+  
 
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/%E5%8F%91%E7%89%88">发版</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/hm">hm</a>
+    
+  </div>
+  
   
 
 </div>
@@ -274,7 +304,685 @@
   </header>
 
   <p>
+  河马查杀1.6.0 发布  
+本次更新为修复性更新
+下载地址 windows版下载
+linux64位下载
+linux32位下载
+Linux版使用教程
+windows版使用教程
+功能更新  新增hmdocker &ndash;docker版的查杀，以适配更多的linux发行版 重写了asp解码，取消跨语言调用；这个特性会导致扫描asp文件速度变慢，但可以检出更多的asp文件webshell 增加jar文件检测，检测方法同war文件； 如果您不需要检测jar文件，可以在hm.yml中忽略jar文件 适配Kali系统 新增规则 支持检测phpstudy DLL后门  BUG修正  修复扫描文件时指定输出路径(-output参数)无效的BUG  已知问题  不支持内核2.6.18以下版本（即centos5系统默认内核版本)且无支持计划  兼容性测试 | OS | kernel | version | arch | result | |------------|-----------------|---------|------|-------- | windows | - | &gt;=2003 | 32/64| OK | | CentOS | &gt;=2.6.18 | &gt;=5 | | OK | | CentOS | &lt;2.6.18 | &lt; 5 | 32/64| 不支持 | | Ubuntu | - | - | | OK | | Kali | - | 2.
+  </p>
+
   
+  <footer>
+    <a href="/2019/09/25/hm_new_version160.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2019/05/21/cve-2019-0708_warning_fix.html">CVE-2019-0708漏洞预警及修复建议 附POC</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-05-21 10:18</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/windows">windows</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/cve">CVE</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/rce">RCE</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/cve">CVE</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/windows">windows</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D">漏洞修复</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  CVE-2019-0708漏洞预警及修复建议 附POC  
+漏洞概述 2019年5月14日，微软发布阅读安全更新，其中包含一个RDP(远程桌面3389）远程代码执行的漏洞安全补丁。该漏洞用允许攻击者利用对外开放的RDP服务直接入侵系统，远程执行代码。
+受影响的系统  Windows 7 Windows Server 2008 R2 Windows Server 2008 Windows XP Windows 2003  修复建议  如果您使用的是桌面版的系统，如飞必要，请关闭远程桌面功能 如果是服务器版本，请尽快安装windows漏洞补丁 打开操作系统的自动更新功能 使用杀毒软件  补丁下载地址  windows 7 x64 补丁下载 windows 7 x86 补丁下载 Windows Server 2008 x86 补丁下载 Windows Server 2008 x64 补丁下载 Windows Server 2008 R2 Itanium 补丁下载 Windows Server 2008 R2 x64 Windows Server 2008 Itanium Windows Server 2003 x86 Windows Server 2003 x64 Windows XP SP3 x86 Windows XP SP2 x64 Windows XP SP3 for XPe  备注：x64 表示64位操作系统, x86 表示32位系统
+  </p>
+
+  
+  <footer>
+    <a href="/2019/05/21/cve-2019-0708_warning_fix.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2019/05/07/xmldecode_ana.html">XMLDecoder解析流程分析</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-05-07 22:18</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/cve">CVE</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/rce">RCE</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2019-2725">CVE-2019-2725</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2019-2725">CVE-2019-2725</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2017-3506">CVE-2017-3506</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2017-10352">CVE-2017-10352</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/rce">RCE</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  XMLDecoder解析流程分析 前言 经过了Weblogic的几个XMLDecoder相关的CVE(CVE-2017-3506、CVE-2017-10352、CVE-2019-2725)，好好看了一下XMLDecoder的分析流程。
+本文以jdk7版本的XMLDecoder进行分析,jdk6的XMLDecoder流程都写在了一个类里面（com.sun.beans.ObjectHandler）
+此处只分析XMLDecoder的解析流程，具体Weblogic的漏洞请看其它几位师傅写的Paper。
+WebLogic RCE(CVE-2019-2725)漏洞之旅-Badcode
+Weblogic CVE-2019-2725 分析报告-廖新喜
+不喜欢看代码的可以看官方关于XMLDecoder的文档： Long Term Persistence of JavaBeans Components: XML Schema
+XMLDecoder的几个关键类 XMLDecoder的整体解析过程是基于Java自带的SAX XML解析进行的。
+以下所有类都在com.sun.beans.decoder包中
+DocumentHandler DocumentHandler继承自DefaultHandler，DefaultHandler是使用SAX进行XML解析的默认Handler，所以Weblogic在对XML对象进行validate的时候也使用了SAX，保证过程的一致性。
+DefaultHandler实现了EntityResolver, DTDHandler, ContentHandler, ErrorHandler四个接口。
+DocumentHandler主要改写了ContentHandler中的几个接口，毕竟主要是针对内容进行解析的，其它的保留默认就好。
+ElementHandler及相关继承类 XMLDecoder对每种支持的标签都实现了一个继承与ElementHandler的类，具体可以在DocumentHandler的构造函数中看到：
+所以XMLDecoder只能使用如上标签。
+其中继承关系与函数重写关系如下（很大，可以看大图或者自己用idea生成再看）：
+如上的继承关系也是object标签可以用void标签替代用的原因，后面详说。
+ValueObject及其相关继承类 ValueObject是一个包装类接口，包裹了实际解析过程中产生的对象（包括null)
+继承关系：
+一般的对像由ValueObjectImpl进行包裹，而null\true\false（非boolean标签）则直接由自身Handler进行代表，实现相关接口。
+XMLDecoder过程中的几个关键函数 DocumentHandler的XML解析相关函数的详细内容可以参考Java Sax的ContentHandler的文档。
+ElementHandler相关函数可以参考ElementHandler的文档。
+DocumentHandler创建各个标签对应的ElementHandler并进行调用。
+startElement 处理开始标签，包括属性的添加 DocumentHandler:。XML解析处理过程中参数包含命名空间URL、标签名、完整标签名、属性列表。根据完整标签名创建对应的ElementHandler并添加相关属性，继续调用其startElement。
+ElementHandler: 除了array标签以外，都无操作。
+endElement 结束标签处理函数 DocumentHandler: 调用对应ElementHandler的endElement函数，并将当前ElementHandler回溯到上一级的ElementHandler。
+ElementHandler: 没看有重写的，都是调用抽象类ElementHandler的endElement函数，判断是否需要向parent写入参数和是否需要注册标签对象ID。
+characters DocumentHandler: 标签包裹的文本内容处理函数，比如处理&lt;string&gt;java.lang.ProcessBuilder&lt;/string&gt;包裹的文本内容就会从这个函数走。函数中最终调用了对应ElementHandler的addCharacter函数。
+addCharacter ElementHandler: ElementHandler里的addCharacter只接受接种空白字符(空格\n\t\r)，其余的会抛异常，而StringElementHandler中则进行了重写，会记录完整的字符串值。
+addAttribute ElementHandler: 添加属性，每种标签支持的相应的属性，出现其余属性会报错。
+getContextBean ElementHandler: 获取操作对象，比如method标签在执行方法时，要从获取上级object/void/new标签Handler所创建的对象。该方法一般会触发上一级的getValueObject方法。
+getValueObject ElementHandler: 获取当前标签所产生的对象对应的ValueObject实例。具体实现需要看每个ElementHandler类。
+  </p>
+
+  
+  <footer>
+    <a href="/2019/05/07/xmldecode_ana.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2018/11/20/hm_new_version150.html">河马WEBSHELL扫描器1.5.0发布</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-11-20 12:08</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E5%90%8E%E9%97%A8">后门</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/%E5%8F%91%E7%89%88">发版</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/hm">hm</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  河马查杀1.5.0 发布  
+本次更新为修复性更新
+下载地址 windows版下载
+linux64位下载
+linux32位下载
+Linux版使用教程 windows版使用教程
+功能更新  现在可以通过配置文件hm.yml（首次扫描后自动生成)指定只扫描的文件类型  注意如果配置了只扫描的类型，那么排除类型将不会生效，不在名单中的类型都不会扫描，建议新手不要使用这种配置   BUG修正  修复了一个崩溃后不能正常退出的BUG  已知问题  最新版的kali下可能无法运行(内核4.14, 增加了一个GCC选项 https://github.com/golang/go/issues/20427), 如果您须要这个环境下的程序请通过本文下方的联系方式联系我们免费获取。  已测试环境 | OS | kernel | arch | result | |------------|-----------------|-------|--------| | windows7 | 6.1.7601 | amd64 | OK | | CentoOS7.4 | 3.10.0-693.21.1 | amd64 | OK | | CentOS6.0 | 2.6.32-71 | 386 | OK | |Ubuntu18.04 |4.15.0-29-generic| amd64 | OK | | Kali2.
+  </p>
+
+  
+  <footer>
+    <a href="/2018/11/20/hm_new_version150.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2018/07/18/weblogic_vul_alarm.html">漏洞预警-WebLogic远程命令执行 CVE-2018-2893&amp;CVE-2018-2894</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-07-18 14:12</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/weblogic">weblogic</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/weblogic">weblogic</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E9%A2%84%E8%AD%A6">预警</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  预警 今日(北京时间2018-07-18)Oracle官方发布CPU（Critical Patch Update关键更新补丁)通告, 本次通告包含的一个反序列化漏洞CVE-2018-2893和远程命令执行CVE-2018-2894危害较大，可被利用来挖矿； 其中CVE-2018-2894漏洞可以直接通过HTTP方式利用，安全漏洞评分系统(CVSS)高达9.8，请站长朋友及时更新，或者使用一些防护产品，以免造成严重损失。
+
+关于WebLogic WebLogic是美国Oracle公司出品的一个Application Server，确切的说是一个基于JAVAEE架构的中间件，WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用的Java应用服务器。将Java的动态功能和Java Enterprise标准的安全性引入大型网络应用的开发、集成、部署和管理之中。
+Oracle 一般会在1，4，7，10月中距离17号最近的周二发布安全补丁包。本站上次WebLogic预警也是今年4月份的18号。
+影响范围  Weblogic 10.3.6.0 Weblogic 12.1.3.0 Weblogic 12.2.1.2 Weblogic 12.2.1.3  修复建议 目前Oracle官方更新建议请访问 http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html 建议使用河马查杀客户端检测WEBSHELL,  
+关于河马 专注WEB安全研究与产品开发，有多年WEBSHELL清理检测经验  
+参考 oracle官方通告
+白帽汇 漏洞预警
+ADLab原创漏洞
+漏洞预警-CVE-2018-2628 WebLogic反序列化远程代码执行
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2018/06/04/hm_new_version141.html">河马WEBSHELL扫描器1.4.1发布</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-06-04 14:05</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E5%90%8E%E9%97%A8">后门</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/%E5%8F%91%E7%89%88">发版</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/hm">hm</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  河马查杀1.4.1 发布  
+本次更新为修复性更新
+下载地址 windows版下载
+linux64位下载
+linux32位下载
+功能更新  移除了一条存在误报的黑链检测规则  BUG修正  windows 图形界面体验优化，在添加扫描目录时现在点击添加扫描路径的文字也能添加  已知问题  最新版的kali下可能无法运行(内核4.14, 增加了一个GCC选项 https://github.com/golang/go/issues/20427), 如果您须要这个环境下的程序请通过本文下方的联系方式联系我们免费获取。   常见问题  扫描失败，或者扫描文件数目为0
+软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等  扫描时崩溃
+请检查您使用的软件版本和操作系统版本是否匹配 情检查您当前的用户是否为管理员用户  linux下没有找到可执行的文件
+请检查是否配置了环境变量或者使用./hm的方式来运行程序  如何配置扩展名白名单
+在软件目录下有hm.yml文件，按照默认格式添加不需要被扫描的文件类型的扩展名 jpg,png,gif不建议添加，有一类后门是隐藏在图片之中的。  如何查看扫描结果
+扫描结果在扫描结束之后会保存到软件目录下的result.csv文件中，windows版可以在界面上直接查看结果  如何实现定时扫描
+linux利用系统crontab，在crontab中添加定时扫描任务。  如果安装了旧版软件是否能够自动更新
+linux环境下您可以在软件所在目录执行`hm update`命令，软件会自动升级到最新版本   如果在使用过程中遇到问题，可以在本文下面留言或加QQ:1494922137
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2018/04/18/weblogic_rce_alarm.html">漏洞预警-WebLogic反序列化远程代码执行</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-04-18 10:02</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/weblogic">weblogic</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/weblogic">weblogic</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E9%A2%84%E8%AD%A6">预警</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  预警 今日凌晨(北京时间2018-04-18)Oracle官方发布CPU（Critical Patch Update关键更新补丁)通告, 本次更新修复了一个未授权远程代码执行的反序列化漏洞CVE-2018-2628。河马安全研究员已就此漏洞进行了验证，已经成功复现此漏洞。本漏洞危害较大可被利用来挖矿，对用户造成严重损失，建议用户第一时间更新。
+
+关于WebLogic WebLogic是美国Oracle公司出品的一个application server，确切的说是一个基于JAVAEE架构的中间件，WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用的Java应用服务器。将Java的动态功能和Java Enterprise标准的安全性引入大型网络应用的开发、集成、部署和管理之中。
+影响范围  Weblogic 10.3.6.0 Weblogic 12.1.3.0 Weblogic 12.2.1.2 Weblogic 12.2.1.3  修复建议 目前Oracle官方已经发布补丁，请移步 http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html 安装对应的补丁 如果在生产环境中，也可以临时禁用Weblogic T3协议， 据称此种方法存在被绕过风险，建议及时验证兼容性，并安装最新官方补丁 在安装补丁后建议使用河马WEBSHELL查杀客户端进行WEBSHELL检测和清理。  关于河马 专注WEB安全研究与产品开发，有多年WEBSHELL清理检测经验  参考 oracle官方通告 http://www.oracle.com/technetwork/security-advisory/cpuapr2018-3678067.html
+绿盟威胁情报 http://blog.nsfocus.net/category/threatalerts/
+白帽汇 漏洞预警
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2018/03/16/ubuntu_privilege-escalation_vulnerability_warning.html">漏洞预警-ubuntu系统存本地提权漏洞</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-03-16 16:10</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83">本地提权</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/aws">aws</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/amazon-web-service">Amazon Web Service</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%9C%AC%E5%9C%B0%E6%8F%90%E6%9D%83">本地提权</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/ubuntu">Ubuntu</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/privilege-escalation">Privilege Escalation</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  漏洞预警&ndash;ubuntu 系统存在本地提权漏洞 
+近日相关安全社群了解到内核版本 4.4.0-116的Ubuntu系统最新的本地提权漏洞。目前相关利用代码已经开始流传扩散，请广大站长，运维人员尽早做出应对措施，并跟进Ubuntu官方公告以便及时更新官方修复补丁。
+1. 存在漏洞的版本 
+经过河马卫士的安全人员进行测试确认，目前16.04的版本存在漏洞。另目前AWS,阿里云,腾讯云的Ubuntu系统的云主机受该漏洞影响，其他的国内外公有云厂商均可能受此影响。
+内核版本为4.4.0-116的ubuntu系统存在此漏洞
+对应的ubuntu发型版本号为16.04
+2. 修复建议 目前暂未有明确的补丁升级方案。 建议用户在评估风险后，通过修改内核参数限制普通用户使用bpf(2)系统调用： # echo 1 &gt; /proc/sys/kernel/unprivileged_bpf_disable 此临时修复方案来自360  参考资料 360 CEDRT ubuntu本地提权攻击预警
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2018/01/30/ms17010_new_threat.html">漏洞预警-MS17010 Wanncry再次来袭</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-01-30 13:46</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/ms17010">MS17010</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/remote-code-excute">remote code excute</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/windows">Windows</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  漏洞预警-MS17010最新利用工具公布，Wanncry再次来袭 影响Windows2000至2016所有版本 2018年01月29日，著名漏洞利用框架Metasploit添加了最新的针对MS17010（永恒之蓝）漏洞的最新利用模块。该利用模块可以攻击包括windows2000至2016的所有未打该补丁的Windows操作系统。shellpub.com 提醒广大站长更新系统补丁，做好防范工作，以免受到该漏洞的影响。
+MS17010(永恒之蓝)是从网络中泄露的NSA攻击工具包中针对SMB协议的远程代码执行漏洞。该漏洞在2017年被公布，微软公司在4月份发布补丁，但是未引起广泛关注。导致后面的wanncry利用该漏洞大肆传播，影响全球计算机系统。造成了巨大的影响。而最新公布的利用代码同样影响Windows 2016的系统。
+ 利用工具利用成功截图 
+漏洞影响 - Affect 该漏洞影响一下版本的Windows 操作系统：
+ Windows Server 2000 SP0 x86 Windows 2000 Professional SP4 x86 Windows 2000 Advanced Server SP4 x86 Windows XP SP0 x86 Windows XP SP1 x86 Windows XP SP2 x86 Windows XP SP3 x86 Windows XP SP2 x64 Windows Server 2003 x86 Windows Server 2003 Enterprise SP 2 x86 Windows Server 2003 x64 Windows Vista Home Premium x86 Windows Server 2008 x64 Windows 7 x86 Windows 7 x64 Windows Server 2008 R2 x64 Windows 8 x86 Windows 8 x64 Windows 8.
+  </p>
+
+  
+  <footer>
+    <a href="/2018/01/30/ms17010_new_threat.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
+    <h2><a href="/2018/01/29/hm_new_version140.html">河马WEBSHELL扫描器1.4.0发布</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2018-01-29 21:31</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E5%90%8E%E9%97%A8">后门</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/%E5%8F%91%E7%89%88">发版</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/hm">hm</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  河马查杀1.4.0 发布  
+随着weblogic漏洞（CVE-2017-3506)的爆发，近期挖矿程序猖獗; 本次更新主要增加了几个挖矿程序的检测规则。
+增加:
+ 黑链、暗链的检测规则 恶意挖矿脚本检测规则 恶意挖矿程序检测规则  下载地址 windows版下载
+linux64位下载
+linux32位下载
+功能更新  升级查杀引擎，提高查杀速度  BUG修正  修正版界面上扫描时间总是被累计，不会重置的BUG  已知问题 windows环境下，由于权限问题，有小概率导致扫描崩溃（测试环境无法复现），如果您遇到这个问题，请联系我们。  常见问题  扫描失败，或者扫描文件数目为0
+软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等  扫描时崩溃
+请检查您使用的软件版本和操作系统版本是否匹配 情检查您当前的用户是否为管理员用户  linux下没有找到可执行的文件
+请检查是否配置了环境变量或者使用./hm的方式来运行程序  如何配置扩展名白名单
+在软件目录下有hm.yml文件，按照默认格式添加不需要被扫描的文件类型的扩展名 jpg,png,gif不建议添加，有一类后门是隐藏在图片之中的。  如何查看扫描结果
+扫描结果在扫描结束之后会保存到软件目录下的result.csv文件中，windows版可以在界面上直接查看结果  如何实现定时扫描
+linux利用系统crontab，在crontab中添加定时扫描任务。  如果安装了旧版软件是否能够自动更新
+linux环境下您可以在软件所在目录执行`hm update`命令，软件会自动升级到最新版本   如果在使用过程中遇到问题，可以在本文下面留言或加QQ:1494922137
   </p>
 
   
@@ -283,6 +991,18 @@
   
 
   
+
+
+<nav class="pagination" role="pagination">
+  
+  <i class="fa fa-chevron-left"></i>
+  
+  <span>&nbsp;1 / 2&nbsp;</span>
+  
+  <a href="/page/2/"><i class="fa fa-chevron-right"></i></a>
+  
+</nav>
+
 
 
 </div>

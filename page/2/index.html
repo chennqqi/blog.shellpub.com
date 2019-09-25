@@ -93,7 +93,7 @@
       
       
         <li class="pure-menu-item">
-          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>HOME</a>
+          <a class="pure-menu-link" href="/post/"><i class='fa fa-home fa-fw'></i>HOME</a>
       
         </li>
       
@@ -251,6 +251,77 @@
 </div>
 
 <div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="/2017/12/22/hm_new_version132.html">河马WEBSHELL扫描器1.3.2发布</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2017-12-22 09:31</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E5%90%8E%E9%97%A8">后门</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/%E5%8F%91%E7%89%88">发版</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/hm">hm</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  河马查杀1.3.2 发布  
+近期不少用户反馈扫描时异常崩溃，我们调试后发现在获取版本失败导致的此问题，这个版本主要是修复这个BUG。 今日冬至，大家大吉大利，晚上吃鸡和饺子！
+下载地址 windows版下载
+linux64位下载
+linux32位下载
+功能更新  增加反馈页面  BUG修正  修正版本号获取失败时界面崩溃的BUG  优化  之前版本CGO DNS请求需要配置环境变量，这个版本直接集成到软件之中了 UI首页增加官方QQ，方便客户即时沟通  常见问题  扫描失败，或者扫描文件数目为0
+软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等  扫描时崩溃
+请检查您使用的软件版本和操作系统版本是否匹配 最常见导致崩溃的就是系统cgo兼容新问题，解决办法参考#已知问题  没有找到可执行的文件
+请检查是否配置了环境变量或者使用./hm的方式来运行程序  如何配置扩展名白名单
+在软件目录下有hm.yml文件，按照默认格式添加不需要被扫描的文件类型的扩展名 jpg,png,gif不建议添加，有一类后门是隐藏在图片之中的。  如何查看扫描结果
+扫描结果在扫描结束之后会保存到软件目录下的result.csv文件中，windows版可以在界面上直接查看结果  如何实现定时扫描
+linux利用系统crontab，在crontab中添加定时扫描任务。  如果安装了旧版软件是否能够自动更新
+linux环境下您可以在软件所在目录执行`hm update`命令，软件会自动升级到最新版本   如果在使用过程中遇到问题，可以在本文下面留言或加QQ:1494922137
+  </p>
+
+  
+</article>
+
   
     <article>
   <header>
