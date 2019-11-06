@@ -13,7 +13,7 @@ url = "/2018/01/29/hm_new_version140.html"
 
 # 河马查杀1.4.0 发布
 <center>
-![](http://blog.shellpub.com/images/2.png)
+![](/images/2.png)
 </center>
 
 随着weblogic漏洞（CVE-2017-3506)的爆发，近期挖矿程序猖獗; 本次更新主要增加了几个挖矿程序的检测规则。

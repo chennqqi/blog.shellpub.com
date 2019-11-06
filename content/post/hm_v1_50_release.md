@@ -14,7 +14,7 @@ url = "/2018/11/20/hm_new_version150.html"
 
 # 河马查杀1.5.0 发布
 <center>
-![](http://blog.shellpub.com/images/2.png)
+![](/images/2.png)
 </center>
 
 本次更新为修复性更新

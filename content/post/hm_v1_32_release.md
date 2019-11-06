@@ -13,7 +13,7 @@ url = "/2017/12/22/hm_new_version132.html"
 
 # 河马查杀1.3.2 发布
 <center>
-![](http://blog.shellpub.com/images/2.png)
+![](/images/2.png)
 </center>
 
 近期不少用户反馈扫描时异常崩溃，我们调试后发现在获取版本失败导致的此问题，这个版本主要是修复这个BUG。

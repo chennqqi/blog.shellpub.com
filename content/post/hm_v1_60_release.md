@@ -1,23 +1,21 @@
 +++
-draft = true
+draft = false
 author = "admin@shellpub.com"
-date = 2019-09-25T10:08:32+08:00
+date = 2019-09-25T09:08:32+08:00
 description = ""
 keywords = ["河马","后门", "发布", "webshell"]
 title = "河马WEBSHELL扫描器1.6.0发布"
 topics = ["后门"]
 tags = [ "发版", "hm" ]
 type = "post"
-url = "/2019/09/25/hm_new_version150.html"
+url = "/2019/09/25/hm_new_version160.html"
 +++
 
 
 # 河马查杀1.6.0 发布
 <center>
-![](http://blog.shellpub.com/images/2.png)
+![](/images/2.png)
 </center>
-
-本次更新为修复性更新
 
 ## 下载地址
 
@@ -33,7 +31,7 @@ url = "/2019/09/25/hm_new_version150.html"
 ## 功能更新
 
   * 新增hmdocker --docker版的查杀，以适配更多的linux发行版
-  * 重写了asp解码，取消跨语言调用；这个特性会导致扫描asp文件速度变慢，但可以检出更多的asp文件webshell
+  * 重写了asp解码，取消跨语言调用；这个特性会导致扫描asp文件速度变慢，但可以检出更多的asp类webshell
   * 增加jar文件检测，检测方法同war文件； 如果您不需要检测jar文件，可以在hm.yml中忽略jar文件
   * 适配Kali系统
   * 新增规则
@@ -73,7 +71,7 @@ url = "/2019/09/25/hm_new_version150.html"
 
 ## 常见问题
 
-1. 已经联网，但是扫描程序依然报没有连接网络
+1. 已经联网，但是扫描程序依然报没有连接网络到错误
 
 		可能的原因有两点： 一是您的操作系统时间于标准时间差距超过1分钟，使用ntp或者其他方式同步后问题解决； 
 		二是您操作系统的PKI证书系统老旧，更新后即可解决，debian/ubuntu使用update-ca-certificates命令，centos使用
@@ -87,7 +85,7 @@ url = "/2019/09/25/hm_new_version150.html"
 3. 扫描时崩溃
 
 		请检查您使用的软件版本和操作系统版本是否匹配
-		情检查您当前的用户是否为管理员用户
+		请检查您当前的用户是否为管理员用户
 
 4. linux下没有找到可执行的文件
 

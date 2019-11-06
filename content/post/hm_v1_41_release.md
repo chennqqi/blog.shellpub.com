@@ -14,7 +14,7 @@ url = "/2018/06/04/hm_new_version141.html"
 
 # 河马查杀1.4.1 发布
 <center>
-![](http://blog.shellpub.com/images/2.png)
+![](/images/2.png)
 </center>
 
 本次更新为修复性更新

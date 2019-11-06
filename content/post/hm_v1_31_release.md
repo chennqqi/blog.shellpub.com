@@ -13,7 +13,7 @@ url = "/2017/11/29/hm_new_version.html"
 
 # 
 <center>
-![](http://blog.shellpub.com/images/2.png)
+![](/images/2.png)
 </center>
 
 ## 下载地址

@@ -30,9 +30,16 @@ id， bug编号
   </tr>
   <tr>
     <td> 2 </td>
-    <td> 未修复 </td>
+    <td> 已修复 </td>
     <td> 所有版本 </td>
-    <td> 修复中 </td>
+    <td> 已修复(>=2.6.18) </td>
     <td> linux内核版本>4.4时，扫描时会崩溃 </td>
+  </tr>
+  <tr>
+    <td> 3 </td>
+    <td> 已修复 </td>
+    <td> 所有版本 </td>
+    <td> 已修复 </td>
+    <td> kali无法运行 </td>
   </tr>
 </table>
