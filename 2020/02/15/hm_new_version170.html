@@ -334,8 +334,8 @@
 <pre><code>|      OS    |      kernel     | version | arch | result |
 |------------|-----------------|---------|------|--------
 |  windows   |    -            | &gt;=2003  | 32/64|   OK   |
-|  CentOS    |    &gt;=2.6.18     | &gt;=6     |      |   OK   |
-|  CentOS    |    &lt;2.6.18      | &lt; 6     | 32/64| 不支持  |
+|  CentOS    |    &gt;=2.6.32     | &gt;=6     |      |   OK   |
+|  CentOS    |    &lt;2.6.32      | &lt; 6     | 32/64| 不支持  |
 |  Ubuntu    |    -            |  -      |      |   OK   |
 |  Kali      |    -            | 2.0,2019| 32/64|   OK   |
 |  Kali      |    -            | &lt;2.0    | 32/64|   -    |
@@ -358,7 +358,7 @@
 <ol>
 <li><p>已经联网，但是扫描程序依然报没有连接网络到错误</p>
 
-<pre><code>可能的原因有两点： 一是您的操作系统时间于标准时间差距超过1分钟，使用ntp或者其他方式同步后问题解决； 
+<pre><code>可能的原因有两点： 一是您的操作系统时间与标准时间差距超过1分钟，使用ntp或者其他方式同步后问题解决； 
 二是您操作系统的PKI证书系统老旧，更新后即可解决，debian/ubuntu使用update-ca-certificates命令，centos使用
 update-ca-trust extract命令
 </code></pre></li>
@@ -404,6 +404,11 @@ windows版检测到可更新版本后点击下载新版本
 <li><p>如何让软件不输出中文，只输出英文</p>
 
 <pre><code>linux配置环境变量HM_LANG=zh-CN则强制显示中文；配置HM_LANG=en-US强制显示英文系统
+</code></pre></li>
+
+<li><p>我不想下载软件如何快速检测</p>
+
+<pre><code>可以使用在线查杀https://n.shellpub.com,上传源代码zip包即可，需要注意点是上传大小限制为20MB
 </code></pre></li>
 </ol>
 
