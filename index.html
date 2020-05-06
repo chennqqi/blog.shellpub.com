@@ -254,6 +254,83 @@
   
     <article>
   <header>
+    <h2><a href="/2020/05/06/saltstack%E5%A4%9A%E7%89%88%E6%9C%ACrce%E5%AE%89%E5%85%A8%E9%80%9A%E5%91%8A.html">saltstack RCE安全通告</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-05-06 11:42</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/vulnerable">vulnerable</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E9%A2%84%E8%AD%A6">预警</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E8%BF%90%E7%BB%B4">运维</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  安全通告 Saltstack 定位是自动化运维工具，运维工具一旦出现漏洞危害影响较大。同类型的运维工具还有ansible,puppet,Chef
+据
+包含两个CVE
+ CVE-2020-11651 CVE-2020-11652  关于saltstack SaltStack是基于Python开发的一套C/S架构配置管理工具，是一个服务器基础架构集中化管理平台，具备配置管理、远程执行、监控等功能，基于Python语言实现，结合轻量级消息队列（ZeroMQ）与Python第三方模块（Pyzmq、PyCrypto、Pyjinjia2、python-msgpack和PyYAML等）构建。
+漏洞描述 影响范围 SaltStack &lt; 2019.2.4 SaltStack &lt; 3000.2
+问题排查  查看进程ps -ef|grep salt 如图所示为阿里云中某机器中招后截图，其中三个salt相关进程。 alicloud-salt-minion 为官方进程 /tmp/salt-minions 为挖矿样本  md5sum /tmp/salt-minions 计算挖矿样本hash为
+目前已知恶意hash如下： - a28ded80d7ab5c69d6ccde4602eef861 - 8ec3385e20d6d9a88bc95831783beaeb - 2c5cbc18d1796fd64f377c43175e79a3 - dc5b2fa7f85aa0bbd226afe3b5fcaeea - defc9efd1b430aea797e573922fa49ae
+file命令查看文件类型，挖矿进程为elf文件 正常文件为python脚本文件  检查网路链接netstat -anp|grep tcp|grep ESTABLISHED 如图所示，排除掉本地连接、排除掉入向链接，观察外连进程状态。  已知挖矿主机远程IP如下： - 217.12.210.192 - 206.189.92.32
+ 阿里云安全面板通知 如果您使用的阿里云，可以在安全面板上看到如图类似告警，请注意关注安全告警
+ 其他行为 目前发现该挖矿程序会关闭cpu占用较高的进程，在系统日志里可以查看到kill记录grep -r &quot;kill&quot; /var/log/messages*
+  也会关闭docker中的其他挖矿程序
+  </p>
+
+  
+  <footer>
+    <a href="/2020/05/06/saltstack%E5%A4%9A%E7%89%88%E6%9C%ACrce%E5%AE%89%E5%85%A8%E9%80%9A%E5%91%8A.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="/2020/02/15/hm_new_version170.html">河马WEBSHELL扫描器1.7.0发布</a></h2>
 
     <div class="post-meta">
@@ -912,75 +989,6 @@ linux环境下您可以在软件所在目录执行`hm update`命令，软件会�
 2. 修复建议 目前暂未有明确的补丁升级方案。 建议用户在评估风险后，通过修改内核参数限制普通用户使用bpf(2)系统调用： # echo 1 &gt; /proc/sys/kernel/unprivileged_bpf_disable 此临时修复方案来自360  参考资料 360 CEDRT ubuntu本地提权攻击预警
   </p>
 
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="/2018/01/30/ms17010_new_threat.html">漏洞预警-MS17010 Wanncry再次来袭</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2018-01-30 13:46</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="topics/ms17010">MS17010</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="topics/remote-code-excute">remote code excute</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  
-
-
-	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
-	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="tags/windows">Windows</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  漏洞预警-MS17010最新利用工具公布，Wanncry再次来袭 影响Windows2000至2016所有版本 2018年01月29日，著名漏洞利用框架Metasploit添加了最新的针对MS17010（永恒之蓝）漏洞的最新利用模块。该利用模块可以攻击包括windows2000至2016的所有未打该补丁的Windows操作系统。shellpub.com 提醒广大站长更新系统补丁，做好防范工作，以免受到该漏洞的影响。
-MS17010(永恒之蓝)是从网络中泄露的NSA攻击工具包中针对SMB协议的远程代码执行漏洞。该漏洞在2017年被公布，微软公司在4月份发布补丁，但是未引起广泛关注。导致后面的wanncry利用该漏洞大肆传播，影响全球计算机系统。造成了巨大的影响。而最新公布的利用代码同样影响Windows 2016的系统。
- 利用工具利用成功截图 
-漏洞影响 - Affect 该漏洞影响一下版本的Windows 操作系统：
- Windows Server 2000 SP0 x86 Windows 2000 Professional SP4 x86 Windows 2000 Advanced Server SP4 x86 Windows XP SP0 x86 Windows XP SP1 x86 Windows XP SP2 x86 Windows XP SP3 x86 Windows XP SP2 x64 Windows Server 2003 x86 Windows Server 2003 Enterprise SP 2 x86 Windows Server 2003 x64 Windows Vista Home Premium x86 Windows Server 2008 x64 Windows 7 x86 Windows 7 x64 Windows Server 2008 R2 x64 Windows 8 x86 Windows 8 x64 Windows 8.
-  </p>
-
-  
-  <footer>
-    <a href="/2018/01/30/ms17010_new_threat.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
-  </footer>
   
 </article>
 

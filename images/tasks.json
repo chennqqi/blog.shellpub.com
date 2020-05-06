@@ -1,0 +1,32 @@
+{
+    "version": "0.1.0",
+    "command": "go",
+    "isShellCommand": true,
+    "args": [
+        "build",
+        "-i",
+        "-v"
+    ],
+    "windows": {
+        "options": {
+            "env": {
+                "GOPATH": "C:\\Users\\wangxiaomei9\\go;D:\\workspace\\jd\\jstack-waf-proxy;D:\\workspace\\jd\\jstack-waf-proxy\\vendor"
+            }
+        }
+    },
+    "linux": {
+        "options": {
+            "env": {
+                //"GOPATH": "/home/USERNAME/GoPath:/home/USERNAME/Work/Git/...自定义目录.../"
+            }
+        }
+    },
+    "osx": {
+        "options": {
+            "env": {
+                //"GOPATH": "/home/USERNAME/GoPath:/home/USERNAME/Work/Git/...自定义目录.../"
+            }
+        }
+    },
+    "showOutput": "always"
+}
