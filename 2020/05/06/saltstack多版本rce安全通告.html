@@ -302,20 +302,20 @@
 
 <p>Saltstack 定位是自动化运维工具，运维工具一旦出现漏洞危害影响较大。同类型的运维工具还有<a href="https://www.ansible.com">ansible</a>,<a href="https://puppet.com/">puppet</a>,<a href="https://www.chef.io/">Chef</a></p>
 
-<p>据</p>
+<p>国外安全团体F-Secure报告了两个Saltstack漏洞</p>
 
 <p>包含两个CVE</p>
 
 <ul>
-<li>CVE-2020-11651</li>
-<li>CVE-2020-11652</li>
+<li>CVE-2020-11651 水平权限绕过漏洞</li>
+<li>CVE-2020-11652 任意文件读写漏洞</li>
 </ul>
+
+<p>通过对这两个漏洞的利用可以实现RCE的效果，在控制salt-master之后，通过salt大面积控制在运维系统下的主机</p>
 
 <h2 id="关于saltstack">关于saltstack</h2>
 
 <p>SaltStack是基于Python开发的一套C/S架构配置管理工具，是一个服务器基础架构集中化管理平台，具备配置管理、远程执行、监控等功能，基于Python语言实现，结合轻量级消息队列（ZeroMQ）与Python第三方模块（Pyzmq、PyCrypto、Pyjinjia2、python-msgpack和PyYAML等）构建。</p>
-
-<h2 id="漏洞描述">漏洞描述</h2>
 
 <h2 id="影响范围">影响范围</h2>
 
@@ -324,13 +324,11 @@ SaltStack &lt; 3000.2</p>
 
 <h2 id="问题排查">问题排查</h2>
 
-<ol>
-<li>查看进程<code>ps -ef|grep salt</code>
+<p><strong>1.查看进程</strong><code>ps -ef|grep salt</code>
 <img src="/images/salt/process.png" alt="" />
 如图所示为阿里云中某机器中招后截图，其中三个salt相关进程。
 <code>alicloud-salt-minion</code> 为官方进程
-<code>/tmp/salt-minions</code> 为挖矿样本</li>
-</ol>
+<code>/tmp/salt-minions</code> 为挖矿样本</p>
 
 <p>md5sum /tmp/salt-minions 计算挖矿样本hash为</p>
 
@@ -347,24 +345,20 @@ SaltStack &lt; 3000.2</p>
 <p>正常文件为python脚本文件
 <img src="/images/salt/file2.png" alt="" /></p>
 
-<ol>
-<li>检查网路链接<code>netstat -anp|grep tcp|grep ESTABLISHED</code>
+<p><strong>2.检查网路链接</strong><code>netstat -anp|grep tcp|grep ESTABLISHED</code>
 <img src="/images/salt/connection.png" alt="" />
-如图所示，排除掉本地连接、排除掉入向链接，观察外连进程状态。</li>
-</ol>
+如图所示，排除掉本地连接、排除掉入向链接，观察外连进程状态。</p>
 
 <p>已知挖矿主机远程IP如下：
 - 217.12.210.192
 - 206.189.92.32</p>
 
-<ol>
-<li><p>阿里云安全面板通知
+<p><strong>3.阿里云安全面板通知</strong>
 <img src="/images/salt/aliyun.png" alt="" />
-如果您使用的阿里云，可以在安全面板上看到如图类似告警，请注意关注安全告警</p></li>
+如果您使用的阿里云，可以在安全面板上看到如图类似告警，请注意关注安全告警</p>
 
-<li><p>其他行为
-目前发现该挖矿程序会关闭cpu占用较高的进程，在系统日志里可以查看到kill记录<code>grep -r &quot;kill&quot; /var/log/messages*</code></p></li>
-</ol>
+<p><strong>4.其他行为</strong>
+目前发现该挖矿程序会关闭cpu占用较高的进程，在系统日志里可以查看到kill记录<code>grep -r &quot;kill&quot; /var/log/messages*</code></p>
 
 <p><img src="/images/salt/messages.png" alt="" />
 也会关闭docker中的其他挖矿程序</p>
@@ -398,6 +392,10 @@ SaltStack &lt; 3000.2</p>
 <p><a href="https://gist.github.com/SwitHak/8e7fa45b5656c691ddf13c8c47e8fda6">CVE-2020-11651 AKA SaltStack RCE</a></p>
 
 <p><a href="https://labs.f-secure.com/advisories/saltstack-authorization-bypass">SaltStack authorization bypass</a></p>
+
+<p><a href="https://github.com/vulhub/vulhub/tree/master/saltstack">https://github.com/vulhub/vulhub/tree/master/saltstack</a></p>
+
+<p><a href="https://s.tencent.com/research/report/975.html">针对SaltStack远程命令执行漏洞（CVE-2020-11651、CVE-2020-11652）植入挖矿木马的应急响应 https://s.tencent.com/research/report/975.html</a></p>
 
 <p><a href="https://github.com/vulhub/vulhub/tree/master/saltstack">https://github.com/vulhub/vulhub/tree/master/saltstack</a></p>
 

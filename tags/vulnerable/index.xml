@@ -18,16 +18,20 @@
       
       <guid>/2020/05/06/saltstack%E5%A4%9A%E7%89%88%E6%9C%ACrce%E5%AE%89%E5%85%A8%E9%80%9A%E5%91%8A.html</guid>
       <description>安全通告 Saltstack 定位是自动化运维工具，运维工具一旦出现漏洞危害影响较大。同类型的运维工具还有ansible,puppet,Chef
-据
+国外安全团体F-Secure报告了两个Saltstack漏洞
 包含两个CVE
- CVE-2020-11651 CVE-2020-11652  关于saltstack SaltStack是基于Python开发的一套C/S架构配置管理工具，是一个服务器基础架构集中化管理平台，具备配置管理、远程执行、监控等功能，基于Python语言实现，结合轻量级消息队列（ZeroMQ）与Python第三方模块（Pyzmq、PyCrypto、Pyjinjia2、python-msgpack和PyYAML等）构建。
-漏洞描述 影响范围 SaltStack &amp;lt; 2019.2.4 SaltStack &amp;lt; 3000.2
-问题排查  查看进程ps -ef|grep salt 如图所示为阿里云中某机器中招后截图，其中三个salt相关进程。 alicloud-salt-minion 为官方进程 /tmp/salt-minions 为挖矿样本  md5sum /tmp/salt-minions 计算挖矿样本hash为
+ CVE-2020-11651 水平权限绕过漏洞 CVE-2020-11652 任意文件读写漏洞  通过对这两个漏洞的利用可以实现RCE的效果，在控制salt-master之后，通过salt大面积控制在运维系统下的主机
+关于saltstack SaltStack是基于Python开发的一套C/S架构配置管理工具，是一个服务器基础架构集中化管理平台，具备配置管理、远程执行、监控等功能，基于Python语言实现，结合轻量级消息队列（ZeroMQ）与Python第三方模块（Pyzmq、PyCrypto、Pyjinjia2、python-msgpack和PyYAML等）构建。
+影响范围 SaltStack &amp;lt; 2019.2.4 SaltStack &amp;lt; 3000.2
+问题排查 1.查看进程ps -ef|grep salt 如图所示为阿里云中某机器中招后截图，其中三个salt相关进程。 alicloud-salt-minion 为官方进程 /tmp/salt-minions 为挖矿样本
+md5sum /tmp/salt-minions 计算挖矿样本hash为
 目前已知恶意hash如下： - a28ded80d7ab5c69d6ccde4602eef861 - 8ec3385e20d6d9a88bc95831783beaeb - 2c5cbc18d1796fd64f377c43175e79a3 - dc5b2fa7f85aa0bbd226afe3b5fcaeea - defc9efd1b430aea797e573922fa49ae
-file命令查看文件类型，挖矿进程为elf文件 正常文件为python脚本文件  检查网路链接netstat -anp|grep tcp|grep ESTABLISHED 如图所示，排除掉本地连接、排除掉入向链接，观察外连进程状态。  已知挖矿主机远程IP如下： - 217.12.210.192 - 206.189.92.32
- 阿里云安全面板通知 如果您使用的阿里云，可以在安全面板上看到如图类似告警，请注意关注安全告警
- 其他行为 目前发现该挖矿程序会关闭cpu占用较高的进程，在系统日志里可以查看到kill记录grep -r &amp;quot;kill&amp;quot; /var/log/messages*
-  也会关闭docker中的其他挖矿程序</description>
+file命令查看文件类型，挖矿进程为elf文件 正常文件为python脚本文件 2.检查网路链接netstat -anp|grep tcp|grep ESTABLISHED 如图所示，排除掉本地连接、排除掉入向链接，观察外连进程状态。
+已知挖矿主机远程IP如下： - 217.12.210.192 - 206.189.92.32
+3.阿里云安全面板通知 如果您使用的阿里云，可以在安全面板上看到如图类似告警，请注意关注安全告警
+4.其他行为 目前发现该挖矿程序会关闭cpu占用较高的进程，在系统日志里可以查看到kill记录grep -r &amp;quot;kill&amp;quot; /var/log/messages*
+也会关闭docker中的其他挖矿程序
+修复建议  建议重装系统，因为salt进程权限为root权限，理论上被黑后，黑客拥有任意权限，可能种入隐藏后门。如果暂时无法重装系统可以使用阿里云提供的一键清理脚本curl https://ageis-check.oss-cn-hangzhou.aliyuncs.com/salt_miner_clean.sh | /bin/bash 升级到安全版本 2019.</description>
     </item>
     
   </channel>
