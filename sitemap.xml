@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2020/05/31/hm_new_version171.html</loc>
+    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2020/05/06/saltstack%E5%A4%9A%E7%89%88%E6%9C%ACrce%E5%AE%89%E5%85%A8%E9%80%9A%E5%91%8A.html</loc>
     <lastmod>2020-05-06T11:42:31+08:00</lastmod>
   </url>
@@ -245,7 +250,7 @@
   
   <url>
     <loc>/tags/hm/</loc>
-    <lastmod>2020-02-15T19:21:49+08:00</lastmod>
+    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -287,7 +292,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-05-06T11:42:31+08:00</lastmod>
+    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -317,7 +322,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-05-06T11:42:31+08:00</lastmod>
+    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -425,7 +430,7 @@
   
   <url>
     <loc>/tags/%E5%8F%91%E7%89%88/</loc>
-    <lastmod>2020-02-15T19:21:49+08:00</lastmod>
+    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -437,7 +442,7 @@
   
   <url>
     <loc>/topics/%E5%90%8E%E9%97%A8/</loc>
-    <lastmod>2020-02-15T19:21:49+08:00</lastmod>
+    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   

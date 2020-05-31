@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="saltstack漏洞挖矿排查">
+  <meta name="description" content="">
   <meta name="generator" content="Hugo 0.37.1" />
 
-  <title>saltstack RCE安全通告 &middot; SHELLPUB BLOG</title>
+  <title>河马WEBSHELL扫描器1.7.1发布 &middot; SHELLPUB BLOG</title>
 
   
   
@@ -240,8 +240,8 @@
 
 
 <div class="header">
-  <h1>saltstack RCE安全通告</h1>
-  <h2>saltstack漏洞挖矿排查</h2>
+  <h1>河马WEBSHELL扫描器1.7.1发布</h1>
+  <h2></h2>
 </div>
 <div class="content">
 
@@ -249,7 +249,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>2020-05-06 11:42</time>
+    <time>2020-05-31 21:21</time>
   </div>
 
   
@@ -260,7 +260,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
+      <a class="post-taxonomy-topic" href="topics/%E5%90%8E%E9%97%A8">后门</a>
     
   </div>
   
@@ -280,13 +280,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="tags/vulnerable">vulnerable</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="tags/%E5%8F%91%E7%89%88">发版</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="tags/%E9%A2%84%E8%AD%A6">预警</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="tags/%E8%BF%90%E7%BB%B4">运维</a>
+      <a class="post-taxonomy-tag" href="tags/hm">hm</a>
     
   </div>
   
@@ -296,121 +292,140 @@
 
   
 
-<p><center><img src="/images/salt/saltstack.jpeg" alt="" /></center></p>
+<h1 id="河马查杀1-7-1-发布">河马查杀1.7.1 发布</h1>
 
-<h2 id="安全通告">安全通告</h2>
+<p><center>
+<img src="/images/2.png" alt="" />
+</center></p>
 
-<p>Saltstack 定位是自动化运维工具，运维工具一旦出现漏洞危害影响较大。同类型的运维工具还有<a href="https://www.ansible.com">ansible</a>,<a href="https://puppet.com/">puppet</a>,<a href="https://www.chef.io/">Chef</a></p>
+<h2 id="下载地址">下载地址</h2>
 
-<p>国外安全团体F-Secure报告了两个Saltstack漏洞</p>
+<p><a href="http://dl.shellpub.com/hm-ui/latest/HmSetup.zip?version=1.7.1">windows版下载</a><br />
+<a href="http://dl.shellpub.com/hm/latest/hm-linux-amd64.tgz?version=1.7.1">linux64位下载</a><br />
+<a href="http://dl.shellpub.com/hm/latest/hm-linux-386.tgz?version=1.7.1">linux32位下载</a></p>
 
-<p>包含两个CVE</p>
+<p><a href="http://www.shellpub.com/doc/hm_linux_usage.html">Linux版使用教程</a><br />
+<a href="http://blog.shellpub.com/2017/08/09/%E6%B2%B3%E9%A9%ACwebshell%E6%89%AB%E6%8F%8F%E5%99%A8v1_2.html">windows版使用教程</a></p>
+
+<h2 id="功能更新">功能更新</h2>
+
+<p>本次更新为修复性更新，可以通过命令<code>hm update</code>升级到最新版或者在<a href="https://www.shellpub.com">官网</a>下载最新版</p>
+
+<h2 id="bug修正">BUG修正</h2>
 
 <ul>
-<li>CVE-2020-11651 水平权限绕过漏洞</li>
-<li>CVE-2020-11652 任意文件读写漏洞</li>
+<li>修复1.7.0版引入的扫描大文件时引发的OOM问题</li>
 </ul>
 
-<p>通过对这两个漏洞的利用可以实现RCE的效果，在控制salt-master之后，通过salt大面积控制在运维系统下的主机</p>
+<h2 id="已知问题">已知问题</h2>
 
-<h2 id="关于saltstack">关于saltstack</h2>
+<ul>
+<li>不支持内核2.6.18以下版本（即centos5系统默认内核版本)且无支持计划</li>
+</ul>
 
-<p>SaltStack是基于Python开发的一套C/S架构配置管理工具，是一个服务器基础架构集中化管理平台，具备配置管理、远程执行、监控等功能，基于Python语言实现，结合轻量级消息队列（ZeroMQ）与Python第三方模块（Pyzmq、PyCrypto、Pyjinjia2、python-msgpack和PyYAML等）构建。</p>
+<h2 id="兼容性测试">兼容性测试</h2>
 
-<h2 id="影响范围">影响范围</h2>
+<pre><code>|      OS    |      kernel     | version | arch | result |
+|------------|-----------------|---------|------|--------
+|  windows   |    -            | &gt;=2003  | 32/64|   OK   |
+|  CentOS    |    &gt;=2.6.32     | &gt;=6     |      |   OK   |
+|  CentOS    |    &lt;2.6.32      | &lt; 6     | 32/64| 不支持  |
+|  Ubuntu    |    -            |  -      |      |   OK   |
+|  Kali      |    -            | 2.0,2019| 32/64|   OK   |
+|  Kali      |    -            | &lt;2.0    | 32/64|   -    |
+|  SuSE      |    -            | -       |      |   -    |
+|  Debian    |    -            | -       |      |   -    |
+|  Fedora    |    -            | -       |      |   -    |
+|  Redhat    |    -            | -       |      |   -    |
+</code></pre>
 
-<p>SaltStack &lt; 2019.2.4
-SaltStack &lt; 3000.2</p>
+<ul>
+<li><strong>OK</strong> 表示测试通过, 可以正常运行</li>
+<li><strong>不支持</strong> 表示官方没有计划支持此版本</li>
+<li><strong>-</strong> 表示未经测试，但是理论上支持</li>
+</ul>
 
-<h2 id="问题排查">问题排查</h2>
+<p>如果您在使用中发现不兼容的发行版本请和我们联系，文章末尾有我们的联系方式</p>
 
-<p><strong>1.查看进程</strong><code>ps -ef|grep salt</code>
-<img src="/images/salt/process.png" alt="" />
-如图所示为阿里云中某机器中招后截图，其中三个salt相关进程。
-<code>alicloud-salt-minion</code> 为官方进程
-<code>/tmp/salt-minions</code> 为挖矿样本</p>
-
-<p>md5sum /tmp/salt-minions 计算挖矿样本hash为</p>
-
-<p>目前已知恶意hash如下：
-- a28ded80d7ab5c69d6ccde4602eef861
-- 8ec3385e20d6d9a88bc95831783beaeb
-- 2c5cbc18d1796fd64f377c43175e79a3
-- dc5b2fa7f85aa0bbd226afe3b5fcaeea
-- defc9efd1b430aea797e573922fa49ae</p>
-
-<p>file命令查看文件类型，挖矿进程为elf文件
-<img src="/images/salt/file.png" alt="" /></p>
-
-<p>正常文件为python脚本文件
-<img src="/images/salt/file2.png" alt="" /></p>
-
-<p><strong>2.检查网路链接</strong><code>netstat -anp|grep tcp|grep ESTABLISHED</code>
-<img src="/images/salt/connection.png" alt="" />
-如图所示，排除掉本地连接、排除掉入向链接，观察外连进程状态。</p>
-
-<p>已知挖矿主机远程IP如下：
-- 217.12.210.192
-- 206.189.92.32</p>
-
-<p><strong>3.阿里云安全面板通知</strong>
-<img src="/images/salt/aliyun.png" alt="" />
-如果您使用的阿里云，可以在安全面板上看到如图类似告警，请注意关注安全告警</p>
-
-<p><strong>4.其他行为</strong>
-目前发现该挖矿程序会关闭cpu占用较高的进程，在系统日志里可以查看到kill记录<code>grep -r &quot;kill&quot; /var/log/messages*</code></p>
-
-<p><img src="/images/salt/message.png" alt="" />
-也会关闭docker中的其他挖矿程序</p>
-
-<h2 id="修复建议">修复建议</h2>
+<h2 id="常见问题">常见问题</h2>
 
 <ol>
-<li>建议重装系统，因为salt进程权限为root权限，理论上被黑后，黑客拥有任意权限，可能种入隐藏后门。如果暂时无法重装系统可以使用阿里云提供的一键清理脚本<code>curl https://ageis-check.oss-cn-hangzhou.aliyuncs.com/salt_miner_clean.sh | /bin/bash</code></li>
-<li>升级到安全版本
-2019.2.4
-3000.2</li>
-<li>打开saltstack自动更新</li>
-<li>Salt Master所在机器的防火墙、安全组上配置策略，只允许可信ip访问4505和4506端口</li>
+<li><p>已经联网，但是扫描程序依然报没有连接网络的错误</p>
+
+<pre><code>可能的原因有两点： 一是您的操作系统时间与标准时间差距超过1分钟，使用ntp或者其他方式同步后问题解决； 
+二是您操作系统的PKI证书系统老旧，更新后即可解决，debian/ubuntu使用update-ca-certificates命令，centos使用
+update-ca-trust extract命令
+</code></pre></li>
+
+<li><p>扫描失败，或者扫描文件数目为0</p>
+
+<pre><code>软件限制了一些目录，例如Linux系统下/proc/目录文件不做检测，windows下C:/windows目录等
+</code></pre></li>
+
+<li><p>扫描时崩溃</p>
+
+<pre><code>请检查您使用的软件版本和操作系统版本是否匹配
+请检查您当前的用户是否为管理员用户
+</code></pre></li>
+
+<li><p>linux下没有找到可执行的文件</p>
+
+<pre><code>请检查是否配置了环境变量或者使用./hm的方式来运行程序
+</code></pre></li>
+
+<li><p>如何配置扩展名白名单</p>
+
+<pre><code>在软件目录下有hm.yml文件，按照默认格式添加不需要被扫描的文件类型的扩展名
+jpg,png,gif不建议添加，有一类后门是隐藏在图片之中的。
+</code></pre></li>
+
+<li><p>如何查看扫描结果</p>
+
+<pre><code>扫描结果在扫描结束之后会保存到软件目录下的result.csv文件中，windows版可以在界面上直接查看结果
+</code></pre></li>
+
+<li><p>如何实现定时扫描</p>
+
+<pre><code>linux利用系统crontab，在crontab中添加定时扫描任务。
+</code></pre></li>
+
+<li><p>如果安装了旧版软件是否能够自动更新</p>
+
+<pre><code>linux环境下您可以在软件所在目录执行`hm update`命令，软件会自动升级到最新版本
+windows版检测到可更新版本后点击下载新版本
+</code></pre></li>
+
+<li><p>如何让软件不输出中文，只输出英文</p>
+
+<pre><code>linux配置环境变量HM_LANG=zh-CN则强制显示中文；配置HM_LANG=en-US强制显示英文系统
+</code></pre></li>
+
+<li><p>我不想下载软件如何快速检测</p>
+
+<pre><code>可以使用在线查杀https://n.shellpub.com,上传源代码zip包即可，需要注意点是上传大小限制为20MB
+</code></pre></li>
 </ol>
 
-<h2 id="关于河马">关于河马</h2>
+<p>如果在使用过程中遇到问题，可以在本文下面留言或加<a href="tencent://message/?uin=1494922137&amp;Site=&amp;Menu=yes">QQ:1494922137</a></p>
 
-<pre><code>专注WEB安全研究与产品开发，有多年WEBSHELL清理检测经验
-</code></pre>
+<h2 id="关注我们">关注我们</h2>
 
 <p><img src="http://open.weixin.qq.com/qr/code?username=gh_d110440c4890" alt="" /></p>
 
-<h2 id="参考">参考</h2>
-
-<p><a href="https://help.aliyun.com/noticelist/articleid/1060284512.html">阿里云漏洞预警https://help.aliyun.com/noticelist/articleid/1060284512.html</a></p>
-
-<p><a href="https://cert.360.cn/warning/detail?id=f31be92efc1ab6e8a09b987411a9759a">360Cert漏洞通告</a></p>
-
-<p><a href="https://www.cnblogs.com/lxmwb/p/12831030.html">SaltStack漏洞导致的挖矿排查思路 https://www.cnblogs.com/lxmwb/p/12831030.html</a></p>
-
-<p><a href="https://gist.github.com/SwitHak/8e7fa45b5656c691ddf13c8c47e8fda6">CVE-2020-11651 AKA SaltStack RCE</a></p>
-
-<p><a href="https://labs.f-secure.com/advisories/saltstack-authorization-bypass">SaltStack authorization bypass</a></p>
-
-<p><a href="https://github.com/vulhub/vulhub/tree/master/saltstack">https://github.com/vulhub/vulhub/tree/master/saltstack</a></p>
-
-<p><a href="https://s.tencent.com/research/report/975.html">针对SaltStack远程命令执行漏洞（CVE-2020-11651、CVE-2020-11652）植入挖矿木马的应急响应 https://s.tencent.com/research/report/975.html</a></p>
-
-<p><a href="https://github.com/vulhub/vulhub/tree/master/saltstack">https://github.com/vulhub/vulhub/tree/master/saltstack</a></p>
+<hr />
 
 
   
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="/2020/02/15/hm_new_version170.html"><i class="fa fa-chevron-left"></i></a>
+    <a href="/2020/05/06/saltstack%E5%A4%9A%E7%89%88%E6%9C%ACrce%E5%AE%89%E5%85%A8%E9%80%9A%E5%91%8A.html"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="/2020/02/15/hm_new_version170.html">河马WEBSHELL扫描器1.7.0发布</a>
+      <a href="/2020/05/06/saltstack%E5%A4%9A%E7%89%88%E6%9C%ACrce%E5%AE%89%E5%85%A8%E9%80%9A%E5%91%8A.html">saltstack RCE安全通告</a>
     </nav>
     
   </div>
@@ -419,14 +434,8 @@ SaltStack &lt; 3000.2</p>
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="/2020/05/31/hm_new_version171.html">河马WEBSHELL扫描器1.7.1发布</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="/2020/05/31/hm_new_version171.html"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

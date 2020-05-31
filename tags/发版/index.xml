@@ -6,10 +6,26 @@
     <description>Recent content in 发版 on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 15 Feb 2020 19:21:49 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 21:21:49 +0800</lastBuildDate>
     
 	<atom:link href="/tags/%E5%8F%91%E7%89%88/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>河马WEBSHELL扫描器1.7.1发布</title>
+      <link>/2020/05/31/hm_new_version171.html</link>
+      <pubDate>Sun, 31 May 2020 21:21:49 +0800</pubDate>
+      
+      <guid>/2020/05/31/hm_new_version171.html</guid>
+      <description>河马查杀1.7.1 发布  
+下载地址 windows版下载
+linux64位下载
+linux32位下载
+Linux版使用教程
+windows版使用教程
+功能更新 本次更新为修复性更新，可以通过命令hm update升级到最新版或者在官网下载最新版
+BUG修正  修复1.7.0版引入的扫描大文件时引发的OOM问题  已知问题  不支持内核2.6.18以下版本（即centos5系统默认内核版本)且无支持计划  兼容性测试 | OS | kernel | version | arch | result | |------------|-----------------|---------|------|-------- | windows | - | &amp;gt;=2003 | 32/64| OK | | CentOS | &amp;gt;=2.6.32 | &amp;gt;=6 | | OK | | CentOS | &amp;lt;2.6.32 | &amp;lt; 6 | 32/64| 不支持 | | Ubuntu | - | - | | OK | | Kali | - | 2.</description>
+    </item>
     
     <item>
       <title>河马WEBSHELL扫描器1.7.0发布</title>

@@ -18,7 +18,7 @@
       
       <guid>/bug/</guid>
       <description>id， bug编号 状态，是否已修复 计划, 修复计划 范围，受影响版本范围
-  id 状态 范围 计划 描述    1   已修复   小于1.3.2   已修复(=1.3.2)   请求dns崩溃参考https://yq.aliyun.com/articles/238940    2   已修复   所有版本   已修复(=2.6.18)   linux内核版本4.4时，扫描时会崩溃     3   已修复   所有版本   已修复   kali无法运行    </description>
+  id 状态 范围 计划 描述    1   已修复   小于1.3.2   已修复(=1.3.2)   请求dns崩溃参考https://yq.aliyun.com/articles/238940    2   已修复   所有版本   已修复(=2.6.18)   linux内核版本4.4时，扫描时会崩溃     3   已修复   所有版本   已修复   kali无法运行     4   已修复   1.</description>
     </item>
     
   </channel>
