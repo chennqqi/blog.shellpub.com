@@ -2,7 +2,7 @@
 draft = false
 author = "admin@shellpub.com"
 date = 2020-02-15T19:21:49+08:00
-description = ""
+description = "河马WEBSHELL扫描器更新"
 keywords = ["河马","后门", "发布", "webshell"]
 title = "河马WEBSHELL扫描器1.7.0发布"
 topics = ["后门"]
