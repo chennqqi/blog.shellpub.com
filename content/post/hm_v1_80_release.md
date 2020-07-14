@@ -122,7 +122,7 @@ url = "/2020/07/14/hm_new_version180.html"
 
 9. 我不想下载软件如何快速检测
 
-		可以使用在线查杀https://n.shellpub.com,上传源代码zip包即可，需要注意点是上传大小限制为20MB
+		可以使用在线查杀https://n.shellpub.com,上传源代码zip包即可，需要注意的是上传大小限制为20MB
 
 10. 检测结果不准确？
 
