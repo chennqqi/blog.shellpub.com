@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2020/07/14/hm_new_version180.html</loc>
+    <lastmod>2020-07-14T09:21:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/07/14/hm_windows_usage.html</loc>
+    <lastmod>2020-07-14T09:08:48+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2020/05/31/hm_new_version171.html</loc>
     <lastmod>2020-05-31T21:21:49+08:00</lastmod>
   </url>
@@ -153,6 +163,10 @@
   </url>
   
   <url>
+    <loc>/post/html/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/1.2/</loc>
     <lastmod>2017-08-09T15:31:21+08:00</lastmod>
     <priority>0</priority>
@@ -250,7 +264,13 @@
   
   <url>
     <loc>/tags/hm/</loc>
-    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
+    <lastmod>2020-07-14T09:21:49+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/topics/hm/</loc>
+    <lastmod>2020-07-14T09:08:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -292,7 +312,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
+    <lastmod>2020-07-14T09:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -322,7 +342,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
+    <lastmod>2020-07-14T09:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -370,13 +390,19 @@
   
   <url>
     <loc>/tags/webshell/</loc>
-    <lastmod>2017-10-11T21:15:21+08:00</lastmod>
+    <lastmod>2020-07-14T09:08:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/topics/webshell/</loc>
+    <lastmod>2020-07-14T09:08:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/windows/</loc>
-    <lastmod>2019-05-21T10:18:30+08:00</lastmod>
+    <lastmod>2020-07-14T09:08:48+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -430,7 +456,7 @@
   
   <url>
     <loc>/tags/%E5%8F%91%E7%89%88/</loc>
-    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
+    <lastmod>2020-07-14T09:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -442,7 +468,7 @@
   
   <url>
     <loc>/topics/%E5%90%8E%E9%97%A8/</loc>
-    <lastmod>2020-05-31T21:21:49+08:00</lastmod>
+    <lastmod>2020-07-14T09:21:49+08:00</lastmod>
     <priority>0</priority>
   </url>
   

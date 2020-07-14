@@ -6,10 +6,36 @@
     <description>Recent content in Windows on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 21 May 2019 10:18:30 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 09:08:48 +0800</lastBuildDate>
     
 	<atom:link href="/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>河马WEBSHELL扫描器-windows使用教程</title>
+      <link>/2020/07/14/hm_windows_usage.html</link>
+      <pubDate>Tue, 14 Jul 2020 09:08:48 +0800</pubDate>
+      
+      <guid>/2020/07/14/hm_windows_usage.html</guid>
+      <description>windows使用教程  下载安装
+访问官网 或者点此直接下载
+解压缩zip文件
+双击安装程序进行安装
+ 扫描
+点击立即扫描选择要扫描的目录
+支持选择多个目录
+单击开始扫描按钮
+使用深度解码器进行深度扫描
+ 处理结果
+扫描完成后处理WEBSHELL
+  FAQ:
+如果发现扫描失败的提醒请联系我们的技术人员
+关注我们
+
+联系我们 如果您在使用中遇到什么问题或者有什么建议欢迎联系我们
+QQ: 1494922137
+EMAIL: service@shellpub.com</description>
+    </item>
     
     <item>
       <title>CVE-2019-0708漏洞预警及修复建议 附POC</title>

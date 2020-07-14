@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "go",
+            "request": "launch",            
+            "mode": "debug",
+            "program": "${workspaceRoot}",
+            "env": {
+                "GOPATH":"C:\\Users\\wangxiaomei9\\go;D:\\workspace\\jd\\jstack-waf-proxy;D:\\workspace\\jd\\jstack-waf-proxy\\vendor;"
+            },
+            "args": [
+                "--conf",
+                "../etc/config.json"
+            ]
+        }
+    ]
+}
