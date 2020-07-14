@@ -33,21 +33,21 @@ url = "/2017/08/09/河马WEBSHELL扫描器V1_2.html"
 	
 	双击安装程序进行安装
 
-	![](http://storage1.imgchr.com/EXqZ8.png)
+	![](https://s2.ax1x.com/old/EXqZ8.png)
 
-	![](http://storage1.imgchr.com/EXHqf.png)
+	![](https://s2.ax1x.com/old/EXHqf.png)
 
-	![](http://storage1.imgchr.com/EX7sP.png)
+	![](https://s2.ax1x.com/old/EX7sP.png)
 
 2. 扫描
 
 	点击立即扫描选择要扫描的目录
 
-	![](http://storage1.imgchr.com/EXvGj.png)
+	![](https://s2.ax1x.com/old/EXvGj.png)
 
 	支持选择多个目录
 
-	![](http://storage1.imgchr.com/EXOIg.png)
+	![](https://s2.ax1x.com/old/EXOIg.png)
 
 	单击开始扫描按钮
 
@@ -56,7 +56,7 @@ url = "/2017/08/09/河马WEBSHELL扫描器V1_2.html"
 
 	扫描完成后处理WEBSHELL
 	
-	![](http://storage1.imgchr.com/EXLdS.png)
+	![](https://s2.ax1x.com/old/EXLdS.png)
 	
 
 FAQ:
