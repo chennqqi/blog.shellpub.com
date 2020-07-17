@@ -254,6 +254,83 @@
   
     <article>
   <header>
+    <h2><a href="/2020/07/17/windows_dns_vuln.html">Windows DNS Server&#34;蠕虫级&#34;漏洞通知，请马上升级</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-07-17 13:45</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E%E9%80%9A%E7%9F%A5">漏洞通知</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/windows">windows</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/dns">dns</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E8%A0%95%E8%99%AB">蠕虫</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E8%A1%A5%E4%B8%81">补丁</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+   Windows DNS Server &ldquo;蠕虫级&rdquo;漏洞通知，请马上升级  某些情形下，企业DNS Server和域控处于内网同一台服务器中，SIGRed漏洞影响的组件dns.exe是以System权限运行，目前网络上已有PoC公开，建议用户尽快升级，避免由于该漏洞导致域控沦陷。
+ 简介 微软公司在本月的安全补丁推送中修复了一个长达17年的“蠕虫级”漏洞。据国外研究机构checkpoint描述成功利用SIGRed漏洞可以达到远程提权的效果。其影响几乎市面上主流的所有Windows Server版本（Windows Server 2008 、2012、2016、2019以及之后的Windows Server, version 1903、1909、2004）。目前网络已经有公开的dns拒绝服务PoC代码，请务必重视！
+漏洞原理简述 在Windows系统中，DNS客户端主要实现在dnsspi.dll中，而DNS服务端是由dns.exe负责响应和处理请求。而SIGRed漏洞就发生在dns.exe!SigWireRead函数。
+可以看到RR_AllocateEx分配内存是通过16位寄存器cx，如果我们这里可以控制其第一个参数大于0xffff，那么就会产生整数溢出，紧接会触发到后面的memcpy导致崩溃。
+触发漏洞 引用checkpoint的研究，利用DNS Pointer Compression。这里主要是一种类似指针指向的压缩编码方式。
+c00c其中0xc0是引用这个packet内部值的标识。0x0c是基于dns header偏移位置，这里指向 () chain。也就是下图划线的部分。其中08是size，research是value。如果我们修改0x0c为0x0d，那么size就变成0x72,这就是导致unCompression数据长度发生变化，触发整数溢出。
+处置建议  升级微软官方最新补丁
+ 临时处置建议
+  通过设置注册表临时缓解，然后重启dns服务
+ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters DWORD = TcpReceivePacketSize Value = 0xFF00  如之后升级补丁，删除HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters即可。
+参考 https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-1350
+https://research.checkpoint.com/2020/resolving-your-way-into-domain-admin-exploiting-a-17-year-old-bug-in-windows-dns-servers/
+关注我们 
+  </p>
+
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="/2020/07/14/hm_new_version180.html">河马WEBSHELL扫描器1.8.0发布</a></h2>
 
     <div class="post-meta">
@@ -932,78 +1009,6 @@ Linux版使用教程 windows版使用教程
   <footer>
     <a href="/2018/11/20/hm_new_version150.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
   </footer>
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="/2018/07/18/weblogic_vul_alarm.html">漏洞预警-WebLogic远程命令执行 CVE-2018-2893&amp;CVE-2018-2894</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2018-07-18 14:12</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="topics/weblogic">weblogic</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E%E9%A2%84%E8%AD%A6">漏洞预警</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  
-
-
-	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
-	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="tags/weblogic">weblogic</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="tags/%E9%A2%84%E8%AD%A6">预警</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  预警 今日(北京时间2018-07-18)Oracle官方发布CPU（Critical Patch Update关键更新补丁)通告, 本次通告包含的一个反序列化漏洞CVE-2018-2893和远程命令执行CVE-2018-2894危害较大，可被利用来挖矿； 其中CVE-2018-2894漏洞可以直接通过HTTP方式利用，安全漏洞评分系统(CVSS)高达9.8，请站长朋友及时更新，或者使用一些防护产品，以免造成严重损失。
-
-关于WebLogic WebLogic是美国Oracle公司出品的一个Application Server，确切的说是一个基于JAVAEE架构的中间件，WebLogic是用于开发、集成、部署和管理大型分布式Web应用、网络应用和数据库应用的Java应用服务器。将Java的动态功能和Java Enterprise标准的安全性引入大型网络应用的开发、集成、部署和管理之中。
-Oracle 一般会在1，4，7，10月中距离17号最近的周二发布安全补丁包。本站上次WebLogic预警也是今年4月份的18号。
-影响范围  Weblogic 10.3.6.0 Weblogic 12.1.3.0 Weblogic 12.2.1.2 Weblogic 12.2.1.3  修复建议 目前Oracle官方更新建议请访问 http://www.oracle.com/technetwork/security-advisory/cpujul2018-4258247.html 建议使用河马查杀客户端检测WEBSHELL,  
-关于河马 专注WEB安全研究与产品开发，有多年WEBSHELL清理检测经验  
-参考 oracle官方通告
-白帽汇 漏洞预警
-ADLab原创漏洞
-漏洞预警-CVE-2018-2628 WebLogic反序列化远程代码执行
-  </p>
-
   
 </article>
 

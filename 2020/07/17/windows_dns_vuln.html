@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="generator" content="Hugo 0.37.1" />
+
+  <title>Windows DNS Server&#34;蠕虫级&#34;漏洞通知，请马上升级 &middot; SHELLPUB BLOG</title>
+
+  
+  
+
+  <link rel="stylesheet" href="//lib.baomitu.com/pure/1.0.0/pure-min.css">
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css">
+  <!--<![endif]-->
+
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/css/side-menu-old-ie.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="/css/side-menu.css">
+  <!--<![endif]-->
+
+  <link rel="stylesheet" href="/css/blackburn.css">
+
+  
+  <link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ 
+  
+
+  
+  <link rel="stylesheet" href="//lib.baomitu.com/highlight.js/9.1.0/styles/androidstudio.min.css">
+  <script src="//lib.baomitu.com/highlight.js/9.1.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+  
+    
+        <link rel="stylesheet" href="/css/custom.css">
+    
+  
+  
+    
+        <script src="/js/baidu.js"></script>
+    
+  
+    
+        <script src="/js/baidupush.js"></script>
+    
+  
+    
+        <script src="/js/cnzz.js"></script>
+    
+  
+
+</head>
+
+
+<body>
+<div id="layout">
+
+  
+<a href="#menu" id="menuLink" class="menu-link">
+  
+  <span></span>
+</a>
+<div id="menu">
+
+  
+  <a class="pure-menu-heading brand" href="/">SHELLPUB</a>
+
+
+  <div class="pure-menu">
+    <ul class="pure-menu-list">
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/"><i class='fa fa-home fa-fw'></i>HOME</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/post/"><i class='fa fa-list fa-fw'></i>POSTS</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/bug/"><i class='fa fa-bug fa-fw'></i>BUG</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/contact/"><i class='fa fa-phone fa-fw'></i>CONTACT</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://www.shellpub.com"><i class='fa fa-globe fa-fw'></i>官网</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="http://n.shellpub.com"><i class='fa fa-chrome fa-fw'></i>在线查杀</a>
+      
+        </li>
+      
+      
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="/about/"><i class='fa fa-user fa-fw'></i>ABOUT</a>
+      
+        </li>
+      
+    </ul>
+  </div>
+
+  <div class="pure-menu social">
+  <ul class="pure-menu-list">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="http://weibo.com/chennqqi" target="_blank"><i class="fa fa-weibo fa-fw"></i>Weibo</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://github.com/webshellpub" target="_blank"><i class="fa fa-github-square fa-fw"></i>GitHub</a>
+    </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+  </ul>
+</div>
+
+
+  <div>
+  <div class="small-print">
+    <small>&copy; 2017. All rights reserved.</small>
+  </div>
+  <div class="small-print">
+    <small>Built with&nbsp;<a href="https://gohugo.io/" target="_blank">Hugo</a></small>
+    <small>Theme&nbsp;<a href="https://github.com/yoshiharuyamashita/blackburn" target="_blank">Blackburn</a></small>
+  </div>
+</div>
+
+</div>
+
+
+  <div id="main">
+
+
+<div class="header">
+  <h1>Windows DNS Server&#34;蠕虫级&#34;漏洞通知，请马上升级</h1>
+  <h2></h2>
+</div>
+<div class="content">
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2020-07-17 13:45</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/%E6%BC%8F%E6%B4%9E%E9%80%9A%E7%9F%A5">漏洞通知</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/%E6%BC%8F%E6%B4%9E">漏洞</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/windows">windows</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/dns">dns</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E8%A0%95%E8%99%AB">蠕虫</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/%E8%A1%A5%E4%B8%81">补丁</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  
+
+<h1 id="windows-dns-server-蠕虫级-漏洞通知-请马上升级">Windows DNS Server &ldquo;蠕虫级&rdquo;漏洞通知，请马上升级</h1>
+
+<blockquote>
+<p>某些情形下，企业DNS Server和域控处于内网同一台服务器中，SIGRed漏洞影响的组件dns.exe是以System权限运行，目前网络上已有PoC公开，建议用户尽快升级，避免由于该漏洞导致域控沦陷。</p>
+</blockquote>
+
+<h2 id="简介">简介</h2>
+
+<p>微软公司在本月的安全补丁推送中修复了一个长达17年的“蠕虫级”漏洞。据国外研究机构checkpoint描述成功利用SIGRed漏洞可以达到远程提权的效果。其影响几乎市面上主流的所有Windows Server版本（Windows Server 2008 、2012、2016、2019以及之后的Windows Server, version 1903、1909、2004）。目前网络已经有公开的dns拒绝服务PoC代码，请务必重视！</p>
+
+<h2 id="漏洞原理简述">漏洞原理简述</h2>
+
+<p>在Windows系统中，DNS客户端主要实现在dnsspi.dll中，而DNS服务端是由dns.exe负责响应和处理请求。而SIGRed漏洞就发生在<code>dns.exe!SigWireRead</code>函数。</p>
+
+<p>可以看到<code>RR_AllocateEx</code>分配内存是通过16位寄存器<code>cx</code>，如果我们这里可以控制其第一个参数大于0xffff，那么就会产生整数溢出，紧接会触发到后面的<code>memcpy</code>导致崩溃。</p>
+
+<p><img src="/images/sigdns.jpg" alt="" /></p>
+
+<h2 id="触发漏洞">触发漏洞</h2>
+
+<p>引用checkpoint的研究，利用<code>DNS Pointer Compression</code>。这里主要是一种类似指针指向的压缩编码方式。</p>
+
+<p><code>c00c</code>其中<code>0xc0</code>是引用这个packet内部值的标识。<code>0x0c</code>是基于dns header偏移位置，这里指向 (<size><value>) chain。也就是下图划线的部分。其中<code>08</code>是size，<code>research</code>是value。如果我们修改<code>0x0c</code>为<code>0x0d</code>，那么size就变成<code>0x72</code>,这就是导致<code>unCompression</code>数据长度发生变化，触发整数溢出。</p>
+
+<p><img src="/images/image-9.png" alt="" /></p>
+
+<h2 id="处置建议">处置建议</h2>
+
+<ul>
+<li><p>升级微软官方最新补丁</p></li>
+
+<li><p>临时处置建议</p></li>
+</ul>
+
+<p>通过设置注册表临时缓解，然后重启dns服务</p>
+
+<pre><code>    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters 
+    DWORD = TcpReceivePacketSize 
+    Value = 0xFF00
+</code></pre>
+
+<p>如之后升级补丁，删除<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DNS\Parameters</code>即可。</p>
+
+<h2 id="参考">参考</h2>
+
+<p><a href="https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-1350">https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2020-1350</a></p>
+
+<p><a href="https://research.checkpoint.com/2020/resolving-your-way-into-domain-admin-exploiting-a-17-year-old-bug-in-windows-dns-servers/">https://research.checkpoint.com/2020/resolving-your-way-into-domain-admin-exploiting-a-17-year-old-bug-in-windows-dns-servers/</a></p>
+
+<h2 id="关注我们">关注我们</h2>
+
+<p><img src="images/qrcode_gh_d110440c4890_1.jpg" alt="" /></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="/2020/07/14/hm_new_version180.html"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="/2020/07/14/hm_new_version180.html">河马WEBSHELL扫描器1.8.0发布</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+  
+  
+  
+  ﻿
+
+<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTUxNC82MDgy">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+
+
+
+</div>
+
+</div>
+</div>
+<script src="js/ui.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'Your Google Analytics tracking ID', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+
+
+
+</body>
+</html>
+
