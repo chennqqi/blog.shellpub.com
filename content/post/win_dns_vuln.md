@@ -63,4 +63,4 @@ https://research.checkpoint.com/2020/resolving-your-way-into-domain-admin-exploi
 
 ## 关注我们
 
-![](images/qrcode_gh_d110440c4890_1.jpg)
+![](/images/qrcode_gh_d110440c4890_1.jpg)
