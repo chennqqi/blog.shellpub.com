@@ -254,6 +254,106 @@
   
     <article>
   <header>
+    <h2><a href="/2019/05/07/xmldecode_ana.html">XMLDecoder解析流程分析</a></h2>
+
+    <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>2019-05-07 22:18</time>
+  </div>
+
+  
+
+  
+  
+  
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="topics/cve">CVE</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-topic" href="topics/rce">RCE</a>
+    
+  </div>
+  
+  
+
+  
+  
+  
+  
+
+
+	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
+	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2019-2725">CVE-2019-2725</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2019-2725">CVE-2019-2725</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2017-3506">CVE-2017-3506</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/cve-2017-10352">CVE-2017-10352</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="tags/rce">RCE</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  </header>
+
+  <p>
+  XMLDecoder解析流程分析 前言 经过了Weblogic的几个XMLDecoder相关的CVE(CVE-2017-3506、CVE-2017-10352、CVE-2019-2725)，好好看了一下XMLDecoder的分析流程。
+本文以jdk7版本的XMLDecoder进行分析,jdk6的XMLDecoder流程都写在了一个类里面（com.sun.beans.ObjectHandler）
+此处只分析XMLDecoder的解析流程，具体Weblogic的漏洞请看其它几位师傅写的Paper。
+WebLogic RCE(CVE-2019-2725)漏洞之旅-Badcode
+Weblogic CVE-2019-2725 分析报告-廖新喜
+不喜欢看代码的可以看官方关于XMLDecoder的文档： Long Term Persistence of JavaBeans Components: XML Schema
+XMLDecoder的几个关键类 XMLDecoder的整体解析过程是基于Java自带的SAX XML解析进行的。
+以下所有类都在com.sun.beans.decoder包中
+DocumentHandler DocumentHandler继承自DefaultHandler，DefaultHandler是使用SAX进行XML解析的默认Handler，所以Weblogic在对XML对象进行validate的时候也使用了SAX，保证过程的一致性。
+DefaultHandler实现了EntityResolver, DTDHandler, ContentHandler, ErrorHandler四个接口。
+DocumentHandler主要改写了ContentHandler中的几个接口，毕竟主要是针对内容进行解析的，其它的保留默认就好。
+ElementHandler及相关继承类 XMLDecoder对每种支持的标签都实现了一个继承与ElementHandler的类，具体可以在DocumentHandler的构造函数中看到：
+所以XMLDecoder只能使用如上标签。
+其中继承关系与函数重写关系如下（很大，可以看大图或者自己用idea生成再看）：
+如上的继承关系也是object标签可以用void标签替代用的原因，后面详说。
+ValueObject及其相关继承类 ValueObject是一个包装类接口，包裹了实际解析过程中产生的对象（包括null)
+继承关系：
+一般的对像由ValueObjectImpl进行包裹，而null\true\false（非boolean标签）则直接由自身Handler进行代表，实现相关接口。
+XMLDecoder过程中的几个关键函数 DocumentHandler的XML解析相关函数的详细内容可以参考Java Sax的ContentHandler的文档。
+ElementHandler相关函数可以参考ElementHandler的文档。
+DocumentHandler创建各个标签对应的ElementHandler并进行调用。
+startElement 处理开始标签，包括属性的添加 DocumentHandler:。XML解析处理过程中参数包含命名空间URL、标签名、完整标签名、属性列表。根据完整标签名创建对应的ElementHandler并添加相关属性，继续调用其startElement。
+ElementHandler: 除了array标签以外，都无操作。
+endElement 结束标签处理函数 DocumentHandler: 调用对应ElementHandler的endElement函数，并将当前ElementHandler回溯到上一级的ElementHandler。
+ElementHandler: 没看有重写的，都是调用抽象类ElementHandler的endElement函数，判断是否需要向parent写入参数和是否需要注册标签对象ID。
+characters DocumentHandler: 标签包裹的文本内容处理函数，比如处理&lt;string&gt;java.lang.ProcessBuilder&lt;/string&gt;包裹的文本内容就会从这个函数走。函数中最终调用了对应ElementHandler的addCharacter函数。
+addCharacter ElementHandler: ElementHandler里的addCharacter只接受接种空白字符(空格\n\t\r)，其余的会抛异常，而StringElementHandler中则进行了重写，会记录完整的字符串值。
+addAttribute ElementHandler: 添加属性，每种标签支持的相应的属性，出现其余属性会报错。
+getContextBean ElementHandler: 获取操作对象，比如method标签在执行方法时，要从获取上级object/void/new标签Handler所创建的对象。该方法一般会触发上一级的getValueObject方法。
+getValueObject ElementHandler: 获取当前标签所产生的对象对应的ValueObject实例。具体实现需要看每个ElementHandler类。
+  </p>
+
+  
+  <footer>
+    <a href="/2019/05/07/xmldecode_ana.html">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
+  
+</article>
+
+  
+    <article>
+  <header>
     <h2><a href="/2018/11/20/hm_new_version150.html">河马WEBSHELL扫描器1.5.0发布</a></h2>
 
     <div class="post-meta">
@@ -881,70 +981,6 @@ linux32位下载
 扫描结果在扫描结束之后会保存到软件目录下的result.csv文件中，windows版可以在界面上直接查看结果  如何实现定时扫描
 linux利用系统crontab，在crontab中添加定时扫描任务。  如果安装了旧版软件是否能够自动更新
 linux环境下您可以在软件所在目录执行`hm update`命令，软件会自动升级到最新版本   如果在使用过程中遇到问题，可以在本文下面留言或添加QQ:1494922137
-  </p>
-
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="/2017/10/23/down_fix.html">河马下载地址修复公告</a></h2>
-
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>2017-11-23 10:31</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="topics/%E4%B8%8B%E8%BD%BD">下载</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-topic" href="topics/%E6%B2%B3%E9%A9%ACwebshell">河马webshell</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  
-
-
-	<div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="������΢��"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="����������΢��"></a><a href="#" class="bds_youdao" data-cmd="youdao" title="�������е��Ʊʼ�"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="������QQ�ռ�"></a><a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="������ӡ��ʼ�"></a></div>
-	<script>window._bd_share_config={"common":{"bdSnsKey":{"tsina":"11640679"},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="tags/%E4%B8%8B%E8%BD%BD">下载</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="tags/download">download</a>
-    
-  </div>
-  
-  
-
-</div>
-
-  </header>
-
-  <p>
-  河马WEBSHELL扫描软件下载修复公告 河马WEBSHELL扫描器软件下载原来是托管在GITHUB上的; 因19大召开，部分用户出现无法正常下载或者下载缓慢的现象。现已将国内的用户下载从GITHUB修改到独立的线路上了，给您带来的不便，敬请原谅。
-WINDOWS版下载
-Linux 64位版下载
-Linux 32位版下载
   </p>
 
   

@@ -6,10 +6,27 @@
     <description>Recent content in Posts on SHELLPUB BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2017. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 18 Jul 2020 16:40:49 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 19 Aug 2020 22:43:21 +0800</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>河马WEBSHELL扫描器1.8.2发布</title>
+      <link>/2020/08/19/hm_new_version182.html</link>
+      <pubDate>Wed, 19 Aug 2020 22:43:21 +0800</pubDate>
+      
+      <guid>/2020/08/19/hm_new_version182.html</guid>
+      <description>河马查杀1.8.2 发布  
+下载地址 windows版下载
+linux64位下载
+linux32位下载
+Linux版使用教程
+windows版使用教程
+功能更新 本次更新
+ 新增规则，支持检测冰蝎3.0(Behinder) 新增规则，支持检测哥斯拉(godzllia) 优化yii2检测效果，去掉一些疑似文件  如何使用深度模式 深度解码模式命令格式为hm deepscan &amp;lt;target dir&amp;gt;
+下面动图演示了linux系统下先用scan模式进行扫描，接着使用deepscan进行扫描 windows下可以在开始扫描按钮左侧勾选深度模式来决定是否启用深度解码器 已知问题  不支持内核2.6.18以下版本（即centos5系统默认内核版本)且无支持计划  兼容性测试 | OS | kernel | version | arch | result | |------------|-----------------|---------|------|-------- | windows | - | &amp;gt;=2003 | 32/64| OK | | CentOS | &amp;gt;=2.6.32 | &amp;gt;=6 | | OK | | CentOS | &amp;lt;2.6.32 | &amp;lt; 6 | 32/64| 不支持 | | Ubuntu | - | - | | OK | | Kali | - | 2.</description>
+    </item>
     
     <item>
       <title>河马WEBSHELL扫描器1.8.1发布</title>
@@ -506,6 +523,19 @@ WordPress是一款由PHP语言开发的内容管理系统（CMS）系统。是�
       <description>##webshell.pub 第一篇博文
 #关于我们 WEBSHELL.PUB
 团队成员来自国内顶尖安全团队，专注webshell查杀研究。拥有海量webshell样本和自主查杀技术，采用传统特征+云端大数据双引擎的查杀技术。查杀速度快、精度高、误报低。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/post/asus_vul/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/asus_vul/</guid>
+      <description>背景 ​2020年08月03日，国内安全厂商极光无线发布了《漏洞公告 | 华硕(ASUS)家庭无线路由器远程代码执行0day》的风险通告。
+风险等级 高危 ​
+漏洞详情 未经过身份验证的远程攻击者通过发送特制数据包到华硕路由器的WEB组件中，可以在路由器上以 ROOT（最高权限）执行任意代码。
+影响版本：  RT-AC68U RT-AC3100 RT-AC88U RT-AC5300 RT-AC3200  ​修复建议  通过​禁止通过互联网访问路由器后台可以阻断远程攻击 增加WIFI密码复杂性，防止通过本地局域网攻击 开启固件自动更新，及时安装官方最新固件  据河马安全团队分析，使用第三方估计梅林、koolshare、官改固件依然可能存在该漏洞，请用户务必慎重！
+参考链接 &amp;lt;漏洞公告 | 华硕(ASUS)家庭无线路由器远程代码执行0day&amp;gt; https://cert.360.cn/warning/detail?id=81fd25539ed87e395f360e9094196da4</description>
     </item>
     
     <item>
